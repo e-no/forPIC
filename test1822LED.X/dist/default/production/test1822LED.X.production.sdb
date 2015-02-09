@@ -103,14 +103,30 @@
 [v ___fltoee __fltoee `(d  1 e 3 0 ]
 "49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"16 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
+"43 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
-"56
+"61
 [v _main main `(v  1 e 0 0 ]
+"40 C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c
+[v _InitCCP InitCCP `(v  1 e 0 0 ]
+"55
+[v _PalseHigh PalseHigh `(v  1 e 0 0 ]
+"73
+[v _InfraredSend InfraredSend `(v  1 e 0 0 ]
+"106
+[v _DataCheck DataCheck `(i  1 e 2 0 ]
+"138
+[v _InfraredRecive InfraredRecive `(i  1 e 2 0 ]
 "412 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
 "801
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"1011
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"1030
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"1049
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
 "1211
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1360
@@ -135,10 +151,18 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
 "3003
 [v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+"3855
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"3874
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
+"3893
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
 "5062
 [v _CARRY CARRY `VEb  1 e 0 @24 ]
 "5208
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"5404
+[v _RA0 RA0 `VEb  1 e 0 @96 ]
 "5424
 [v _RD RD `VEb  1 e 0 @3240 ]
 "5432
@@ -147,6 +171,8 @@
 [v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
 "5606
 [v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"5630
+[v _TMR2ON TMR2ON `VEb  1 e 0 @226 ]
 "5666
 [v _TXCKSEL TXCKSEL `VEb  1 e 0 @2282 ]
 "5672
@@ -155,19 +181,51 @@
 [v _WR WR `VEb  1 e 0 @3241 ]
 "5702
 [v _WREN WREN `VEb  1 e 0 @3242 ]
-"11 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
+"37 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
 [v _Count Count `i  1 e 2 0 ]
-"12
+"38
 [v _LEDflg LEDflg `i  1 e 2 0 ]
-"56
+"61
 [v _main main `(v  1 e 0 0 ]
 {
-"58
-[v main@i i `uc  1 a 1 5 ]
-"93
+"64
+[v main@ans ans `i  1 a 2 42 ]
+"101
 } 0
-"16
+"138 C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c
+[v _InfraredRecive InfraredRecive `(i  1 e 2 0 ]
+{
+[v InfraredRecive@MyDeviceNo MyDeviceNo `uc  1 a 1 wreg ]
+"140
+[v InfraredRecive@IRbit IRbit `[26]uc  1 a 26 7 ]
+"141
+[v InfraredRecive@t t `ul  1 a 4 36 ]
+"142
+[v InfraredRecive@i i `i  1 a 2 40 ]
+[v InfraredRecive@ans ans `i  1 a 2 34 ]
+"138
+[v InfraredRecive@MyDeviceNo MyDeviceNo `uc  1 a 1 wreg ]
+"144
+[v InfraredRecive@MyDeviceNo MyDeviceNo `uc  1 a 1 33 ]
+"177
+} 0
+"106
+[v _DataCheck DataCheck `(i  1 e 2 0 ]
+{
+[v DataCheck@MyDeviceNo MyDeviceNo `uc  1 a 1 wreg ]
+"108
+[v DataCheck@i i `i  1 a 2 5 ]
+[v DataCheck@x1 x1 `i  1 a 2 3 ]
+[v DataCheck@x2 x2 `i  1 a 2 1 ]
+"106
+[v DataCheck@MyDeviceNo MyDeviceNo `uc  1 a 1 wreg ]
+[v DataCheck@dt dt `*.4uc  1 p 1 2 ]
+"111
+[v DataCheck@MyDeviceNo MyDeviceNo `uc  1 a 1 0 ]
+"128
+} 0
+"43 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
 {
-"28
+"55
 } 0

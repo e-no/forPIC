@@ -1,4 +1,6 @@
-_main: CODE, 55 0 81
-__initialization: CODE, 48 0 4
-_InterTimer: CODE, 4 0 43
-Total: 128
+_DataCheck: CODE, 56 0 204
+_InfraredRecive: CODE, 260 0 146
+_main: CODE, 406 0 66
+__initialization: CODE, 49 0 4
+_InterTimer: CODE, 4 0 44
+Total: 464
