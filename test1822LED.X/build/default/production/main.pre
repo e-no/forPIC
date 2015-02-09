@@ -3055,7 +3055,7 @@ int InfraredRecive(unsigned char MyDeviceNo) ;
 int RemoconSW() ;
 
 
-# 18 "main.c"
+# 16 "main.c"
 #pragma config FOSC = INTOSC
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -3095,7 +3095,7 @@ else LEDflg = 0;
 }
 }
 
-# 61
+# 59
 void main() {
 
 static short int led_flag = 0;
@@ -3104,7 +3104,7 @@ char s[6];
 
 
 OSCCON = 0b01110010;
-ANSELA = 0b00000000;
+ANSELAbits.ANSELA = 0b00000000;
 TRISA = 0b00001001;
 PORTA = 0b00000000;
 
@@ -3126,7 +3126,7 @@ LEDflg = 0;
 
 
 
-_delay((unsigned long)((5000)*(8000000/4000.0)));
+_delay((unsigned long)((50)*(32000000/4000.0)));
 
 
 while (1) {
@@ -3134,14 +3134,12 @@ while (TXIF == 0);
 
 RA3 = 1;
 
-ans = InfraredRecive(10);
-_delay((unsigned long)((500)*(8000000/4000.0)));
-TXREG = ans;
+
+_delay((unsigned long)((50)*(32000000/4000.0)));
+TXREG = "aaaa";
 RA3 = 0;
 
-
-
-_delay((unsigned long)((500)*(8000000/4000.0)));
+_delay((unsigned long)((50)*(32000000/4000.0)));
 
 }
 }

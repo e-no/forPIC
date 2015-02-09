@@ -2897,7 +2897,7 @@ int i ;
 
 CCPR1L = 400/4 ;
 for (i=0 ; i < cnt ; i++ ) {
-_delay((unsigned long)((560)*(8000000/4000000.0))) ;
+_delay((unsigned long)((560)*(32000000/4000000.0))) ;
 }
 CCPR1L = 0 ;
 }
@@ -2909,28 +2909,28 @@ int i ;
 
 
 PalseHigh(9) ;
-_delay((unsigned long)((1000)*(8000000/4000000.0))) ;
+_delay((unsigned long)((1000)*(32000000/4000000.0))) ;
 
 for (i=0 ; i<8 ; i++) {
 PalseHigh(1) ;
-if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
-else _delay((unsigned long)((560)*(8000000/4000000.0))) ;
+if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 }
 
 for (i=0 ; i<8 ; i++) {
 PalseHigh(1) ;
-if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
-else _delay((unsigned long)((560)*(8000000/4000000.0))) ;
+if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 }
 
 for (i=0 ; i<8 ; i++) {
 PalseHigh(1) ;
-if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(8000000/4000000.0))) ;
-else _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
+if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+else _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
 }
 
 PalseHigh(1) ;
-_delay((unsigned long)((1000)*(8000000/4000000.0))) ;
+_delay((unsigned long)((1000)*(32000000/4000000.0))) ;
 }
 
 
@@ -2973,7 +2973,7 @@ t = 0 ;
 if (RA0 == 0) {
 t = 0 ;
 while (RA0 == 0) {
-_delay((unsigned long)((10)*(8000000/4000000.0))) ;
+_delay((unsigned long)((10)*(32000000/4000000.0))) ;
 t++ ;
 }
 }
@@ -2986,7 +2986,7 @@ while (1) {
 while(RA0 == 0) ;
 t = 0 ;
 while(RA0 == 1) {
-_delay((unsigned long)((10)*(8000000/4000000.0))) ;
+_delay((unsigned long)((10)*(32000000/4000000.0))) ;
 t++ ;
 }
 if (t >= 50) IRbit[i] = (char)0x31 ;

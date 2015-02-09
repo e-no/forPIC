@@ -11,39 +11,39 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\s8g8.obj
-end_init CODE 0 30 30 1 2
+$C:\Users\User\AppData\Local\Temp\s98o.obj
+end_init CODE 0 2F 2F 1 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production\test1822LED.X.production.obj
-cinit CODE 0 31 31 9 2
-intentry CODE 0 4 4 2C 2
-text2 CODE 0 3A 3A CC 2
-text1 CODE 0 106 106 92 2
-maintext CODE 0 198 198 5B 2
-cstackBANK0 BANK0 1 20 20 2F 1
-cstackCOMMON COMMON 1 70 70 9 1
-bssBANK0 BANK0 1 4F 4F 4 1
-bssCOMMON COMMON 1 79 79 2 1
+cinit CODE 0 30 30 9 2
+intentry CODE 0 4 4 2B 2
+maintext CODE 0 39 39 50 2
+cstackCOMMON COMMON 1 76 76 5 1
+bssCOMMON COMMON 1 70 70 6 1
+stringtext STRCODE 0 100 100 5 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-BANK0 00053-0006F 1
+BANK0 00020-0006F 1
 BANK1 000A0-000BF 1
 BIGRAM 02000-0206F 1
 CODE 00001-00003 2
-CODE 001F3-007FF 2
+CODE 00089-000FF 2
+CODE 00105-007FF 2
 COMMON 0007B-0007D 1
 CONST 00001-00003 2
-CONST 001F3-007FF 2
+CONST 00089-000FF 2
+CONST 00105-007FF 2
 EEDATA 0F000-0F0FF 2
 ENTRY 00001-00003 2
-ENTRY 001F3-007FF 2
+ENTRY 00089-000FF 2
+ENTRY 00105-007FF 2
 IDLOC 08000-08003 2
-RAM 00053-0006F 1
+RAM 00020-0006F 1
 RAM 000A0-000BF 1
 SFR0 00000-0001F 1
 SFR1 00080-0009F 1
@@ -77,11 +77,13 @@ SFR6 00300-0036F 1
 SFR7 00380-003EF 1
 SFR8 00400-0046F 1
 SFR9 00480-004EF 1
-STACK 02033-0206F 1
+STACK 02000-0206F 1
 STRCODE 00001-00003 2
-STRCODE 001F3-007FF 2
+STRCODE 00089-000FF 2
+STRCODE 00105-007FF 2
 STRING 00001-00003 2
-STRING 001F3-007FF 2
+STRING 00089-000FF 2
+STRING 00105-007FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -96,96 +98,54 @@ STRING 001F3-007FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\test1822LED.X.production.obj
-"C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h":4927 4 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":43 4 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":44 9 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":45 B intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":46 D intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":47 11 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":48 12 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":49 1D intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":51 20 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":52 29 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":55 2B intentry CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":614 31 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":617 31 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":637 31 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":638 32 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":642 33 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":643 34 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":644 35 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":645 36 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":651 37 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":652 37 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":653 38 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8g8.":654 39 cinit CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":106 3A text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":111 3C text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":112 3E text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":113 4A text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":112 63 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":115 72 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":117 86 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":118 88 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":119 94 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":118 AD text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":122 BC text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":123 BF text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":124 CB text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":123 E4 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":126 F3 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":127 FF text2 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":138 106 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":144 108 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":145 10A text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":147 112 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":148 114 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":149 11C text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":150 11E text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":151 123 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":149 12C text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":155 12D text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":156 13D text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":157 13F text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":160 141 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":161 143 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":162 14B text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":163 14D text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":164 152 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":162 15B text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":166 15C text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":167 16E text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":168 176 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":169 17A text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":172 17F text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":173 184 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\skInfraredCOM.c":176 191 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":61 198 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":68 198 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":69 19B maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":70 19D maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":71 1A0 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":73 1A2 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":74 1A4 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":75 1A5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":76 1A8 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":77 1AA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":79 1AC maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":80 1AF maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":81 1B2 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":82 1B3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":83 1B5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":84 1B6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":86 1B7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":91 1B9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":95 1C5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":97 1C8 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":99 1C9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":100 1D2 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":101 1DF maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":102 1E3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":106 1E5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":94 1F2 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":41 4 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":105 4 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":42 9 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":43 B intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":44 D intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":45 11 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":46 12 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":47 1D intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":49 1F intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":50 28 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":53 2A intentry CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":624 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":627 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":644 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":645 31 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":646 32 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":647 33 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":648 34 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":649 35 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":655 36 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":656 36 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":657 37 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s98o.":658 38 cinit CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":59 39 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":66 39 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":67 3C maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":68 3F maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":69 42 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":71 44 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":72 46 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":73 47 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":74 4A maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":75 4C maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":77 4E maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":78 51 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":79 54 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":80 55 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":81 57 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":82 58 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":84 59 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":89 5B maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":93 67 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":95 6A maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":98 6B maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":99 77 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":100 7A maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":102 7C maintext CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":92 88 maintext CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -198,7 +158,6 @@ $dist/default/production\test1822LED.X.production.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__end_of_DataCheck 20C 0 CODE 0 text2 dist/default/production\test1822LED.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _RA0 60 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _RA3 63 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
@@ -208,30 +167,26 @@ __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _GIE 5F 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-__Hintentry 60 0 CODE 0 intentry -
+__Hintentry 5E 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\test1822LED.X.production.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR0 15 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR2 1A 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-__size_of_DataCheck 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-DataCheck@i 25 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
 _TXIF 8C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-InfraredRecive@t 44 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-_main 330 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
-__end_of_InfraredRecive 330 0 CODE 0 text1 dist/default/production\test1822LED.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s8g8.obj
+_main 72 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s98o.obj
 btemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-start 60 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s8g8.obj
+start 5E 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s98o.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _RCSTA 19D 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s8g8.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s98o.obj
 _SPBRG 19B 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TXSTA 19E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _T2CON 1C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
@@ -257,8 +212,9 @@ __Hbigram 0 0 ABS 0 bigram -
 __Lbigram 0 0 ABS 0 bigram -
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
+__end_of__stringdata 20A 0 STRCODE 0 stringtext dist/default/production\test1822LED.X.production.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-_Count 4F 0 BANK0 1 bssBANK0 dist/default/production\test1822LED.X.production.obj
+_Count 70 0 COMMON 1 bssCOMMON dist/default/production\test1822LED.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Lfunctab 0 0 CODE 0 functab -
 _OPTION_REG 95 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
@@ -266,16 +222,13 @@ __Hcommon 0 0 ABS 0 common -
 __Lcommon 0 0 ABS 0 common -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__size_of_InfraredRecive 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _CCPR1H 292 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR0IE 5D 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR0IF 5A 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s8g8.obj
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s98o.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _CCPR1L 291 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-_ANSELA 18C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR2ON E2 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-_DataCheck 74 0 CODE 0 text2 dist/default/production\test1822LED.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Labs1 0 0 ABS 0 abs1 -
@@ -300,21 +253,17 @@ __Hsfr8 0 0 ABS 0 sfr8 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
-_LEDflg 51 0 BANK0 1 bssBANK0 dist/default/production\test1822LED.X.production.obj
+_LEDflg 72 0 COMMON 1 bssCOMMON dist/default/production\test1822LED.X.production.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s8g8.obj
-__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-stacklo 2033 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s8g8.obj
-__Hinit 60 0 CODE 0 init -
-__Linit 60 0 CODE 0 init -
-__end_of_main 3E6 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
+stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s98o.obj
+stacklo 2000 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s98o.obj
+__Hinit 5E 0 CODE 0 init -
+__Linit 5E 0 CODE 0 init -
+__end_of_main 112 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-InfraredRecive@MyDeviceNo 41 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-end_of_initialization 6E 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
+end_of_initialization 6C 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Hsfr20 0 0 ABS 0 sfr20 -
@@ -366,7 +315,6 @@ _TXCKSEL 8EA 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _RXDTSEL 8EF 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Lbank0 0 0 ABS 0 bank0 -
-?_DataCheck 72 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -388,16 +336,9 @@ __Hbank8 0 0 BANK8 1 bank8 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__ptext1 20C 0 CODE 0 text1 dist/default/production\test1822LED.X.production.obj
-__ptext2 74 0 CODE 0 text2 dist/default/production\test1822LED.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
-_InfraredRecive 20C 0 CODE 0 text1 dist/default/production\test1822LED.X.production.obj
-DataCheck@x1 23 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-InfraredRecive@i 48 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-__end_of__initialization 6E 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
-InfraredRecive@IRbit 27 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
-DataCheck@x2 21 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
+__end_of__initialization 6C 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
@@ -407,21 +348,17 @@ __Lspace_0 0 0 ABS 0 - -
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __Hspace_1 7B 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
-main@ans 4D 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
 __Hspace_2 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
-__Hcinit 74 0 CODE 0 cinit -
-__Lcinit 62 0 CODE 0 cinit -
+__Hcinit 72 0 CODE 0 cinit -
+__Lcinit 60 0 CODE 0 cinit -
 __Hspace_3 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __size_of_main 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-__end_of_InterTimer 60 0 CODE 0 intentry dist/default/production\test1822LED.X.production.obj
+__end_of_InterTimer 5E 0 CODE 0 intentry dist/default/production\test1822LED.X.production.obj
 _InterTimer 8 0 CODE 0 intentry dist/default/production\test1822LED.X.production.obj
-__HbssBANK0 0 0 ABS 0 bssBANK0 -
-__LbssBANK0 0 0 ABS 0 bssBANK0 -
 __Hbank10 0 0 BANK10 1 bank10 -
-__pbssBANK0 4F 0 BANK0 1 bssBANK0 dist/default/production\test1822LED.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Hbank20 0 0 BANK20 1 bank20 -
 __Lbank20 0 0 BANK20 1 bank20 -
@@ -443,8 +380,11 @@ __Hbank23 0 0 BANK23 1 bank23 -
 __Lbank23 0 0 BANK23 1 bank23 -
 __Hbank14 0 0 BANK14 1 bank14 -
 __Lbank14 0 0 BANK14 1 bank14 -
+__Hstringtext 0 0 ABS 0 stringtext -
+__Lstringtext 0 0 ABS 0 stringtext -
 __Hbank24 0 0 BANK24 1 bank24 -
 __Lbank24 0 0 BANK24 1 bank24 -
+__pstringtext 200 0 STRCODE 0 stringtext dist/default/production\test1822LED.X.production.obj
 __Hbank15 0 0 BANK15 1 bank15 -
 __Lbank15 0 0 BANK15 1 bank15 -
 __Hbank25 0 0 BANK25 1 bank25 -
@@ -466,39 +406,37 @@ __Hbank19 0 0 BANK19 1 bank19 -
 __Lbank19 0 0 BANK19 1 bank19 -
 __Hbank29 0 0 BANK29 1 bank29 -
 __Lbank29 0 0 BANK29 1 bank29 -
-DataCheck@MyDeviceNo 20 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
+_ANSELAbits 18C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-__pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\test1822LED.X.production.obj
-__Hend_init 62 0 CODE 0 end_init -
-__Lend_init 60 0 CODE 0 end_init -
+__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\test1822LED.X.production.obj
+__Hend_init 60 0 CODE 0 end_init -
+__Lend_init 5E 0 CODE 0 end_init -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
+__stringdata 200 0 STRCODE 0 stringtext dist/default/production\test1822LED.X.production.obj
 __size_of_InterTimer 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
+intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
-intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
-intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
-intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
-intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8g8.obj
+intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
+intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
+intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
+intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
+intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s98o.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj
+__pcstackCOMMON 76 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-start_initialization 62 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
+start_initialization 60 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext 330 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
+__pmaintext 72 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
 __CFG_BORV$HI 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-DataCheck@dt 72 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-__initialization 62 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
-?_InfraredRecive 76 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj
+__initialization 60 0 CODE 0 cinit dist/default/production\test1822LED.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-InfraredRecive@ans 42 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -525,7 +463,7 @@ InfraredRecive@ans 42 0 BANK0 1 cstackBANK0 dist/default/production\test1822LED.
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 1 2
-intentry 0 4 8 1EF 2
+intentry 0 4 8 85 2
 config 0 8007 1000E 2 2
-cstackCOMMON 1 70 70 B 1
-cstackBANK0 1 20 20 33 1
+bssCOMMON 1 70 70 B 1
+stringtext 0 100 200 5 2

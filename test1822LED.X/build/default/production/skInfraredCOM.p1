@@ -2199,9 +2199,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 275  ]
 [e :U 272 ]
 {
-[; ;skInfraredCOM.c: 61: _delay((unsigned long)((560)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 61: _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 "61
-[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "62
 }
 "60
@@ -2237,9 +2237,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.c: 78: PalseHigh(9) ;
 "78
 [e ( _PalseHigh (1 -> 9 `i ]
-[; ;skInfraredCOM.c: 79: _delay((unsigned long)((1000)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 79: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
 "79
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [; ;skInfraredCOM.c: 81: for (i=0 ; i<8 ; i++) {
 "81
 {
@@ -2251,15 +2251,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.c: 82: PalseHigh(1) ;
 "82
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 83: if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 83: if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
 "83
 [e $ ! != & >> -> _toDeviceNo `i _i -> 1 `i -> 0 `i 280  ]
-[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 281  ]
 "84
 [e :U 280 ]
-[; ;skInfraredCOM.c: 84: else _delay((unsigned long)((560)*(8000000/4000000.0))) ;
-[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;skInfraredCOM.c: 84: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 281 ]
 "85
 }
@@ -2281,15 +2281,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.c: 88: PalseHigh(1) ;
 "88
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 89: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 89: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
 "89
 [e $ ! != & >> -> _KeyCode `i _i -> 1 `i -> 0 `i 285  ]
-[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 286  ]
 "90
 [e :U 285 ]
-[; ;skInfraredCOM.c: 90: else _delay((unsigned long)((560)*(8000000/4000000.0))) ;
-[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;skInfraredCOM.c: 90: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 286 ]
 "91
 }
@@ -2311,15 +2311,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.c: 94: PalseHigh(1) ;
 "94
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 95: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 95: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 "95
 [e $ ! != & >> -> _KeyCode `i _i -> 1 `i -> 0 `i 290  ]
-[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 291  ]
 "96
 [e :U 290 ]
-[; ;skInfraredCOM.c: 96: else _delay((unsigned long)((1690)*(8000000/4000000.0))) ;
-[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;skInfraredCOM.c: 96: else _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+[e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 291 ]
 "97
 }
@@ -2333,9 +2333,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.c: 99: PalseHigh(1) ;
 "99
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 100: _delay((unsigned long)((1000)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 100: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
 "100
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [; ;skInfraredCOM.c: 101: }
 "101
 [e :UE 276 ]
@@ -2491,9 +2491,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 309  ]
 [e :U 310 ]
 {
-[; ;skInfraredCOM.c: 150: _delay((unsigned long)((10)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 150: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
 "150
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [; ;skInfraredCOM.c: 151: t++ ;
 "151
 [e ++ _t -> -> -> 1 `i `l `ul ]
@@ -2541,9 +2541,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 322  ]
 [e :U 323 ]
 {
-[; ;skInfraredCOM.c: 163: _delay((unsigned long)((10)*(8000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 163: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
 "163
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [; ;skInfraredCOM.c: 164: t++ ;
 "164
 [e ++ _t -> -> -> 1 `i `l `ul ]

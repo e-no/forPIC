@@ -1,5 +1,3 @@
-#include <pic.h>
-#include <htc.h>
 #include <xc.h>
 
 #include <stdlib.h>
@@ -66,7 +64,7 @@ void main() {
 
 
     OSCCON = 0b01110010; // 内部クロックは8ＭＨｚとする
-    ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
+    ANSELAbits.ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
     TRISA = 0b00001001; // ピンは全て出力に割当てる(RA3は入力専用)
     PORTA = 0b00000000; // 出力ピンの初期化(全てLOWにする)
     // ＵＳＡＲＴ機能の設定を行う
@@ -88,7 +86,7 @@ void main() {
 
      
        
-    __delay_ms(5000); // ５秒後に開始する
+    __delay_ms(50); // ５秒後に開始する
 
 
     while (1) {
@@ -96,14 +94,12 @@ void main() {
         
         RA3 = 1;
 
-        ans = InfraredRecive(10);
-        __delay_ms(500);
-        TXREG = ans;  //　受信したデータ(通知情報)はシリアル出力して表示させておる。
+//        ans = InfraredRecive(10);
+        __delay_ms(50);
+        TXREG = "aaaa";  //　受信したデータ(通知情報)はシリアル出力して表示させておる。
         RA3 = 0;
         
-
-
-        __delay_ms(500);
+        __delay_ms(50);
 
     }
 }

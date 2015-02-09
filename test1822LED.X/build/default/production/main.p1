@@ -6,8 +6,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "1607
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"2576
-[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"2582
+[s S135 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S135 . ANSA0 ANSA1 ANSA2 . ANSA4 ]
+"2589
+[s S136 :5 `uc 1 ]
+[n S136 . ANSELA ]
+"2581
+[u S134 `S135 1 `S136 1 ]
+[n S134 . . . ]
+"2593
+[v _ANSELAbits `VS134 ~T0 @X0 0 e@396 ]
 "1211
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
 "412
@@ -36,9 +45,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXIF `Vb ~T0 @X0 0 e@140 ]
 "5410
 [v _RA3 `Vb ~T0 @X0 0 e@99 ]
-"15 skInfraredCOM.h
-[v _InfraredRecive `(i ~T0 @X0 0 ef1`uc ]
-"2827 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
+"2827
 [v _TXREG `Vuc ~T0 @X0 0 e@410 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
@@ -2275,197 +2282,196 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.h: 14: void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode) ;
 [; ;skInfraredCOM.h: 15: int InfraredRecive(unsigned char MyDeviceNo) ;
 [; ;skInfraredCOM.h: 16: int RemoconSW() ;
-"18 main.c
+"16 main.c
 [p x FOSC=INTOSC ]
-"19
+"17
 [p x WDTE=OFF ]
-"20
+"18
 [p x PWRTE=ON ]
-"21
+"19
 [p x MCLRE=OFF ]
-"22
+"20
 [p x CP=OFF ]
-"23
+"21
 [p x CPD=OFF ]
-"24
+"22
 [p x BOREN=ON ]
-"25
+"23
 [p x CLKOUTEN=OFF ]
-"26
+"24
 [p x IESO=ON ]
-"27
+"25
 [p x FCMEN=ON ]
-"30
+"28
 [p x WRT=OFF ]
-"31
+"29
 [p x PLLEN=OFF ]
-"32
+"30
 [p x STVREN=ON ]
-"33
+"31
 [p x BORV=HI ]
-"34
+"32
 [p x LVP=OFF ]
-"37
+"35
 [v _Count `i ~T0 @X0 1 e ]
-[; ;main.c: 37: int Count;
-"38
+[; ;main.c: 35: int Count;
+"36
 [v _LEDflg `i ~T0 @X0 1 e ]
-[; ;main.c: 38: int LEDflg;
+[; ;main.c: 36: int LEDflg;
 [v F2462 `(v ~T0 @X0 1 tf ]
-"43
+"41
 [v _InterTimer `IF2462 ~T0 @X0 1 e ]
 {
-[; ;main.c: 43: void interrupt InterTimer(void) {
+[; ;main.c: 41: void interrupt InterTimer(void) {
 [e :U _InterTimer ]
 [f ]
-[; ;main.c: 44: if (TMR0IF == 1) {
-"44
+[; ;main.c: 42: if (TMR0IF == 1) {
+"42
 [e $ ! == -> _TMR0IF `i -> 1 `i 276  ]
 {
-[; ;main.c: 45: TMR0 = 61;
-"45
+[; ;main.c: 43: TMR0 = 61;
+"43
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 46: Count++;
-"46
+[; ;main.c: 44: Count++;
+"44
 [e ++ _Count -> 1 `i ]
-[; ;main.c: 47: TMR0IF = 0;
-"47
+[; ;main.c: 45: TMR0IF = 0;
+"45
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 48: if (Count >= 40) {
-"48
+[; ;main.c: 46: if (Count >= 40) {
+"46
 [e $ ! >= _Count -> 40 `i 277  ]
 {
-[; ;main.c: 49: Count = 0;
-"49
+[; ;main.c: 47: Count = 0;
+"47
 [e = _Count -> 0 `i ]
-[; ;main.c: 51: if (LEDflg == 0) LEDflg = 1;
-"51
+[; ;main.c: 49: if (LEDflg == 0) LEDflg = 1;
+"49
 [e $ ! == _LEDflg -> 0 `i 278  ]
 [e = _LEDflg -> 1 `i ]
 [e $U 279  ]
-"52
+"50
 [e :U 278 ]
-[; ;main.c: 52: else LEDflg = 0;
+[; ;main.c: 50: else LEDflg = 0;
 [e = _LEDflg -> 0 `i ]
 [e :U 279 ]
-"53
+"51
 }
 [e :U 277 ]
-"54
+"52
 }
 [e :U 276 ]
+[; ;main.c: 51: }
+[; ;main.c: 52: }
 [; ;main.c: 53: }
-[; ;main.c: 54: }
-[; ;main.c: 55: }
-"55
+"53
 [e :UE 275 ]
 }
-"61
+"59
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 61: void main() {
+[; ;main.c: 59: void main() {
 [e :U _main ]
 [f ]
-"63
+"61
 [v F2464 `s ~T0 @X0 1 s led_flag ]
 [i F2464
 -> -> 0 `i `s
 ]
-"64
+"62
 [v _ans `i ~T0 @X0 1 a ]
-"65
+"63
 [v _s `uc ~T0 @X0 -> 6 `i a ]
-[; ;main.c: 63: static short int led_flag = 0;
-[; ;main.c: 64: int ans;
-[; ;main.c: 65: char s[6];
-[; ;main.c: 68: OSCCON = 0b01110010;
-"68
+[; ;main.c: 61: static short int led_flag = 0;
+[; ;main.c: 62: int ans;
+[; ;main.c: 63: char s[6];
+[; ;main.c: 66: OSCCON = 0b01110010;
+"66
 [e = _OSCCON -> -> 114 `i `uc ]
-[; ;main.c: 69: ANSELA = 0b00000000;
-"69
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;main.c: 70: TRISA = 0b00001001;
-"70
+[; ;main.c: 67: ANSELAbits.ANSELA = 0b00000000;
+"67
+[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 68: TRISA = 0b00001001;
+"68
 [e = _TRISA -> -> 9 `i `uc ]
-[; ;main.c: 71: PORTA = 0b00000000;
-"71
+[; ;main.c: 69: PORTA = 0b00000000;
+"69
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 73: RXDTSEL = 1;
-"73
+[; ;main.c: 71: RXDTSEL = 1;
+"71
 [e = _RXDTSEL -> -> 1 `i `b ]
-[; ;main.c: 74: TXCKSEL = 1;
-"74
+[; ;main.c: 72: TXCKSEL = 1;
+"72
 [e = _TXCKSEL -> -> 1 `i `b ]
-[; ;main.c: 75: TXSTA = 0b00100100;
-"75
+[; ;main.c: 73: TXSTA = 0b00100100;
+"73
 [e = _TXSTA -> -> 36 `i `uc ]
-[; ;main.c: 76: RCSTA = 0b10010000;
-"76
+[; ;main.c: 74: RCSTA = 0b10010000;
+"74
 [e = _RCSTA -> -> 144 `i `uc ]
-[; ;main.c: 77: SPBRG = 51;
-"77
+[; ;main.c: 75: SPBRG = 51;
+"75
 [e = _SPBRG -> -> 51 `i `uc ]
-[; ;main.c: 79: OPTION_REG = 0b00000110;
-"79
+[; ;main.c: 77: OPTION_REG = 0b00000110;
+"77
 [e = _OPTION_REG -> -> 6 `i `uc ]
-[; ;main.c: 80: TMR0 = 61;
-"80
+[; ;main.c: 78: TMR0 = 61;
+"78
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 81: TMR0IF = 0;
-"81
+[; ;main.c: 79: TMR0IF = 0;
+"79
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 82: Count = 0;
-"82
+[; ;main.c: 80: Count = 0;
+"80
 [e = _Count -> 0 `i ]
-[; ;main.c: 83: TMR0IE = 1;
-"83
+[; ;main.c: 81: TMR0IE = 1;
+"81
 [e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 84: GIE = 1;
-"84
+[; ;main.c: 82: GIE = 1;
+"82
 [e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 86: LEDflg = 0;
-"86
+[; ;main.c: 84: LEDflg = 0;
+"84
 [e = _LEDflg -> 0 `i ]
-[; ;main.c: 91: _delay((unsigned long)((5000)*(8000000/4000.0)));
-"91
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 94: while (1) {
-"94
+[; ;main.c: 89: _delay((unsigned long)((50)*(32000000/4000.0)));
+"89
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 92: while (1) {
+"92
 [e :U 282 ]
 {
-[; ;main.c: 95: while (TXIF == 0);
-"95
+[; ;main.c: 93: while (TXIF == 0);
+"93
 [e $U 284  ]
 [e :U 285 ]
 [e :U 284 ]
 [e $ == -> _TXIF `i -> 0 `i 285  ]
 [e :U 286 ]
-[; ;main.c: 97: RA3 = 1;
-"97
+[; ;main.c: 95: RA3 = 1;
+"95
 [e = _RA3 -> -> 1 `i `b ]
-[; ;main.c: 99: ans = InfraredRecive(10);
+[; ;main.c: 98: _delay((unsigned long)((50)*(32000000/4000.0)));
+"98
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 99: TXREG = "aaaa";
 "99
-[e = _ans ( _InfraredRecive (1 -> -> 10 `i `uc ]
-[; ;main.c: 100: _delay((unsigned long)((500)*(8000000/4000.0)));
+[e = _TXREG -> :s 1C `Vuc ]
+[; ;main.c: 100: RA3 = 0;
 "100
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 101: TXREG = ans;
-"101
-[e = _TXREG -> _ans `uc ]
-[; ;main.c: 102: RA3 = 0;
-"102
 [e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 106: _delay((unsigned long)((500)*(8000000/4000.0)));
-"106
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"108
+[; ;main.c: 102: _delay((unsigned long)((50)*(32000000/4000.0)));
+"102
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"104
 }
 [e :U 281 ]
-"94
+"92
 [e $U 282  ]
 [e :U 283 ]
-[; ;main.c: 108: }
-[; ;main.c: 109: }
-"109
+[; ;main.c: 104: }
+[; ;main.c: 105: }
+"105
 [e :UE 280 ]
 }
+[a 1C 97 97 97 97 0 ]
+
