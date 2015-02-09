@@ -12,14 +12,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
 "412
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
+"5432
+[v _RXDTSEL `Vb ~T0 @X0 0 e@2287 ]
+"5666
+[v _TXCKSEL `Vb ~T0 @X0 0 e@2282 ]
+"3003
+[v _TXSTA `Vuc ~T0 @X0 0 e@414 ]
+"2942
+[v _RCSTA `Vuc ~T0 @X0 0 e@413 ]
+"2857
+[v _SPBRG `Vuc ~T0 @X0 0 e@411 ]
 "1360
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
 "5604
 [v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
 "5208
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
-"5404
-[v _RA0 `Vb ~T0 @X0 0 e@96 ]
+[v F2328 `(v ~T0 @X0 1 tf1`ul ]
+"154 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h
+[v __delay `JF2328 ~T0 @X0 0 e ]
+[p i __delay ]
+"5672 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
+[v _TXIF `Vb ~T0 @X0 0 e@140 ]
+"2827
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
 [; ;stdio.h: 9: typedef unsigned size_t;
 [; ;stdio.h: 10: typedef unsigned short wchar_t;
@@ -2199,152 +2215,189 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
-"7 main.c
+"11 main.c
 [v _Count `i ~T0 @X0 1 e ]
-[; ;main.c: 7: int Count;
-"8
+[; ;main.c: 11: int Count;
+"12
 [v _LEDflg `i ~T0 @X0 1 e ]
-[; ;main.c: 8: int LEDflg;
-"27
-[p x FOSC=INTOSC ]
-"28
-[p x WDTE=OFF ]
-"29
-[p x PWRTE=ON ]
-"30
-[p x MCLRE=OFF ]
-"31
-[p x CP=OFF ]
-"32
-[p x CPD=OFF ]
-"33
-[p x BOREN=ON ]
-"34
-[p x CLKOUTEN=OFF ]
-"35
-[p x IESO=OFF ]
-"36
-[p x FCMEN=OFF ]
-"39
-[p x WRT=OFF ]
-"40
-[p x PLLEN=OFF ]
-"41
-[p x STVREN=ON ]
-"42
-[p x BORV=LO ]
-"43
-[p x LVP=OFF ]
+[; ;main.c: 12: int LEDflg;
 [v F2333 `(v ~T0 @X0 1 tf ]
-"49
+"16
 [v _InterTimer `IF2333 ~T0 @X0 1 e ]
 {
-[; ;main.c: 49: void interrupt InterTimer(void) {
+[; ;main.c: 16: void interrupt InterTimer(void) {
 [e :U _InterTimer ]
 [f ]
-[; ;main.c: 50: if (TMR0IF == 1) {
-"50
+[; ;main.c: 17: if (TMR0IF == 1) {
+"17
 [e $ ! == -> _TMR0IF `i -> 1 `i 272  ]
 {
-[; ;main.c: 51: TMR0 = 61;
-"51
+[; ;main.c: 18: TMR0 = 61;
+"18
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 52: Count++;
-"52
+[; ;main.c: 19: Count++;
+"19
 [e ++ _Count -> 1 `i ]
-[; ;main.c: 53: TMR0IF = 0;
-"53
+[; ;main.c: 20: TMR0IF = 0;
+"20
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 54: if (Count >= 40) {
-"54
+[; ;main.c: 21: if (Count >= 40) {
+"21
 [e $ ! >= _Count -> 40 `i 273  ]
 {
-[; ;main.c: 55: Count = 0;
-"55
+[; ;main.c: 22: Count = 0;
+"22
 [e = _Count -> 0 `i ]
-[; ;main.c: 57: if (LEDflg == 0) LEDflg = 1;
-"57
+[; ;main.c: 24: if (LEDflg == 0) LEDflg = 1;
+"24
 [e $ ! == _LEDflg -> 0 `i 274  ]
 [e = _LEDflg -> 1 `i ]
 [e $U 275  ]
-"58
+"25
 [e :U 274 ]
-[; ;main.c: 58: else LEDflg = 0;
+[; ;main.c: 25: else LEDflg = 0;
 [e = _LEDflg -> 0 `i ]
 [e :U 275 ]
-"59
+"26
 }
 [e :U 273 ]
-"60
+"27
 }
 [e :U 272 ]
-[; ;main.c: 59: }
-[; ;main.c: 60: }
-[; ;main.c: 61: }
-"61
+[; ;main.c: 26: }
+[; ;main.c: 27: }
+[; ;main.c: 28: }
+"28
 [e :UE 271 ]
 }
-"64
+"36
+[p x FOSC=INTOSC ]
+"37
+[p x WDTE=OFF ]
+"38
+[p x PWRTE=ON ]
+"39
+[p x MCLRE=OFF ]
+"40
+[p x CP=OFF ]
+"41
+[p x CPD=OFF ]
+"42
+[p x BOREN=ON ]
+"43
+[p x CLKOUTEN=OFF ]
+"44
+[p x IESO=OFF ]
+"45
+[p x FCMEN=OFF ]
+"48
+[p x WRT=OFF ]
+"49
+[p x PLLEN=OFF ]
+"50
+[p x STVREN=ON ]
+"51
+[p x BORV=HI ]
+"52
+[p x LVP=OFF ]
+"56
 [v _main `(v ~T0 @X0 1 ef ]
+"57
 {
-[; ;main.c: 64: void main() {
+[; ;main.c: 56: void main()
+[; ;main.c: 57: {
 [e :U _main ]
 [f ]
-[; ;main.c: 65: OSCCON = 0b01101010;
-"65
-[e = _OSCCON -> -> 106 `i `uc ]
-[; ;main.c: 66: ANSELA = 0b00000000;
-"66
+"58
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 58: char i ;
+[; ;main.c: 60: OSCCON = 0b01110010 ;
+"60
+[e = _OSCCON -> -> 114 `i `uc ]
+[; ;main.c: 61: ANSELA = 0b00000000 ;
+"61
 [e = _ANSELA -> -> 0 `i `uc ]
-[; ;main.c: 67: TRISA = 0b00001000;
-"67
+[; ;main.c: 62: TRISA = 0b00001000 ;
+"62
 [e = _TRISA -> -> 8 `i `uc ]
-[; ;main.c: 68: PORTA = 0b00000000;
-"68
+[; ;main.c: 63: PORTA = 0b00000000 ;
+"63
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 70: OPTION_REG = 0b00000110;
-"70
-[e = _OPTION_REG -> -> 6 `i `uc ]
-[; ;main.c: 71: TMR0 = 61;
+[; ;main.c: 65: RXDTSEL = 1 ;
+"65
+[e = _RXDTSEL -> -> 1 `i `b ]
+[; ;main.c: 66: TXCKSEL = 1 ;
+"66
+[e = _TXCKSEL -> -> 1 `i `b ]
+[; ;main.c: 67: TXSTA = 0b00100100 ;
+"67
+[e = _TXSTA -> -> 36 `i `uc ]
+[; ;main.c: 68: RCSTA = 0b10010000 ;
+"68
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;main.c: 69: SPBRG = 51 ;
+"69
+[e = _SPBRG -> -> 51 `i `uc ]
+[; ;main.c: 71: OPTION_REG = 0b00000110;
 "71
-[e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 72: TMR0IF = 0;
+[e = _OPTION_REG -> -> 6 `i `uc ]
+[; ;main.c: 72: TMR0 = 61;
 "72
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 73: Count = 0;
+[e = _TMR0 -> -> 61 `i `uc ]
+[; ;main.c: 73: TMR0IF = 0;
 "73
-[e = _Count -> 0 `i ]
-[; ;main.c: 74: TMR0IE = 1;
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 74: Count = 0;
 "74
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 75: GIE = 1;
+[e = _Count -> 0 `i ]
+[; ;main.c: 75: TMR0IE = 1;
 "75
+[e = _TMR0IE -> -> 1 `i `b ]
+[; ;main.c: 76: GIE = 1;
+"76
 [e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 77: LEDflg = 0;
-"77
+[; ;main.c: 78: LEDflg = 0;
+"78
 [e = _LEDflg -> 0 `i ]
-[; ;main.c: 79: while (1) {
-"79
+[; ;main.c: 81: _delay((unsigned long)((5000)*(8000000/4000.0))) ;
+"81
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 82: i = 0x30 ;
+"82
+[e = _i -> -> 48 `i `uc ]
+[; ;main.c: 84: while(1) {
+"84
 [e :U 278 ]
 {
-[; ;main.c: 81: if (LEDflg == 0) RA0 = 0;
-"81
-[e $ ! == _LEDflg -> 0 `i 280  ]
-[e = _RA0 -> -> 0 `i `b ]
-[e $U 281  ]
-"82
-[e :U 280 ]
-[; ;main.c: 82: else RA0 = 1;
-[e = _RA0 -> -> 1 `i `b ]
+[; ;main.c: 85: while(TXIF==0) ;
+"85
+[e $U 280  ]
 [e :U 281 ]
-"83
+[e :U 280 ]
+[e $ == -> _TXIF `i -> 0 `i 281  ]
+[e :U 282 ]
+[; ;main.c: 86: TXREG = i ;
+"86
+[e = _TXREG _i ]
+[; ;main.c: 88: i++ ;
+"88
+[e ++ _i -> -> 1 `i `uc ]
+[; ;main.c: 89: if (i > 0x7b) i=0x30 ;
+"89
+[e $ ! > -> _i `i -> 123 `i 283  ]
+[e = _i -> -> 48 `i `uc ]
+[e :U 283 ]
+[; ;main.c: 91: _delay((unsigned long)((1000)*(8000000/4000.0))) ;
+"91
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"92
 }
 [e :U 277 ]
-"79
+"84
 [e $U 278  ]
 [e :U 279 ]
-[; ;main.c: 83: }
-[; ;main.c: 84: }
-"84
+[; ;main.c: 92: }
+[; ;main.c: 93: }
+"93
 [e :UE 276 ]
 }

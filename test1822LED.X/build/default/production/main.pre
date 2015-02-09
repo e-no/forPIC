@@ -2977,31 +2977,12 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 7 "main.c"
+# 11 "main.c"
 int Count;
 int LEDflg;
 
 
-# 27
-#pragma config FOSC = INTOSC
-#pragma config WDTE = OFF
-#pragma config PWRTE = ON
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
 
-
-#pragma config WRT = OFF
-#pragma config PLLEN = OFF
-#pragma config STVREN = ON
-#pragma config BORV = LO
-#pragma config LVP = OFF
-
-# 49
 void interrupt InterTimer(void) {
 if (TMR0IF == 1) {
 TMR0 = 61;
@@ -3017,11 +2998,41 @@ else LEDflg = 0;
 }
 
 
-void main() {
-OSCCON = 0b01101010;
-ANSELA = 0b00000000;
-TRISA = 0b00001000;
-PORTA = 0b00000000;
+# 36
+#pragma config FOSC = INTOSC
+#pragma config WDTE = OFF
+#pragma config PWRTE = ON
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config CLKOUTEN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+
+
+#pragma config WRT = OFF
+#pragma config PLLEN = OFF
+#pragma config STVREN = ON
+#pragma config BORV = HI
+#pragma config LVP = OFF
+
+
+
+void main()
+{
+char i ;
+
+OSCCON = 0b01110010 ;
+ANSELA = 0b00000000 ;
+TRISA = 0b00001000 ;
+PORTA = 0b00000000 ;
+
+RXDTSEL = 1 ;
+TXCKSEL = 1 ;
+TXSTA = 0b00100100 ;
+RCSTA = 0b10010000 ;
+SPBRG = 51 ;
 
 OPTION_REG = 0b00000110;
 TMR0 = 61;
@@ -3032,9 +3043,18 @@ GIE = 1;
 
 LEDflg = 0;
 
-while (1) {
 
-if (LEDflg == 0) RA0 = 0;
-else RA0 = 1;
+_delay((unsigned long)((5000)*(8000000/4000.0))) ;
+i = 0x30 ;
+
+while(1) {
+while(TXIF==0) ;
+TXREG = i ;
+
+i++ ;
+if (i > 0x7b) i=0x30 ;
+
+_delay((unsigned long)((1000)*(8000000/4000.0))) ;
 }
 }
+

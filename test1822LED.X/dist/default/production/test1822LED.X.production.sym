@@ -1,7 +1,6 @@
 __CFG_WRT$OFF 0 0 ABS 0
-_RA0 60 0 ABS 0
 __S0 8009 0 ABS 0
-__S1 76 0 ABS 0
+__S1 7A 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 _GIE 5F 0 ABS 0
@@ -11,6 +10,7 @@ __CFG_BOREN$ON 0 0 ABS 0
 __pintentry 4 0 CODE 0
 __CFG_PWRTE$ON 0 0 ABS 0
 _TMR0 15 0 ABS 0
+_TXIF 8C 0 ABS 0
 _main 37 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
@@ -19,8 +19,12 @@ ttemp 7E 0 ABS 0
 wtemp 7E 0 ABS 0
 start 2F 0 CODE 0
 _TRISA 8C 0 ABS 0
+_RCSTA 19D 0 ABS 0
+_TXREG 19A 0 ABS 0
 _PORTA C 0 ABS 0
 reset_vec 0 0 CODE 0
+_SPBRG 19B 0 ABS 0
+_TXSTA 19E 0 ABS 0
 ltemp0 7E 0 ABS 0
 ttemp0 7E 0 ABS 0
 wtemp0 7E 0 ABS 0
@@ -39,12 +43,13 @@ wtemp5 88 0 ABS 0
 wtemp6 7F 0 ABS 0
 __Hconfig 8009 0 CONFIG 0
 __Lconfig 8007 0 CONFIG 0
+main@i 75 0 COMMON 1
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __CFG_STVREN$ON 0 0 ABS 0
-_Count 70 0 COMMON 1
+_Count 76 0 COMMON 1
 __Hfunctab 0 0 CODE 0
 __Lfunctab 0 0 CODE 0
 _OPTION_REG 95 0 ABS 0
@@ -81,14 +86,14 @@ __Hsfr8 0 0 ABS 0
 __Lsfr8 0 0 ABS 0
 __Hsfr9 0 0 ABS 0
 __Lsfr9 0 0 ABS 0
-_LEDflg 72 0 COMMON 1
+_LEDflg 78 0 COMMON 1
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 stackhi 206F 0 ABS 0
 stacklo 2000 0 ABS 0
 __Hinit 2F 0 CODE 0
 __Linit 2F 0 CODE 0
-__end_of_main 56 0 CODE 0
+__end_of_main 88 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 34 0 CODE 0
@@ -138,6 +143,8 @@ __Hsfr29 0 0 ABS 0
 __Lsfr29 0 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
+_TXCKSEL 8EA 0 ABS 0
+_RXDTSEL 8EF 0 ABS 0
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -170,7 +177,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 8009 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 76 0 ABS 0
+__Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
@@ -179,7 +186,6 @@ __Lcinit 30 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
-__CFG_BORV$LO 0 0 ABS 0
 __CFG_MCLRE$OFF 0 0 ABS 0
 __end_of_InterTimer 2F 0 CODE 0
 _InterTimer 4 0 CODE 0
@@ -231,7 +237,7 @@ __Hbank29 0 0 BANK29 1
 __Lbank29 0 0 BANK29 1
 __HbssCOMMON 0 0 ABS 0
 __LbssCOMMON 0 0 ABS 0
-__pbssCOMMON 70 0 COMMON 1
+__pbssCOMMON 76 0 COMMON 1
 __Hend_init 30 0 CODE 0
 __Lend_init 2F 0 CODE 0
 __Hreset_vec 1 0 CODE 0
@@ -246,61 +252,72 @@ intlevel4 0 0 CODE 0
 intlevel5 0 0 CODE 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
-__pcstackCOMMON 74 0 COMMON 1
+__pcstackCOMMON 70 0 COMMON 1
 __CFG_CPD$OFF 0 0 ABS 0
 start_initialization 30 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __CFG_IESO$OFF 0 0 ABS 0
 __pmaintext 37 0 CODE 0
+__CFG_BORV$HI 0 0 ABS 0
 __CFG_FOSC$INTOSC 0 0 ABS 0
 __initialization 30 0 CODE 0
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 1 CODE 0 0
-intentry 8 AB CODE 8 0
+intentry 8 10F CODE 8 0
 config 1000E 10011 CONFIG 1000E 0
-bssCOMMON 70 75 COMMON 70 1
+cstackCOMMON 70 79 COMMON 70 1
 %locals
 dist/default/production\test1822LED.X.production.obj
 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 4927 4 0 CODE 0
 main.c
-49 4 0 CODE 0
-50 9 0 CODE 0
-51 B 0 CODE 0
-52 D 0 CODE 0
-53 11 0 CODE 0
-54 12 0 CODE 0
-55 1D 0 CODE 0
-57 1F 0 CODE 0
-58 28 0 CODE 0
-61 2A 0 CODE 0
-C:\Users\User\AppData\Local\Temp\s7j4.
-350 30 0 CODE 0
-353 30 0 CODE 0
-367 30 0 CODE 0
-368 31 0 CODE 0
-369 32 0 CODE 0
-370 33 0 CODE 0
-376 34 0 CODE 0
-377 34 0 CODE 0
-378 35 0 CODE 0
-379 36 0 CODE 0
+16 4 0 CODE 0
+17 9 0 CODE 0
+18 B 0 CODE 0
+19 D 0 CODE 0
+20 11 0 CODE 0
+21 12 0 CODE 0
+22 1D 0 CODE 0
+24 1F 0 CODE 0
+25 28 0 CODE 0
+28 2A 0 CODE 0
+C:\Users\User\AppData\Local\Temp\s6eo.
+362 30 0 CODE 0
+365 30 0 CODE 0
+379 30 0 CODE 0
+380 31 0 CODE 0
+381 32 0 CODE 0
+382 33 0 CODE 0
+388 34 0 CODE 0
+389 34 0 CODE 0
+390 35 0 CODE 0
+391 36 0 CODE 0
 main.c
-64 37 0 CODE 0
-65 37 0 CODE 0
-66 3A 0 CODE 0
-67 3C 0 CODE 0
-68 3F 0 CODE 0
-70 41 0 CODE 0
-71 44 0 CODE 0
-72 47 0 CODE 0
-73 48 0 CODE 0
-74 4A 0 CODE 0
-75 4B 0 CODE 0
-77 4C 0 CODE 0
-81 4E 0 CODE 0
-82 54 0 CODE 0
-79 55 0 CODE 0
+56 37 0 CODE 0
+60 37 0 CODE 0
+61 3A 0 CODE 0
+62 3C 0 CODE 0
+63 3F 0 CODE 0
+65 41 0 CODE 0
+66 43 0 CODE 0
+67 44 0 CODE 0
+68 47 0 CODE 0
+69 49 0 CODE 0
+71 4B 0 CODE 0
+72 4E 0 CODE 0
+73 51 0 CODE 0
+74 52 0 CODE 0
+75 54 0 CODE 0
+76 55 0 CODE 0
+78 56 0 CODE 0
+81 58 0 CODE 0
+82 64 0 CODE 0
+85 68 0 CODE 0
+86 6B 0 CODE 0
+88 6E 0 CODE 0
+89 72 0 CODE 0
+91 7A 0 CODE 0
+84 87 0 CODE 0
