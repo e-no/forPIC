@@ -1,0 +1,4 @@
+_main: CODE, 55 0 31
+__initialization: CODE, 48 0 4
+_InterTimer: CODE, 4 0 43
+Total: 78
