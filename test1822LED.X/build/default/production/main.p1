@@ -34,6 +34,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "5672 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _TXIF `Vb ~T0 @X0 0 e@140 ]
+"5410
+[v _RA3 `Vb ~T0 @X0 0 e@99 ]
 "15 skInfraredCOM.h
 [v _InfraredRecive `(i ~T0 @X0 0 ef1`uc ]
 "2827 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
@@ -2364,12 +2366,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 61: void main() {
 [e :U _main ]
 [f ]
-"62
-[v _s `uc ~T0 @X0 -> 6 `i a ]
+"63
+[v F2464 `s ~T0 @X0 1 s led_flag ]
+[i F2464
+-> -> 0 `i `s
+]
 "64
 [v _ans `i ~T0 @X0 1 a ]
-[; ;main.c: 62: char s[6];
+"65
+[v _s `uc ~T0 @X0 -> 6 `i a ]
+[; ;main.c: 63: static short int led_flag = 0;
 [; ;main.c: 64: int ans;
+[; ;main.c: 65: char s[6];
 [; ;main.c: 68: OSCCON = 0b01110010;
 "68
 [e = _OSCCON -> -> 114 `i `uc ]
@@ -2418,42 +2426,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 86: LEDflg = 0;
 "86
 [e = _LEDflg -> 0 `i ]
-[; ;main.c: 89: _delay((unsigned long)((5000)*(32000000/4000.0)));
-"89
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 92: while (1) {
-"92
+[; ;main.c: 91: _delay((unsigned long)((5000)*(8000000/4000.0)));
+"91
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 94: while (1) {
+"94
 [e :U 282 ]
 {
-[; ;main.c: 93: while (TXIF == 0);
-"93
+[; ;main.c: 95: while (TXIF == 0);
+"95
 [e $U 284  ]
 [e :U 285 ]
 [e :U 284 ]
 [e $ == -> _TXIF `i -> 0 `i 285  ]
 [e :U 286 ]
-[; ;main.c: 95: ans = InfraredRecive(10);
-"95
-[e = _ans ( _InfraredRecive (1 -> -> 10 `i `uc ]
-[; ;main.c: 96: if (ans != 0) {
-"96
-[e $ ! != _ans -> 0 `i 287  ]
-{
-[; ;main.c: 97: TXREG = ans;
+[; ;main.c: 97: RA3 = 1;
 "97
-[e = _TXREG -> _ans `uc ]
-"98
-}
-[e :U 287 ]
+[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 99: ans = InfraredRecive(10);
+"99
+[e = _ans ( _InfraredRecive (1 -> -> 10 `i `uc ]
+[; ;main.c: 100: _delay((unsigned long)((500)*(8000000/4000.0)));
 "100
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 101: TXREG = ans;
+"101
+[e = _TXREG -> _ans `uc ]
+[; ;main.c: 102: RA3 = 0;
+"102
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 106: _delay((unsigned long)((500)*(8000000/4000.0)));
+"106
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"108
 }
 [e :U 281 ]
-"92
+"94
 [e $U 282  ]
 [e :U 283 ]
-[; ;main.c: 98: }
-[; ;main.c: 100: }
-[; ;main.c: 101: }
-"101
+[; ;main.c: 108: }
+[; ;main.c: 109: }
+"109
 [e :UE 280 ]
 }

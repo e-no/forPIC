@@ -3097,10 +3097,10 @@ else LEDflg = 0;
 
 # 61
 void main() {
-char s[6];
 
+static short int led_flag = 0;
 int ans;
-
+char s[6];
 
 
 OSCCON = 0b01110010;
@@ -3124,16 +3124,24 @@ GIE = 1;
 LEDflg = 0;
 
 
-_delay((unsigned long)((5000)*(32000000/4000.0)));
+
+
+_delay((unsigned long)((5000)*(8000000/4000.0)));
 
 
 while (1) {
 while (TXIF == 0);
 
+RA3 = 1;
+
 ans = InfraredRecive(10);
-if (ans != 0) {
+_delay((unsigned long)((500)*(8000000/4000.0)));
 TXREG = ans;
-}
+RA3 = 0;
+
+
+
+_delay((unsigned long)((500)*(8000000/4000.0)));
 
 }
 }

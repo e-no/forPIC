@@ -1,3 +1,5 @@
+#include <pic.h>
+#include <htc.h>
 #include <xc.h>
 
 #include <stdlib.h>
@@ -5,8 +7,6 @@
 #include <string.h>
 
 #include "skInfraredCOM.h"	// 赤外線通信用
-
-#define _XTAL_FREQ  32000000    // delay用(クロック８MHzで動作時)
 
 #define T0COUT     61   // タイマー０用カウントの初期値(256 - 195 = 61)
 
@@ -59,10 +59,10 @@ void interrupt InterTimer(void) {
 // メインの処理
 
 void main() {
-    char s[6];
 
+    static short int led_flag = 0;
     int ans;
-
+    char s[6];
 
 
     OSCCON = 0b01110010; // 内部クロックは8ＭＨｚとする
@@ -86,16 +86,24 @@ void main() {
     LEDflg = 0; // LEDのフラグ状態をOFFとする
 
 
+     
+       
     __delay_ms(5000); // ５秒後に開始する
 
 
     while (1) {
         while (TXIF == 0); // 送信可能になるまで待つ    *1)
+        
+        RA3 = 1;
 
         ans = InfraredRecive(10);
-        if (ans != 0) {
-              TXREG = ans;  //　受信したデータ(通知情報)はシリアル出力して表示させておる。
-        }
+        __delay_ms(500);
+        TXREG = ans;  //　受信したデータ(通知情報)はシリアル出力して表示させておる。
+        RA3 = 0;
+        
+
+
+        __delay_ms(500);
 
     }
 }
