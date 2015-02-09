@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\sat4.obj
+$C:\Users\User\AppData\Local\Temp\s7j4.obj
 end_init CODE 0 2F 2F 1 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 8007 8007 2 2
@@ -93,7 +93,7 @@ STRING 00056-007FF 2
 %LINETAB
 $dist/default/production\test1822LED.X.production.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h":4927 4 intentry CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":48 4 intentry CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":49 4 intentry CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":50 9 intentry CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":51 B intentry CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":52 D intentry CODE
@@ -103,17 +103,17 @@ $dist/default/production\test1822LED.X.production.obj
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":57 1F intentry CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":58 28 intentry CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":61 2A intentry CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":350 30 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":353 30 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":367 30 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":368 31 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":369 32 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":370 33 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":376 34 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":377 34 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":378 35 cinit CODE
-"C:\Users\User\AppData\Local\Temp\sat4.":379 36 cinit CODE
-"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":63 37 maintext CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":350 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":353 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":367 30 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":368 31 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":369 32 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":370 33 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":376 34 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":377 34 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":378 35 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s7j4.":379 36 cinit CODE
+"C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":64 37 maintext CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":65 37 maintext CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":66 3A maintext CODE
 "C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c":67 3C maintext CODE
@@ -154,15 +154,15 @@ __pintentry 8 0 CODE 0 intentry dist/default/production\test1822LED.X.production
 __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR0 15 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _main 6E 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sat4.obj
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s7j4.obj
 btemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-start 5E 0 CODE 0 init C:\Users\User\AppData\Local\Temp\sat4.obj
+start 5E 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s7j4.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\sat4.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s7j4.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
@@ -196,7 +196,7 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _TMR0IE 5D 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _TMR0IF 5A 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sat4.obj
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s7j4.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
@@ -226,8 +226,8 @@ __Lsfr9 0 0 ABS 0 sfr9 -
 _LEDflg 72 0 COMMON 1 bssCOMMON dist/default/production\test1822LED.X.production.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sat4.obj
-stacklo 2000 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sat4.obj
+stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s7j4.obj
+stacklo 2000 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s7j4.obj
 __Hinit 5E 0 CODE 0 init -
 __Linit 5E 0 CODE 0 init -
 __end_of_main AC 0 CODE 0 maintext dist/default/production\test1822LED.X.production.obj
@@ -379,13 +379,13 @@ __Lend_init 5E 0 CODE 0 end_init -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __size_of_InterTimer 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
+intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\test1822LED.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
-intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
-intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
-intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
-intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sat4.obj
+intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
+intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
+intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
+intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
+intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s7j4.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 74 0 COMMON 1 cstackCOMMON dist/default/production\test1822LED.X.production.obj

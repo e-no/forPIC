@@ -2201,10 +2201,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
 "7 main.c
 [v _Count `i ~T0 @X0 1 e ]
-[; ;main.c: 7: int Count ;
+[; ;main.c: 7: int Count;
 "8
 [v _LEDflg `i ~T0 @X0 1 e ]
-[; ;main.c: 8: int LEDflg ;
+[; ;main.c: 8: int LEDflg;
 "27
 [p x FOSC=INTOSC ]
 "28
@@ -2236,42 +2236,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "43
 [p x LVP=OFF ]
 [v F2333 `(v ~T0 @X0 1 tf ]
-"48
-[v _InterTimer `IF2333 ~T0 @X0 1 e ]
 "49
+[v _InterTimer `IF2333 ~T0 @X0 1 e ]
 {
-[; ;main.c: 48: void interrupt InterTimer( void )
-[; ;main.c: 49: {
+[; ;main.c: 49: void interrupt InterTimer(void) {
 [e :U _InterTimer ]
 [f ]
 [; ;main.c: 50: if (TMR0IF == 1) {
 "50
 [e $ ! == -> _TMR0IF `i -> 1 `i 272  ]
 {
-[; ;main.c: 51: TMR0 = 61 ;
+[; ;main.c: 51: TMR0 = 61;
 "51
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 52: Count++ ;
+[; ;main.c: 52: Count++;
 "52
 [e ++ _Count -> 1 `i ]
-[; ;main.c: 53: TMR0IF = 0 ;
+[; ;main.c: 53: TMR0IF = 0;
 "53
 [e = _TMR0IF -> -> 0 `i `b ]
 [; ;main.c: 54: if (Count >= 40) {
 "54
 [e $ ! >= _Count -> 40 `i 273  ]
 {
-[; ;main.c: 55: Count = 0 ;
+[; ;main.c: 55: Count = 0;
 "55
 [e = _Count -> 0 `i ]
-[; ;main.c: 57: if (LEDflg == 0) LEDflg = 1 ;
+[; ;main.c: 57: if (LEDflg == 0) LEDflg = 1;
 "57
 [e $ ! == _LEDflg -> 0 `i 274  ]
 [e = _LEDflg -> 1 `i ]
 [e $U 275  ]
 "58
 [e :U 274 ]
-[; ;main.c: 58: else LEDflg = 0 ;
+[; ;main.c: 58: else LEDflg = 0;
 [e = _LEDflg -> 0 `i ]
 [e :U 275 ]
 "59
@@ -2286,59 +2284,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 "61
 [e :UE 271 ]
 }
-"63
-[v _main `(v ~T0 @X0 1 ef ]
 "64
+[v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 63: void main()
-[; ;main.c: 64: {
+[; ;main.c: 64: void main() {
 [e :U _main ]
 [f ]
-[; ;main.c: 65: OSCCON = 0b01101010 ;
+[; ;main.c: 65: OSCCON = 0b01101010;
 "65
 [e = _OSCCON -> -> 106 `i `uc ]
-[; ;main.c: 66: ANSELA = 0b00000000 ;
+[; ;main.c: 66: ANSELA = 0b00000000;
 "66
 [e = _ANSELA -> -> 0 `i `uc ]
-[; ;main.c: 67: TRISA = 0b00001000 ;
+[; ;main.c: 67: TRISA = 0b00001000;
 "67
 [e = _TRISA -> -> 8 `i `uc ]
-[; ;main.c: 68: PORTA = 0b00000000 ;
+[; ;main.c: 68: PORTA = 0b00000000;
 "68
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 70: OPTION_REG = 0b00000110 ;
+[; ;main.c: 70: OPTION_REG = 0b00000110;
 "70
 [e = _OPTION_REG -> -> 6 `i `uc ]
-[; ;main.c: 71: TMR0 = 61 ;
+[; ;main.c: 71: TMR0 = 61;
 "71
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 72: TMR0IF = 0 ;
+[; ;main.c: 72: TMR0IF = 0;
 "72
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 73: Count = 0 ;
+[; ;main.c: 73: Count = 0;
 "73
 [e = _Count -> 0 `i ]
-[; ;main.c: 74: TMR0IE = 1 ;
+[; ;main.c: 74: TMR0IE = 1;
 "74
 [e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 75: GIE = 1 ;
+[; ;main.c: 75: GIE = 1;
 "75
 [e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 77: LEDflg = 0 ;
+[; ;main.c: 77: LEDflg = 0;
 "77
 [e = _LEDflg -> 0 `i ]
-[; ;main.c: 79: while(1) {
+[; ;main.c: 79: while (1) {
 "79
 [e :U 278 ]
 {
-[; ;main.c: 81: if (LEDflg == 0) RA0 = 0 ;
+[; ;main.c: 81: if (LEDflg == 0) RA0 = 0;
 "81
 [e $ ! == _LEDflg -> 0 `i 280  ]
 [e = _RA0 -> -> 0 `i `b ]
 [e $U 281  ]
 "82
 [e :U 280 ]
-[; ;main.c: 82: else RA0 = 1 ;
+[; ;main.c: 82: else RA0 = 1;
 [e = _RA0 -> -> 1 `i `b ]
 [e :U 281 ]
 "83

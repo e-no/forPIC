@@ -4,8 +4,8 @@
 
 #define T0COUT     61   // タイマー０用カウントの初期値(256 - 195 = 61)
 
-int Count ;             // タイマーの割込み発生回数をカウントする変数
-int LEDflg ;            // LEDのON/OFF状態フラグ
+int Count; // タイマーの割込み発生回数をカウントする変数
+int LEDflg; // LEDのON/OFF状態フラグ
 
 // コンフィギュレーション１の設定
 // CLKOUTﾋﾟﾝをRA4ﾋﾟﾝで使用する(CLKOUTEN_OFF)：内部ｸﾛｯｸ使用する(INTIO)
@@ -45,40 +45,40 @@ int LEDflg ;            // LEDのON/OFF状態フラグ
 
 
 // タイマー割込みの処理
-void interrupt InterTimer( void )
-{
-     if (TMR0IF == 1) {           // タイマー0の割込み発生か？
-          TMR0 = T0COUT ;         // タイマー0の初期化
-          Count++ ;               // 割込み発生の回数をカウントする
-          TMR0IF = 0 ;            // タイマー0割込フラグをリセット
-          if (Count >= 40) {      // 割込みを40回カウントすると約１秒
-               Count = 0 ;
-               // １秒毎にLEDのフラグをON/OFFさせる処理
-               if (LEDflg == 0) LEDflg = 1 ;
-               else             LEDflg = 0 ;
-          }
-     }
+
+void interrupt InterTimer(void) {
+    if (TMR0IF == 1) { // timer0interruptFlag
+        TMR0 = T0COUT; // タイマー0の初期化
+        Count++; // 割込み発生の回数をカウントする
+        TMR0IF = 0; // タイマー0割込フラグをリセット
+        if (Count >= 40) { // 割込みを40回カウントすると約１秒
+            Count = 0;
+            // １秒毎にLEDのフラグをON/OFFさせる処理
+            if (LEDflg == 0) LEDflg = 1;
+            else LEDflg = 0;
+        }
+    }
 }
 // メインの処理
-void main()
-{
-     OSCCON = 0b01101010 ;     // 内部クロックは４ＭＨｚとする
-     ANSELA = 0b00000000 ;     // アナログは使用しない（すべてデジタルI/Oに割当てる）
-     TRISA  = 0b00001000 ;     // ピンは全て出力に割当てる(RA3は入力のみとなる)
-     PORTA  = 0b00000000 ;     // 出力ピンの初期化(全てLOWにする)
 
-     OPTION_REG = 0b00000110 ; // 内部ｸﾛｯｸでTIMER0を使用、ﾌﾟﾘｽｹｰﾗｶｳﾝﾄ値 1:128
-     TMR0   = T0COUT ;         // タイマー0の初期化
-     TMR0IF = 0 ;              // タイマー0割込フラグ(T0IF)を0にする
-     Count  = 0 ;              // 割込み発生の回数カウンターを0にする
-     TMR0IE = 1 ;              // タイマー0割込み(T0IE)を許可する
-     GIE    = 1 ;              // 全割込み処理を許可する
+void main() {
+    OSCCON = 0b01101010; // 内部クロックは４ＭＨｚとする
+    ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
+    TRISA = 0b00001000; // ピンは全て出力に割当てる(RA3は入力のみとなる)
+    PORTA = 0b00000000; // 出力ピンの初期化(全てLOWにする)
 
-     LEDflg = 0 ;              // LEDのフラグ状態をOFFとする
+    OPTION_REG = 0b00000110; // 内部ｸﾛｯｸでTIMER0を使用、ﾌﾟﾘｽｹｰﾗｶｳﾝﾄ値 1:128
+    TMR0 = T0COUT; // タイマー0の初期化
+    TMR0IF = 0; // タイマー0割込フラグ(T0IF)を0にする
+    Count = 0; // 割込み発生の回数カウンターを0にする
+    TMR0IE = 1; // タイマー0割込み(T0IE)を許可する
+    GIE = 1; // 全割込み処理を許可する
 
-     while(1) {
-          // LEDのフラグ状態ON/OFFによりLEDをON/OFFする処理
-          if (LEDflg == 0) RA0 = 0 ;    // 5番ピンにLOWを出力する(LED OFF)
-          else             RA0 = 1 ;    // 5番ピンにHIGHを出力する(LED ON)
-     }
+    LEDflg = 0; // LEDのフラグ状態をOFFとする
+
+    while (1) {
+        // LEDのフラグ状態ON/OFFによりLEDをON/OFFする処理
+        if (LEDflg == 0) RA0 = 0; // 5番ピンにLOWを出力する(LED OFF)
+        else RA0 = 1; // 5番ピンにHIGHを出力する(LED ON)
+    }
 }

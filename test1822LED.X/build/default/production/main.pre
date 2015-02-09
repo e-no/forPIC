@@ -2978,8 +2978,8 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 extern __nonreentrant void _delay(unsigned long);
 
 # 7 "main.c"
-int Count ;
-int LEDflg ;
+int Count;
+int LEDflg;
 
 
 # 27
@@ -3001,43 +3001,40 @@ int LEDflg ;
 #pragma config BORV = LO
 #pragma config LVP = OFF
 
-
-
-
-void interrupt InterTimer( void )
-{
+# 49
+void interrupt InterTimer(void) {
 if (TMR0IF == 1) {
-TMR0 = 61 ;
-Count++ ;
-TMR0IF = 0 ;
+TMR0 = 61;
+Count++;
+TMR0IF = 0;
 if (Count >= 40) {
-Count = 0 ;
+Count = 0;
 
-if (LEDflg == 0) LEDflg = 1 ;
-else LEDflg = 0 ;
+if (LEDflg == 0) LEDflg = 1;
+else LEDflg = 0;
 }
 }
 }
 
-void main()
-{
-OSCCON = 0b01101010 ;
-ANSELA = 0b00000000 ;
-TRISA = 0b00001000 ;
-PORTA = 0b00000000 ;
 
-OPTION_REG = 0b00000110 ;
-TMR0 = 61 ;
-TMR0IF = 0 ;
-Count = 0 ;
-TMR0IE = 1 ;
-GIE = 1 ;
+void main() {
+OSCCON = 0b01101010;
+ANSELA = 0b00000000;
+TRISA = 0b00001000;
+PORTA = 0b00000000;
 
-LEDflg = 0 ;
+OPTION_REG = 0b00000110;
+TMR0 = 61;
+TMR0IF = 0;
+Count = 0;
+TMR0IE = 1;
+GIE = 1;
 
-while(1) {
+LEDflg = 0;
 
-if (LEDflg == 0) RA0 = 0 ;
-else RA0 = 1 ;
+while (1) {
+
+if (LEDflg == 0) RA0 = 0;
+else RA0 = 1;
 }
 }

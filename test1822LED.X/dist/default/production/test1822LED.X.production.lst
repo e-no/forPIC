@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Mon Feb 09 14:54:05 2015
+                                                                                               Mon Feb 09 15:00:29 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	12F1822
@@ -147,7 +147,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    141  0000                     
    142 ;; *************** function _InterTimer *****************
    143 ;; Defined at:
-   144 ;;		line 48 in file "main.c"
+   144 ;;		line 49 in file "main.c"
    145 ;; Parameters:    Size  Location     Type
    146 ;;		None
    147 ;; Auto vars:     Size  Location     Type
@@ -187,17 +187,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    181  0009  1D0B               	btfss	11,2	;volatile
    182  000A  282A               	goto	i1l31
    183                           
-   184                           ;main.c: 51: TMR0 = 61 ;
+   184                           ;main.c: 51: TMR0 = 61;
    185  000B  303D               	movlw	61
    186  000C  0095               	movwf	21	;volatile
    187                           
-   188                           ;main.c: 52: Count++ ;
+   188                           ;main.c: 52: Count++;
    189  000D  3001               	movlw	1
    190  000E  07F0               	addwf	_Count,f
    191  000F  3000               	movlw	0
    192  0010  3DF1               	addwfc	_Count+1,f
    193                           
-   194                           ;main.c: 53: TMR0IF = 0 ;
+   194                           ;main.c: 53: TMR0IF = 0;
    195  0011  110B               	bcf	11,2	;volatile
    196                           
    197                           ;main.c: 54: if (Count >= 40) {
@@ -214,11 +214,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    208  001B  1C03               	skipc
    209  001C  282A               	goto	i1l31
    210                           
-   211                           ;main.c: 55: Count = 0 ;
+   211                           ;main.c: 55: Count = 0;
    212  001D  01F0               	clrf	_Count
    213  001E  01F1               	clrf	_Count+1
    214                           
-   215                           ;main.c: 57: if (LEDflg == 0) LEDflg = 1 ;
+   215                           ;main.c: 57: if (LEDflg == 0) LEDflg = 1;
    216  001F  0873               	movf	_LEDflg+1,w
    217  0020  0472               	iorwf	_LEDflg,w
    218  0021  1D03               	skipz
@@ -230,7 +230,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    224  0027  282A               	goto	i1l31
    225  0028                     i1l508:	
    226                           
-   227                           ;main.c: 58: else LEDflg = 0 ;
+   227                           ;main.c: 58: else LEDflg = 0;
    228  0028  01F2               	clrf	_LEDflg
    229  0029  01F3               	clrf	_LEDflg+1
    230  002A                     i1l31:	
@@ -308,7 +308,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    302 ;;
    303 ;; *************** function _main *****************
    304 ;; Defined at:
-   305 ;;		line 63 in file "main.c"
+   305 ;;		line 64 in file "main.c"
    306 ;; Parameters:    Size  Location     Type
    307 ;;		None
    308 ;; Auto vars:     Size  Location     Type
@@ -339,7 +339,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    333                           ;psect for function _main
    334  0037                     _main:	
    335                           
-   336                           ;main.c: 65: OSCCON = 0b01101010 ;
+   336                           ;main.c: 65: OSCCON = 0b01101010;
    337                           
    338                           ;incstack = 0
    339                           ; Regs used in _main: [wreg+status,2+status,0]
@@ -347,59 +347,59 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    341  0038  0021               	movlb	1	; select bank1
    342  0039  0099               	movwf	25	;volatile
    343                           
-   344                           ;main.c: 66: ANSELA = 0b00000000 ;
+   344                           ;main.c: 66: ANSELA = 0b00000000;
    345  003A  0023               	movlb	3	; select bank3
    346  003B  018C               	clrf	12	;volatile
    347                           
-   348                           ;main.c: 67: TRISA = 0b00001000 ;
+   348                           ;main.c: 67: TRISA = 0b00001000;
    349  003C  3008               	movlw	8
    350  003D  0021               	movlb	1	; select bank1
    351  003E  008C               	movwf	12	;volatile
    352                           
-   353                           ;main.c: 68: PORTA = 0b00000000 ;
+   353                           ;main.c: 68: PORTA = 0b00000000;
    354  003F  0020               	movlb	0	; select bank0
    355  0040  018C               	clrf	12	;volatile
    356                           
-   357                           ;main.c: 70: OPTION_REG = 0b00000110 ;
+   357                           ;main.c: 70: OPTION_REG = 0b00000110;
    358  0041  3006               	movlw	6
    359  0042  0021               	movlb	1	; select bank1
    360  0043  0095               	movwf	21	;volatile
    361                           
-   362                           ;main.c: 71: TMR0 = 61 ;
+   362                           ;main.c: 71: TMR0 = 61;
    363  0044  303D               	movlw	61
    364  0045  0020               	movlb	0	; select bank0
    365  0046  0095               	movwf	21	;volatile
    366                           
-   367                           ;main.c: 72: TMR0IF = 0 ;
+   367                           ;main.c: 72: TMR0IF = 0;
    368  0047  110B               	bcf	11,2	;volatile
    369                           
-   370                           ;main.c: 73: Count = 0 ;
+   370                           ;main.c: 73: Count = 0;
    371  0048  01F0               	clrf	_Count
    372  0049  01F1               	clrf	_Count+1
    373                           
-   374                           ;main.c: 74: TMR0IE = 1 ;
+   374                           ;main.c: 74: TMR0IE = 1;
    375  004A  168B               	bsf	11,5	;volatile
    376                           
-   377                           ;main.c: 75: GIE = 1 ;
+   377                           ;main.c: 75: GIE = 1;
    378  004B  178B               	bsf	11,7	;volatile
    379                           
-   380                           ;main.c: 77: LEDflg = 0 ;
+   380                           ;main.c: 77: LEDflg = 0;
    381  004C  01F2               	clrf	_LEDflg
    382  004D  01F3               	clrf	_LEDflg+1
    383  004E  2850               	goto	l526
    384  004F                     l528:	
    385  004F  100C               	bcf	12,0	;volatile
    386  0050                     l526:	
-   387                           ;main.c: 79: while(1) {
+   387                           ;main.c: 79: while (1) {
    388                           
    389                           
-   390                           ;main.c: 81: if (LEDflg == 0) RA0 = 0 ;
+   390                           ;main.c: 81: if (LEDflg == 0) RA0 = 0;
    391  0050  0873               	movf	_LEDflg+1,w
    392  0051  0472               	iorwf	_LEDflg,w
    393  0052  1903               	btfsc	3,2
    394  0053  284F               	goto	l528
    395                           
-   396                           ;main.c: 82: else RA0 = 1 ;
+   396                           ;main.c: 82: else RA0 = 1;
    397  0054  140C               	bsf	12,0	;volatile
    398  0055  2850               	goto	l526
    399  0056                     __end_of_main:	
@@ -552,7 +552,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Mon Feb 09 14:54:05 2015
+Symbol Table                                                                                   Mon Feb 09 15:00:29 2015
 
             __CFG_CP$OFF 0000                      l526 0050                      l528 004F  
                     _GIE 005F                      _RA0 0060             __CFG_CPD$OFF 0000  
