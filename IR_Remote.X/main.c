@@ -178,13 +178,16 @@ void main(void) {
     Delay_10ms(20);
     OFF_LED = 0;
 
+
     //---------------------------------------------------------
     while (1) {
         while (IR_Seki == 1) { // IR-Sencer Faill Check!
             __delay_ms(1);
+
         }
         // 9ms Pulse Witdh Check //
         while (1) {
+            RA3 = 1;
             if (IR_Seki == 0) {
                 __delay_ms(4);
                 if (IR_Seki == 0)
@@ -196,6 +199,7 @@ void main(void) {
 
             // 4.5ms Pulse Witdh Check //
             while (IR_Seki == 0) { // IR-Sencer Rise Check!
+                RA3 = 0;
             }
             if (IR_Seki == 1) {
                 __delay_us(3500);
@@ -208,6 +212,7 @@ void main(void) {
 
             // Cusf1 tom Code 16bit Pulse Check //
             while (IR_Seki == 1) { // IR-Senser Faill Check
+                    RA3 = 1;
             }
             __delay_us(1400);
             DebgSig = 1; // Debug Onry
@@ -219,9 +224,11 @@ void main(void) {
                 for (i = 0; i < 15; i++) {
                     //					DebgSig =! DebgSig;			// Debug Onry
                     while (IR_Seki == 0) { // IR-Sencer Rise Check!
+                        RA3 = 0;
                     }
                     __delay_us(300);
                     while (IR_Seki == 1) { // IR-Senser Faill Check
+                        RA3 = 1;
                     }
                     __delay_us(300);
                     DebgSig = !DebgSig; // Debug Onry
@@ -309,6 +316,7 @@ void ActionLED(void) {
         // '9' Switch //
         LED_Flash(9);
     }
+
 }
 
 void LED_Flash(unsigned char F_Cnt) {

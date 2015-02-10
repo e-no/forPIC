@@ -111,9 +111,9 @@
 [v _Delay_10ms Delay_10ms `(v  1 e 0 0 ]
 "142
 [v _main main `(v  1 e 0 0 ]
-"260
+"267
 [v _ActionLED ActionLED `(v  1 e 0 0 ]
-"314
+"322
 [v _LED_Flash LED_Flash `(v  1 e 0 0 ]
 "412 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
@@ -153,6 +153,8 @@
 [v _RA0 RA0 `VEb  1 e 0 @96 ]
 "5406
 [v _RA1 RA1 `VEb  1 e 0 @97 ]
+"5410
+[v _RA3 RA3 `VEb  1 e 0 @99 ]
 "5412
 [v _RA4 RA4 `VEb  1 e 0 @100 ]
 "5414
@@ -192,9 +194,9 @@
 "142
 [v _main main `(v  1 e 0 0 ]
 {
-"217
+"222
 [v main@i i `uc  1 a 1 7 ]
-"256
+"263
 } 0
 "115
 [v _IR_DatST IR_DatST `(v  1 e 0 0 ]
@@ -205,22 +207,22 @@
 [v IR_DatST@BitPos BitPos `uc  1 a 1 6 ]
 "130
 } 0
-"260
+"267
 [v _ActionLED ActionLED `(v  1 e 0 0 ]
 {
-"312
+"320
 } 0
-"314
+"322
 [v _LED_Flash LED_Flash `(v  1 e 0 0 ]
 {
 [v LED_Flash@F_Cnt F_Cnt `uc  1 a 1 wreg ]
-"315
+"323
 [v LED_Flash@k k `uc  1 a 1 1 ]
-"314
+"322
 [v LED_Flash@F_Cnt F_Cnt `uc  1 a 1 wreg ]
-"316
+"324
 [v LED_Flash@F_Cnt F_Cnt `uc  1 a 1 0 ]
-"325
+"333
 } 0
 "134
 [v _Delay_10ms Delay_10ms `(v  1 e 0 0 ]

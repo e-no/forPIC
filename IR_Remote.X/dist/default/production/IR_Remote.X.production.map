@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\IR_Remote.X.production.sym \
   --cmf=dist/default/production\IR_Remote.X.production.cmf -z -Q12F1822 \
-  -oC:\Users\User\AppData\Local\Temp\s8ns.6 \
+  -oC:\Users\User\AppData\Local\Temp\sbo0.6 \
   -Mdist/default/production/IR_Remote.X.production.map -E1 -ver=XC8 \
   -ASTACK=02008h-0206fh -pstack=STACK -ACONST=00h-0FFhx8 -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -AENTRY=00h-0FFhx8 -ASTRING=00h-0FFhx8 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s8ns.obj \
+  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\sbo0.obj \
   dist/default/production\IR_Remote.X.production.obj 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\s8ns.obj
+C:\Users\User\AppData\Local\Temp\sbo0.obj
                 end_init                             38       38        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
@@ -44,10 +44,10 @@ dist/default/production\IR_Remote.X.production.obj
                 cinit                                39       39        A        8       0
                 intentry                              4        4       34        8       0
                 text4                               214      214       11      428       0
-                text3                               1AC      1AC       18        8       0
-                text2                                FD       FD       7B        8       0
-                text1                               178      178       34        8       0
-                maintext                             43       43       BA        8       0
+                text3                               1B2      1B2       18        8       0
+                text2                               103      103       7B        8       0
+                text1                               17E      17E       34        8       0
+                maintext                             43       43       C0        8       0
                 cstackBANK0                          24       24        4       20       1
                 cstackCOMMON                         70       70        8       70       1
                 bssBANK0                             20       20        4       20       1
@@ -65,10 +65,10 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intentry                              4        4       34         0
                 reset_vec                             0        0        1         0
                 text4                               214      214       11         0
-                text3                               1AC      1AC       18         0
-                text2                                FD       FD       7B         0
-                text1                               178      178       34         0
-                maintext                             43       43       BA         0
+                text3                               1B2      1B2       18         0
+                text2                               103      103       7B         0
+                text1                               17E      17E       34         0
+                maintext                             43       43       C0         0
 
         CLASS   STRCODE        
                 stringtext                          200      200       14         0
@@ -230,7 +230,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  0001C0  0001C4         8       0  CODE        2
+                intentry                       000004  0001C6  0001CA         8       0  CODE        2
                 bssBANK0                       000020  000008  000028        20       1  BANK0       1
                 cstackCOMMON                   000070  00000B  00007B        70       1  COMMON      1
                 stringtext                     000200  000014  000214         4       0  STRCODE     2
@@ -245,15 +245,15 @@ UNUSED ADDRESS RANGES
         BANK1            000A0-000BF              20           1
         BIGRAM           02000-0206F              70           1
         CODE             00001-00003               3           2
-                         001C4-001FF              3C
+                         001CA-001FF              36
                          00225-007FF             5DB
         COMMON           0007B-0007D               3           1
         CONST            00001-00003               3           2
-                         001C4-001FF              3C
+                         001CA-001FF              36
                          00225-007FF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00001-00003               3           2
-                         001C4-001FF              3C
+                         001CA-001FF              36
                          00225-007FF             100
         IDLOC            08000-08003               4           2
         RAM              00028-0006F              48           1
@@ -292,10 +292,10 @@ UNUSED ADDRESS RANGES
         SFR9             00480-004EF              70           1
         STACK            02008-0206F              68           1
         STRCODE          00001-00003               3           2
-                         001C4-001FF              3C
+                         001CA-001FF              36
                          00225-007FF             5DB
         STRING           00001-00003               3           2
-                         001C4-001FF              3C
+                         001CA-001FF              36
                          00225-007FF             100
 
                                   Symbol Table
@@ -307,22 +307,23 @@ LED_Flash@F_Cnt          cstackBANK0  00024
 LED_Flash@k              cstackBANK0  00025
 _ANSELA                  (abs)        0018C
 _APFCON                  (abs)        0011D
-_ActionLED               text2        000FD
+_ActionLED               text2        00103
 _DaTM1_H                 stringtext   00200
 _DaTM1_L                 stringtext   0020A
 _Delay_10ms              text4        00214
 _GIE                     (abs)        0005F
 _IR_Dat1                 bssCOMMON    00078
 _IR_Dat2                 bssCOMMON    00079
-_IR_DatST                text1        00178
+_IR_DatST                text1        0017E
 _IR_DatX                 bssBANK0     00020
 _LATA                    (abs)        0010C
-_LED_Flash               text3        001AC
+_LED_Flash               text3        001B2
 _OSCCON                  (abs)        00099
 _PEIE                    (abs)        0005E
 _PORTA                   (abs)        0000C
 _RA0                     (abs)        00060
 _RA1                     (abs)        00061
+_RA3                     (abs)        00063
 _RA4                     (abs)        00064
 _RA5                     (abs)        00065
 _RepeatF                 bssBANK0     00021
@@ -545,15 +546,15 @@ __S3                     (abs)        00000
 ___int_sp                stack        00000
 ___latbits               (abs)        00000
 ___sp                    stack        00000
-__end_of_ActionLED       text2        00178
+__end_of_ActionLED       text2        0017E
 __end_of_DaTM1_H         stringtext   0020A
 __end_of_DaTM1_L         stringtext   00214
 __end_of_Delay_10ms      text4        00225
-__end_of_IR_DatST        text1        001AC
-__end_of_LED_Flash       text3        001C4
+__end_of_IR_DatST        text1        001B2
+__end_of_LED_Flash       text3        001CA
 __end_of__initialization cinit        00040
 __end_of_isr             intentry     00038
-__end_of_main            maintext     000FD
+__end_of_main            maintext     00103
 __initialization         cinit        00039
 __pbssBANK0              bssBANK0     00020
 __pbssCOMMON             bssCOMMON    00078
@@ -562,9 +563,9 @@ __pcstackCOMMON          cstackCOMMON 00070
 __pintentry              intentry     00004
 __pmaintext              maintext     00043
 __pstringtext            stringtext   00200
-__ptext1                 text1        00178
-__ptext2                 text2        000FD
-__ptext3                 text3        001AC
+__ptext1                 text1        0017E
+__ptext2                 text2        00103
+__ptext3                 text3        001B2
 __ptext4                 text4        00214
 __size_of_ActionLED      (abs)        00000
 __size_of_Delay_10ms     (abs)        00000
@@ -677,7 +678,7 @@ Total ram usage:        4 bytes
 
  *************** function _ActionLED *****************
  Defined at:
-		line 260 in file "main.c"
+		line 267 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -707,7 +708,7 @@ Total ram usage:        0 bytes
 
  *************** function _LED_Flash *****************
  Defined at:
-		line 314 in file "main.c"
+		line 322 in file "main.c"
  Parameters:    Size  Location     Type
   F_Cnt           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -808,12 +809,12 @@ shared
 shared estimated size: 27
 
 main.c
-		_ActionLED     		CODE           	00FD	0000	123
+		_ActionLED     		CODE           	0103	0000	123
 		_Delay_10ms    		CODE           	0214	0000	17
-		_IR_DatST      		CODE           	0178	0000	52
-		_main          		CODE           	0043	0000	186
-		_LED_Flash     		CODE           	01AC	0000	24
+		_IR_DatST      		CODE           	017E	0000	52
+		_main          		CODE           	0043	0000	192
+		_LED_Flash     		CODE           	01B2	0000	24
 		_isr           		CODE           	0004	0000	52
 
-main.c estimated size: 454
+main.c estimated size: 460
 

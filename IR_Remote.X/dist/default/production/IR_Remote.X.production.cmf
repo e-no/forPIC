@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\s8ns.obj
+$C:\Users\User\AppData\Local\Temp\sbo0.obj
 end_init CODE 0 38 38 1 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 8007 8007 2 2
@@ -19,10 +19,10 @@ $dist/default/production\IR_Remote.X.production.obj
 cinit CODE 0 39 39 A 2
 intentry CODE 0 4 4 34 2
 text4 CODE 0 214 214 11 2
-text3 CODE 0 1AC 1AC 18 2
-text2 CODE 0 FD FD 7B 2
-text1 CODE 0 178 178 34 2
-maintext CODE 0 43 43 BA 2
+text3 CODE 0 1B2 1B2 18 2
+text2 CODE 0 103 103 7B 2
+text1 CODE 0 17E 17E 34 2
+maintext CODE 0 43 43 C0 2
 cstackBANK0 BANK0 1 24 24 4 1
 cstackCOMMON COMMON 1 70 70 8 1
 bssBANK0 BANK0 1 20 20 4 1
@@ -38,15 +38,15 @@ BANK0 00028-0006F 1
 BANK1 000A0-000BF 1
 BIGRAM 02000-0206F 1
 CODE 00001-00003 2
-CODE 001C4-001FF 2
+CODE 001CA-001FF 2
 CODE 00225-007FF 2
 COMMON 0007B-0007D 1
 CONST 00001-00003 2
-CONST 001C4-001FF 2
+CONST 001CA-001FF 2
 CONST 00225-007FF 2
 EEDATA 0F000-0F0FF 2
 ENTRY 00001-00003 2
-ENTRY 001C4-001FF 2
+ENTRY 001CA-001FF 2
 ENTRY 00225-007FF 2
 IDLOC 08000-08003 2
 RAM 00028-0006F 1
@@ -85,10 +85,10 @@ SFR8 00400-0046F 1
 SFR9 00480-004EF 1
 STACK 02008-0206F 1
 STRCODE 00001-00003 2
-STRCODE 001C4-001FF 2
+STRCODE 001CA-001FF 2
 STRCODE 00225-007FF 2
 STRING 00001-00003 2
-STRING 001C4-001FF 2
+STRING 001CA-001FF 2
 STRING 00225-007FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -116,19 +116,19 @@ $dist/default/production\IR_Remote.X.production.obj
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":111 31 intentry CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":112 33 intentry CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":113 34 intentry CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":425 39 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":428 39 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":460 39 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":461 3A cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":462 3B cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":466 3C cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":467 3D cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":468 3E cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":469 3F cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":475 40 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":476 40 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":477 41 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s8ns.":478 42 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":427 39 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":430 39 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":462 39 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":463 3A cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":464 3B cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":468 3C cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":469 3D cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":470 3E cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":471 3F cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":477 40 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":478 40 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":479 41 cinit CODE
+"C:\Users\User\AppData\Local\Temp\sbo0.":480 42 cinit CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":142 43 maintext CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":144 43 maintext CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":145 46 maintext CODE
@@ -155,103 +155,112 @@ $dist/default/production\IR_Remote.X.production.obj
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":177 6E maintext CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":178 70 maintext CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":179 72 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":183 74 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":184 77 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":183 80 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":189 81 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":190 8A maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":191 8D maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":198 96 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":199 96 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":200 99 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":201 9B maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":202 A3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":203 A6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":205 A9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":210 AA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":211 AA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":212 AC maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":213 B5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":215 B7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":218 BD maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":219 BE maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":221 C3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":222 C3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":223 C5 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":224 CC maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":225 CC maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":226 CF maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":227 D6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":219 D9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":229 E1 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":236 E2 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":239 E3 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":240 E4 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":242 E9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":243 EA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":245 EF maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":246 F0 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":187 F1 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":188 F1 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":248 F4 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":249 F6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":250 F8 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":254 FA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":182 FC maintext CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":260 FD text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":261 FD text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":263 105 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":264 107 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":266 108 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":268 110 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":269 112 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":271 113 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":273 11B text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":274 11D text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":276 11E text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":278 126 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":280 128 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":282 12F text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":284 131 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":286 139 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":288 13B text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":290 143 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":292 145 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":294 14D text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":296 14F text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":298 157 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":300 159 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":302 161 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":304 163 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":306 169 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":304 16A text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":306 16C text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":308 16D text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":310 175 text2 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":115 178 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":118 178 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":119 17A text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":120 17E text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":121 18A text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":123 18D text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":124 18E text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":125 191 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":126 195 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":127 199 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":120 19B text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":129 1A9 text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":130 1AB text1 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":314 1AC text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":316 1AE text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":317 1AF text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":318 1B0 text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":319 1B5 text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":320 1B6 text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":321 1B8 text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":322 1BA text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":318 1BC text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":324 1C2 text3 CODE
-"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":325 1C3 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":184 74 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":185 77 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":184 80 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":192 81 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":193 8A maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":194 8D maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":201 96 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":203 96 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":202 99 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":201 9A maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":204 9B maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":205 9D maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":206 A5 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":207 A8 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":209 AB maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":214 AC maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":216 AC maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":215 AE maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":214 AF maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":217 B0 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":218 B9 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":220 BB maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":223 C1 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":224 C2 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":226 C4 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":228 C4 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":227 C6 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":226 C7 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":229 C8 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":230 CF maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":232 CF maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":231 D2 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":230 D3 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":233 D4 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":234 DB maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":224 DE maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":236 E6 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":243 E7 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":246 E8 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":247 E9 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":249 EE maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":250 EF maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":252 F4 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":253 F5 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":189 F6 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":190 F6 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":191 F8 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":255 FA maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":256 FC maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":257 FE maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":261 100 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":183 102 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":267 103 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":268 103 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":270 10B text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":271 10D text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":273 10E text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":275 116 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":276 118 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":278 119 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":280 121 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":281 123 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":283 124 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":285 12C text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":287 12E text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":289 135 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":291 137 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":293 13F text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":295 141 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":297 149 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":299 14B text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":301 153 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":303 155 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":305 15D text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":307 15F text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":309 167 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":311 169 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":313 16F text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":311 170 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":313 172 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":315 173 text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":317 17B text2 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":115 17E text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":118 17E text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":119 180 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":120 184 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":121 190 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":123 193 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":124 194 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":125 197 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":126 19B text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":127 19F text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":120 1A1 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":129 1AF text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":130 1B1 text1 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":322 1B2 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":324 1B4 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":325 1B5 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":326 1B6 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":327 1BB text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":328 1BC text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":329 1BE text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":330 1C0 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":326 1C2 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":332 1C8 text3 CODE
+"C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":333 1C9 text3 CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":134 214 text4 CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":135 215 text4 CODE
 "C:\Users\User\Desktop\program\forPIC\IR_Remote.X\main.c":136 21B text4 CODE
@@ -271,6 +280,7 @@ $dist/default/production\IR_Remote.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _RA0 60 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _RA1 61 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
+_RA3 63 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _RA4 64 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _RA5 65 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 __S0 8009 0 ABS 0 - -
@@ -287,17 +297,17 @@ _LATA 10C 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _PEIE 5E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _main 86 0 CODE 0 maintext dist/default/production\IR_Remote.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s8ns.obj
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbo0.obj
 btemp 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-start 70 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s8ns.obj
+start 70 0 CODE 0 init C:\Users\User\AppData\Local\Temp\sbo0.obj
 _TMR1H 17 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _TMR1L 16 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s8ns.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\sbo0.obj
 _T1CON 18 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
@@ -319,7 +329,7 @@ LED_Flash@k 25 0 BANK0 1 cstackBANK0 dist/default/production\IR_Remote.X.product
 __Hconfig 10012 0 CONFIG 0 config -
 __Lconfig 1000E 0 CONFIG 0 config -
 main@i 77 0 COMMON 1 cstackCOMMON dist/default/production\IR_Remote.X.production.obj
-__end_of_ActionLED 2F0 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
+__end_of_ActionLED 2FC 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
 __Hbigram 0 0 ABS 0 bigram -
 __Lbigram 0 0 ABS 0 bigram -
 __Hram 0 0 ABS 0 ram -
@@ -334,7 +344,7 @@ __Lcommon 0 0 ABS 0 common -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _TMR1IE 488 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s8ns.obj
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbo0.obj
 _TMR1IF 88 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
@@ -365,20 +375,20 @@ __Hsfr8 0 0 ABS 0 sfr8 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
-__end_of_IR_DatST 358 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
+__end_of_IR_DatST 364 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
 _StartF 22 0 BANK0 1 bssBANK0 dist/default/production\IR_Remote.X.production.obj
-_LED_Flash 358 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
+_LED_Flash 364 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
 __size_of_IR_DatST 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s8ns.obj
+stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbo0.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __pcstackBANK0 24 0 BANK0 1 cstackBANK0 dist/default/production\IR_Remote.X.production.obj
-stacklo 2008 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s8ns.obj
+stacklo 2008 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbo0.obj
 __Hinit 70 0 CODE 0 init -
 __Linit 70 0 CODE 0 init -
-__end_of_main 1FA 0 CODE 0 maintext dist/default/production\IR_Remote.X.production.obj
+__end_of_main 206 0 CODE 0 maintext dist/default/production\IR_Remote.X.production.obj
 IR_DatST@BitPos 76 0 COMMON 1 cstackCOMMON dist/default/production\IR_Remote.X.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
@@ -433,7 +443,7 @@ __Hstrings 0 0 ABS 0 strings -
 __Lstrings 0 0 ABS 0 strings -
 _TMR1_DC 23 0 BANK0 1 bssBANK0 dist/default/production\IR_Remote.X.production.obj
 _TMR1_EF 7A 0 COMMON 1 bssCOMMON dist/default/production\IR_Remote.X.production.obj
-__end_of_LED_Flash 388 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
+__end_of_LED_Flash 394 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
 _IR_Dat1 78 0 COMMON 1 bssCOMMON dist/default/production\IR_Remote.X.production.obj
 _IR_Dat2 79 0 COMMON 1 bssCOMMON dist/default/production\IR_Remote.X.production.obj
 _DaTM1_H 400 0 STRCODE 0 stringtext dist/default/production\IR_Remote.X.production.obj
@@ -461,9 +471,9 @@ __Hbank8 0 0 BANK8 1 bank8 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__ptext1 2F0 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
-__ptext2 1FA 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
-__ptext3 358 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
+__ptext1 2FC 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
+__ptext2 206 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
+__ptext3 364 0 CODE 0 text3 dist/default/production\IR_Remote.X.production.obj
 __ptext4 428 0 CODE 0 text4 dist/default/production\IR_Remote.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -484,7 +494,7 @@ __Hspace_2 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Hcinit 86 0 CODE 0 cinit -
 __Lcinit 72 0 CODE 0 cinit -
-_ActionLED 1FA 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
+_ActionLED 206 0 CODE 0 text2 dist/default/production\IR_Remote.X.production.obj
 __Hspace_3 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __size_of_main 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
@@ -553,13 +563,13 @@ __Hend_init 72 0 CODE 0 end_init -
 __Lend_init 70 0 CODE 0 end_init -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
+intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
-intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
-intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
-intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
-intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s8ns.obj
+intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
+intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
+intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
+intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\sbo0.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\IR_Remote.X.production.obj
@@ -571,7 +581,7 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 __pmaintext 86 0 CODE 0 maintext dist/default/production\IR_Remote.X.production.obj
 __size_of_Delay_10ms 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
-_IR_DatST 2F0 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
+_IR_DatST 2FC 0 CODE 0 text1 dist/default/production\IR_Remote.X.production.obj
 __initialization 72 0 CODE 0 cinit dist/default/production\IR_Remote.X.production.obj
 IR_DatST@j 74 0 COMMON 1 cstackCOMMON dist/default/production\IR_Remote.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
@@ -603,7 +613,7 @@ __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\IR_Remote.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 1 2
-intentry 0 4 8 1C0 2
+intentry 0 4 8 1C6 2
 config 0 8007 1000E 2 2
 cstackCOMMON 1 70 70 B 1
 bssBANK0 1 20 20 8 1
