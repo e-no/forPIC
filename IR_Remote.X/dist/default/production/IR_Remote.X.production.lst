@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Tue Feb 10 10:31:49 2015
+                                                                                               Tue Feb 10 11:19:14 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	12F1822
@@ -848,16 +848,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    842                           ;psect for function _ActionLED
    843  00FD                     _ActionLED:	
    844                           
-   845                           ;main.c: 261: if ((IR_Dat1 == 0x08) && (IR_Dat2 == 0xF7)) {
+   845                           ;main.c: 261: if ((IR_Dat1 == 0xD8) && (IR_Dat2 == 0x27)) {
    846                           
    847                           ;incstack = 0
    848                           ; Regs used in _ActionLED: [wreg+status,2+status,0+pclath+cstack]
    849  00FD  0878               	movf	_IR_Dat1,w
-   850  00FE  3A08               	xorlw	8
+   850  00FE  3AD8               	xorlw	216
    851  00FF  1D03               	skipz
    852  0100  2908               	goto	l1109
    853  0101  0879               	movf	_IR_Dat2,w
-   854  0102  3AF7               	xorlw	247
+   854  0102  3A27               	xorlw	39
    855  0103  1D03               	skipz
    856  0104  2908               	goto	l1109
    857                           
@@ -908,13 +908,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    902  011E                     l1121:	
    903                           
    904                           ;main.c: 275: }
-   905                           ;main.c: 276: if ((IR_Dat1 == 0xE8) && (IR_Dat2 == 0x17)) {
+   905                           ;main.c: 276: if ((IR_Dat1 == 0xA0) && (IR_Dat2 == 0x5F)) {
    906  011E  0878               	movf	_IR_Dat1,w
-   907  011F  3AE8               	xorlw	232
+   907  011F  3AA0               	xorlw	160
    908  0120  1D03               	skipz
    909  0121  2928               	goto	l1127
    910  0122  0879               	movf	_IR_Dat2,w
-   911  0123  3A17               	xorlw	23
+   911  0123  3A5F               	xorlw	95
    912  0124  1D03               	skipz
    913  0125  2928               	goto	l1127
    914                           
@@ -924,108 +924,108 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    918  0128                     l1127:	
    919                           
    920                           ;main.c: 279: }
-   921                           ;main.c: 280: if ((IR_Dat1 == 0x48) && (IR_Dat2 == 0xB7)) {
-   922  0128  0878               	movf	_IR_Dat1,w
-   923  0129  3A48               	xorlw	72
-   924  012A  1D03               	skipz
-   925  012B  2932               	goto	l1133
-   926  012C  0879               	movf	_IR_Dat2,w
-   927  012D  3AB7               	xorlw	183
-   928  012E  1D03               	skipz
-   929  012F  2932               	goto	l1133
-   930                           
-   931                           ;main.c: 282: LED_Flash(2);
-   932  0130  3002               	movlw	2
-   933  0131  21AC               	fcall	_LED_Flash
-   934  0132                     l1133:	
-   935                           
-   936                           ;main.c: 283: }
-   937                           ;main.c: 284: if ((IR_Dat1 == 0x68) && (IR_Dat2 == 0x97)) {
-   938  0132  0878               	movf	_IR_Dat1,w
-   939  0133  3A68               	xorlw	104
-   940  0134  1D03               	skipz
-   941  0135  293C               	goto	l1139
-   942  0136  0879               	movf	_IR_Dat2,w
-   943  0137  3A97               	xorlw	151
-   944  0138  1D03               	skipz
-   945  0139  293C               	goto	l1139
-   946                           
-   947                           ;main.c: 286: LED_Flash(3);
-   948  013A  3003               	movlw	3
-   949  013B  21AC               	fcall	_LED_Flash
-   950  013C                     l1139:	
-   951                           
-   952                           ;main.c: 287: }
-   953                           ;main.c: 288: if ((IR_Dat1 == 0xB2) && (IR_Dat2 == 0x4D)) {
-   954  013C  0878               	movf	_IR_Dat1,w
-   955  013D  3AB2               	xorlw	178
-   956  013E  1D03               	skipz
-   957  013F  2946               	goto	l1145
-   958  0140  0879               	movf	_IR_Dat2,w
-   959  0141  3A4D               	xorlw	77
-   960  0142  1D03               	skipz
-   961  0143  2946               	goto	l1145
-   962                           
-   963                           ;main.c: 290: LED_Flash(4);
-   964  0144  3004               	movlw	4
-   965  0145  21AC               	fcall	_LED_Flash
-   966  0146                     l1145:	
-   967                           
-   968                           ;main.c: 291: }
-   969                           ;main.c: 292: if ((IR_Dat1 == 0x02) && (IR_Dat2 == 0xFD)) {
-   970  0146  0878               	movf	_IR_Dat1,w
-   971  0147  3A02               	xorlw	2
-   972  0148  1D03               	skipz
-   973  0149  2950               	goto	l1151
-   974  014A  0879               	movf	_IR_Dat2,w
-   975  014B  3AFD               	xorlw	253
-   976  014C  1D03               	skipz
-   977  014D  2950               	goto	l1151
-   978                           
-   979                           ;main.c: 294: LED_Flash(5);
-   980  014E  3005               	movlw	5
-   981  014F  21AC               	fcall	_LED_Flash
-   982  0150                     l1151:	
-   983                           
-   984                           ;main.c: 295: }
-   985                           ;main.c: 296: if ((IR_Dat1 == 0x32) && (IR_Dat2 == 0xCD)) {
-   986  0150  0878               	movf	_IR_Dat1,w
-   987  0151  3A32               	xorlw	50
-   988  0152  1D03               	skipz
-   989  0153  295A               	goto	l1157
-   990  0154  0879               	movf	_IR_Dat2,w
-   991  0155  3ACD               	xorlw	205
-   992  0156  1D03               	skipz
-   993  0157  295A               	goto	l1157
-   994                           
-   995                           ;main.c: 298: LED_Flash(6);
-   996  0158  3006               	movlw	6
-   997  0159  21AC               	fcall	_LED_Flash
-   998  015A                     l1157:	
-   999                           
-  1000                           ;main.c: 299: }
-  1001                           ;main.c: 300: if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
-  1002  015A  0878               	movf	_IR_Dat1,w
-  1003  015B  3A20               	xorlw	32
-  1004  015C  1D03               	skipz
-  1005  015D  2964               	goto	l1163
-  1006  015E  0879               	movf	_IR_Dat2,w
-  1007  015F  3ADF               	xorlw	223
-  1008  0160  1D03               	skipz
-  1009  0161  2964               	goto	l1163
-  1010                           
-  1011                           ;main.c: 302: LED_Flash(7);
-  1012  0162  3007               	movlw	7
-  1013  0163  21AC               	fcall	_LED_Flash
-  1014  0164                     l1163:	
-  1015                           
-  1016                           ;main.c: 303: }
-  1017                           ;main.c: 304: if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
-  1018  0164  08F8               	movf	_IR_Dat1,f
+   921                           ;main.c: 280: if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
+   922  0128  08F8               	movf	_IR_Dat1,f
+   923  0129  1D03               	skipz
+   924  012A  2931               	goto	l1133
+   925  012B  0879               	movf	_IR_Dat2,w
+   926  012C  3AFF               	xorlw	255
+   927  012D  1D03               	skipz
+   928  012E  2931               	goto	l1133
+   929                           
+   930                           ;main.c: 282: LED_Flash(2);
+   931  012F  3002               	movlw	2
+   932  0130  21AC               	fcall	_LED_Flash
+   933  0131                     l1133:	
+   934                           
+   935                           ;main.c: 283: }
+   936                           ;main.c: 284: if ((IR_Dat1 == 0x10) && (IR_Dat2 == 0xEF)) {
+   937  0131  0878               	movf	_IR_Dat1,w
+   938  0132  3A10               	xorlw	16
+   939  0133  1D03               	skipz
+   940  0134  293B               	goto	l1139
+   941  0135  0879               	movf	_IR_Dat2,w
+   942  0136  3AEF               	xorlw	239
+   943  0137  1D03               	skipz
+   944  0138  293B               	goto	l1139
+   945                           
+   946                           ;main.c: 286: LED_Flash(3);
+   947  0139  3003               	movlw	3
+   948  013A  21AC               	fcall	_LED_Flash
+   949  013B                     l1139:	
+   950                           
+   951                           ;main.c: 287: }
+   952                           ;main.c: 288: if ((IR_Dat1 == 0x80) && (IR_Dat2 == 0x7F)) {
+   953  013B  0878               	movf	_IR_Dat1,w
+   954  013C  3A80               	xorlw	128
+   955  013D  1D03               	skipz
+   956  013E  2945               	goto	l1145
+   957  013F  0879               	movf	_IR_Dat2,w
+   958  0140  3A7F               	xorlw	127
+   959  0141  1D03               	skipz
+   960  0142  2945               	goto	l1145
+   961                           
+   962                           ;main.c: 290: LED_Flash(4);
+   963  0143  3004               	movlw	4
+   964  0144  21AC               	fcall	_LED_Flash
+   965  0145                     l1145:	
+   966                           
+   967                           ;main.c: 291: }
+   968                           ;main.c: 292: if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
+   969  0145  0878               	movf	_IR_Dat1,w
+   970  0146  3A20               	xorlw	32
+   971  0147  1D03               	skipz
+   972  0148  294F               	goto	l1151
+   973  0149  0879               	movf	_IR_Dat2,w
+   974  014A  3ADF               	xorlw	223
+   975  014B  1D03               	skipz
+   976  014C  294F               	goto	l1151
+   977                           
+   978                           ;main.c: 294: LED_Flash(5);
+   979  014D  3005               	movlw	5
+   980  014E  21AC               	fcall	_LED_Flash
+   981  014F                     l1151:	
+   982                           
+   983                           ;main.c: 295: }
+   984                           ;main.c: 296: if ((IR_Dat1 == 0xB1) && (IR_Dat2 == 0x4E)) {
+   985  014F  0878               	movf	_IR_Dat1,w
+   986  0150  3AB1               	xorlw	177
+   987  0151  1D03               	skipz
+   988  0152  2959               	goto	l1157
+   989  0153  0879               	movf	_IR_Dat2,w
+   990  0154  3A4E               	xorlw	78
+   991  0155  1D03               	skipz
+   992  0156  2959               	goto	l1157
+   993                           
+   994                           ;main.c: 298: LED_Flash(6);
+   995  0157  3006               	movlw	6
+   996  0158  21AC               	fcall	_LED_Flash
+   997  0159                     l1157:	
+   998                           
+   999                           ;main.c: 299: }
+  1000                           ;main.c: 300: if ((IR_Dat1 == 0x11) && (IR_Dat2 == 0xEE)) {
+  1001  0159  0878               	movf	_IR_Dat1,w
+  1002  015A  3A11               	xorlw	17
+  1003  015B  1D03               	skipz
+  1004  015C  2963               	goto	l1163
+  1005  015D  0879               	movf	_IR_Dat2,w
+  1006  015E  3AEE               	xorlw	238
+  1007  015F  1D03               	skipz
+  1008  0160  2963               	goto	l1163
+  1009                           
+  1010                           ;main.c: 302: LED_Flash(7);
+  1011  0161  3007               	movlw	7
+  1012  0162  21AC               	fcall	_LED_Flash
+  1013  0163                     l1163:	
+  1014                           
+  1015                           ;main.c: 303: }
+  1016                           ;main.c: 304: if ((IR_Dat1 == 0x21) && (IR_Dat2 == 0xDE)) {
+  1017  0163  0878               	movf	_IR_Dat1,w
+  1018  0164  3A21               	xorlw	33
   1019  0165  1D03               	skipz
   1020  0166  296D               	goto	l1169
   1021  0167  0879               	movf	_IR_Dat2,w
-  1022  0168  3AFF               	xorlw	255
+  1022  0168  3ADE               	xorlw	222
   1023                           
   1024                           ;main.c: 306: LED_Flash(8);
   1025  0169  3008               	movlw	8
@@ -1035,13 +1035,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1029  016D                     l1169:	
   1030                           
   1031                           ;main.c: 307: }
-  1032                           ;main.c: 308: if ((IR_Dat1 == 0x50) && (IR_Dat2 == 0xAF)) {
+  1032                           ;main.c: 308: if ((IR_Dat1 == 0x81) && (IR_Dat2 == 0x7E)) {
   1033  016D  0878               	movf	_IR_Dat1,w
-  1034  016E  3A50               	xorlw	80
+  1034  016E  3A81               	xorlw	129
   1035  016F  1D03               	skipz
   1036  0170  0008               	return
   1037  0171  0879               	movf	_IR_Dat2,w
-  1038  0172  3AAF               	xorlw	175
+  1038  0172  3A7E               	xorlw	126
   1039  0173  1D03               	skipz
   1040  0174  0008               	return
   1041                           
@@ -1508,7 +1508,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Tue Feb 10 10:31:49 2015
+Symbol Table                                                                                   Tue Feb 10 11:19:14 2015
 
             __CFG_CP$OFF 0000                       l74 01A9                       l92 00F1  
                      l78 0195                       l98 0096                      l110 00E1  
@@ -1517,10 +1517,10 @@ Symbol Table                                                                    
                     _RA1 0061                      _RA4 0064                      _RA5 0065  
            __CFG_CPD$OFF 0000                      _isr 0004             __CFG_BORV$LO 0000  
            __CFG_LVP$OFF 0000                     l1121 011E                     l1115 0113  
-                   l1133 0132                     l1109 0108                     l1221 0074  
-                   l1151 0150                     l1127 0128                     l1223 0081  
-                   l1145 0146                     l1067 0215                     l1163 0164  
-                   l1139 013C                     l1235 00A9                     l1157 015A  
+                   l1133 0131                     l1109 0108                     l1221 0074  
+                   l1151 014F                     l1127 0128                     l1223 0081  
+                   l1145 0145                     l1067 0215                     l1163 0163  
+                   l1139 013B                     l1235 00A9                     l1157 0159  
                    l1079 01B1                     l1169 016D                     l1089 018A  
                    l1269 00F4                     ?_isr 0070                     _LATA 010C  
                    u1407 00B0                     u1417 00C7                     u1427 00D1  

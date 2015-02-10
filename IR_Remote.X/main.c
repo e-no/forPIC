@@ -258,7 +258,7 @@ void main(void) {
 // IR Data Action //
 
 void ActionLED(void) {
-    if ((IR_Dat1 == 0x08) && (IR_Dat2 == 0xF7)) {
+    if ((IR_Dat1 == 0xD8) && (IR_Dat2 == 0x27)) {
         // 'POWER' Switch //
         ON_LED = 1; // ON LED 'ON'
         OFF_LED = 0; // OFF LED 'OFF'
@@ -273,39 +273,39 @@ void ActionLED(void) {
         ON_LED = 0; // ON LED 'OFF'
         OFF_LED = 0; // OFF LED 'OFF'
     }
-    if ((IR_Dat1 == 0xE8) && (IR_Dat2 == 0x17)) {
+    if ((IR_Dat1 == 0xA0) && (IR_Dat2 == 0x5F)) {
         // '1' Switch //
         LED_Flash(1);
     }
-    if ((IR_Dat1 == 0x48) && (IR_Dat2 == 0xB7)) {
+    if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
         // '2' Switch //
         LED_Flash(2);
     }
-    if ((IR_Dat1 == 0x68) && (IR_Dat2 == 0x97)) {
+    if ((IR_Dat1 == 0x10) && (IR_Dat2 == 0xEF)) {
         // '3' Switch //
         LED_Flash(3);
     }
-    if ((IR_Dat1 == 0xB2) && (IR_Dat2 == 0x4D)) {
+    if ((IR_Dat1 == 0x80) && (IR_Dat2 == 0x7F)) {
         // '4' Switch //
         LED_Flash(4);
     }
-    if ((IR_Dat1 == 0x02) && (IR_Dat2 == 0xFD)) {
+    if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
         // '5' Switch //
         LED_Flash(5);
     }
-    if ((IR_Dat1 == 0x32) && (IR_Dat2 == 0xCD)) {
+    if ((IR_Dat1 == 0xB1) && (IR_Dat2 == 0x4E)) {
         // '6' Switch //
         LED_Flash(6);
     }
-    if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
+    if ((IR_Dat1 == 0x11) && (IR_Dat2 == 0xEE)) {
         // '7' Switch //
         LED_Flash(7);
     }
-    if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
+    if ((IR_Dat1 == 0x21) && (IR_Dat2 == 0xDE)) {
         // '8' Switch //
         LED_Flash(8);
     }
-    if ((IR_Dat1 == 0x50) && (IR_Dat2 == 0xAF)) {
+    if ((IR_Dat1 == 0x81) && (IR_Dat2 == 0x7E)) {
         // '9' Switch //
         LED_Flash(9);
     }

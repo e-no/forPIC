@@ -2794,9 +2794,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 260: void ActionLED(void) {
 [e :U _ActionLED ]
 [f ]
-[; ;main.c: 261: if ((IR_Dat1 == 0x08) && (IR_Dat2 == 0xF7)) {
+[; ;main.c: 261: if ((IR_Dat1 == 0xD8) && (IR_Dat2 == 0x27)) {
 "261
-[e $ ! && == -> _IR_Dat1 `i -> 8 `i == -> _IR_Dat2 `i -> 247 `i 327  ]
+[e $ ! && == -> _IR_Dat1 `i -> 216 `i == -> _IR_Dat2 `i -> 39 `i 327  ]
 {
 [; ;main.c: 263: RA1 = 1;
 "263
@@ -2836,9 +2836,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 329 ]
 [; ;main.c: 275: }
-[; ;main.c: 276: if ((IR_Dat1 == 0xE8) && (IR_Dat2 == 0x17)) {
+[; ;main.c: 276: if ((IR_Dat1 == 0xA0) && (IR_Dat2 == 0x5F)) {
 "276
-[e $ ! && == -> _IR_Dat1 `i -> 232 `i == -> _IR_Dat2 `i -> 23 `i 330  ]
+[e $ ! && == -> _IR_Dat1 `i -> 160 `i == -> _IR_Dat2 `i -> 95 `i 330  ]
 {
 [; ;main.c: 278: LED_Flash(1);
 "278
@@ -2847,9 +2847,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 330 ]
 [; ;main.c: 279: }
-[; ;main.c: 280: if ((IR_Dat1 == 0x48) && (IR_Dat2 == 0xB7)) {
+[; ;main.c: 280: if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
 "280
-[e $ ! && == -> _IR_Dat1 `i -> 72 `i == -> _IR_Dat2 `i -> 183 `i 331  ]
+[e $ ! && == -> _IR_Dat1 `i -> 0 `i == -> _IR_Dat2 `i -> 255 `i 331  ]
 {
 [; ;main.c: 282: LED_Flash(2);
 "282
@@ -2858,9 +2858,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 331 ]
 [; ;main.c: 283: }
-[; ;main.c: 284: if ((IR_Dat1 == 0x68) && (IR_Dat2 == 0x97)) {
+[; ;main.c: 284: if ((IR_Dat1 == 0x10) && (IR_Dat2 == 0xEF)) {
 "284
-[e $ ! && == -> _IR_Dat1 `i -> 104 `i == -> _IR_Dat2 `i -> 151 `i 332  ]
+[e $ ! && == -> _IR_Dat1 `i -> 16 `i == -> _IR_Dat2 `i -> 239 `i 332  ]
 {
 [; ;main.c: 286: LED_Flash(3);
 "286
@@ -2869,9 +2869,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 332 ]
 [; ;main.c: 287: }
-[; ;main.c: 288: if ((IR_Dat1 == 0xB2) && (IR_Dat2 == 0x4D)) {
+[; ;main.c: 288: if ((IR_Dat1 == 0x80) && (IR_Dat2 == 0x7F)) {
 "288
-[e $ ! && == -> _IR_Dat1 `i -> 178 `i == -> _IR_Dat2 `i -> 77 `i 333  ]
+[e $ ! && == -> _IR_Dat1 `i -> 128 `i == -> _IR_Dat2 `i -> 127 `i 333  ]
 {
 [; ;main.c: 290: LED_Flash(4);
 "290
@@ -2880,9 +2880,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 333 ]
 [; ;main.c: 291: }
-[; ;main.c: 292: if ((IR_Dat1 == 0x02) && (IR_Dat2 == 0xFD)) {
+[; ;main.c: 292: if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
 "292
-[e $ ! && == -> _IR_Dat1 `i -> 2 `i == -> _IR_Dat2 `i -> 253 `i 334  ]
+[e $ ! && == -> _IR_Dat1 `i -> 32 `i == -> _IR_Dat2 `i -> 223 `i 334  ]
 {
 [; ;main.c: 294: LED_Flash(5);
 "294
@@ -2891,9 +2891,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 334 ]
 [; ;main.c: 295: }
-[; ;main.c: 296: if ((IR_Dat1 == 0x32) && (IR_Dat2 == 0xCD)) {
+[; ;main.c: 296: if ((IR_Dat1 == 0xB1) && (IR_Dat2 == 0x4E)) {
 "296
-[e $ ! && == -> _IR_Dat1 `i -> 50 `i == -> _IR_Dat2 `i -> 205 `i 335  ]
+[e $ ! && == -> _IR_Dat1 `i -> 177 `i == -> _IR_Dat2 `i -> 78 `i 335  ]
 {
 [; ;main.c: 298: LED_Flash(6);
 "298
@@ -2902,9 +2902,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 335 ]
 [; ;main.c: 299: }
-[; ;main.c: 300: if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
+[; ;main.c: 300: if ((IR_Dat1 == 0x11) && (IR_Dat2 == 0xEE)) {
 "300
-[e $ ! && == -> _IR_Dat1 `i -> 32 `i == -> _IR_Dat2 `i -> 223 `i 336  ]
+[e $ ! && == -> _IR_Dat1 `i -> 17 `i == -> _IR_Dat2 `i -> 238 `i 336  ]
 {
 [; ;main.c: 302: LED_Flash(7);
 "302
@@ -2913,9 +2913,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 336 ]
 [; ;main.c: 303: }
-[; ;main.c: 304: if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
+[; ;main.c: 304: if ((IR_Dat1 == 0x21) && (IR_Dat2 == 0xDE)) {
 "304
-[e $ ! && == -> _IR_Dat1 `i -> 0 `i == -> _IR_Dat2 `i -> 255 `i 337  ]
+[e $ ! && == -> _IR_Dat1 `i -> 33 `i == -> _IR_Dat2 `i -> 222 `i 337  ]
 {
 [; ;main.c: 306: LED_Flash(8);
 "306
@@ -2924,9 +2924,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 337 ]
 [; ;main.c: 307: }
-[; ;main.c: 308: if ((IR_Dat1 == 0x50) && (IR_Dat2 == 0xAF)) {
+[; ;main.c: 308: if ((IR_Dat1 == 0x81) && (IR_Dat2 == 0x7E)) {
 "308
-[e $ ! && == -> _IR_Dat1 `i -> 80 `i == -> _IR_Dat2 `i -> 175 `i 338  ]
+[e $ ! && == -> _IR_Dat1 `i -> 129 `i == -> _IR_Dat2 `i -> 126 `i 338  ]
 {
 [; ;main.c: 310: LED_Flash(9);
 "310

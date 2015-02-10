@@ -3217,7 +3217,7 @@ Delay_10ms(20);
 
 
 void ActionLED(void) {
-if ((IR_Dat1 == 0x08) && (IR_Dat2 == 0xF7)) {
+if ((IR_Dat1 == 0xD8) && (IR_Dat2 == 0x27)) {
 
 RA1 = 1;
 RA0 = 0;
@@ -3232,39 +3232,39 @@ if ((IR_Dat1 == 0xB8) && (IR_Dat2 == 0x47)) {
 RA1 = 0;
 RA0 = 0;
 }
-if ((IR_Dat1 == 0xE8) && (IR_Dat2 == 0x17)) {
+if ((IR_Dat1 == 0xA0) && (IR_Dat2 == 0x5F)) {
 
 LED_Flash(1);
 }
-if ((IR_Dat1 == 0x48) && (IR_Dat2 == 0xB7)) {
+if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
 
 LED_Flash(2);
 }
-if ((IR_Dat1 == 0x68) && (IR_Dat2 == 0x97)) {
+if ((IR_Dat1 == 0x10) && (IR_Dat2 == 0xEF)) {
 
 LED_Flash(3);
 }
-if ((IR_Dat1 == 0xB2) && (IR_Dat2 == 0x4D)) {
+if ((IR_Dat1 == 0x80) && (IR_Dat2 == 0x7F)) {
 
 LED_Flash(4);
 }
-if ((IR_Dat1 == 0x02) && (IR_Dat2 == 0xFD)) {
+if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
 
 LED_Flash(5);
 }
-if ((IR_Dat1 == 0x32) && (IR_Dat2 == 0xCD)) {
+if ((IR_Dat1 == 0xB1) && (IR_Dat2 == 0x4E)) {
 
 LED_Flash(6);
 }
-if ((IR_Dat1 == 0x20) && (IR_Dat2 == 0xDF)) {
+if ((IR_Dat1 == 0x11) && (IR_Dat2 == 0xEE)) {
 
 LED_Flash(7);
 }
-if ((IR_Dat1 == 0x00) && (IR_Dat2 == 0xFF)) {
+if ((IR_Dat1 == 0x21) && (IR_Dat2 == 0xDE)) {
 
 LED_Flash(8);
 }
-if ((IR_Dat1 == 0x50) && (IR_Dat2 == 0xAF)) {
+if ((IR_Dat1 == 0x81) && (IR_Dat2 == 0x7E)) {
 
 LED_Flash(9);
 }
