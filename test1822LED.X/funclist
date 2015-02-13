@@ -1,5 +1,4 @@
-__stringdata: STRCODE, 256 0 5
-_main: CODE, 57 0 80
+_main: CODE, 57 0 96
 __initialization: CODE, 48 0 6
 _InterTimer: CODE, 4 0 43
-Total: 134
+Total: 145

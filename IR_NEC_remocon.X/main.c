@@ -106,7 +106,7 @@ void main() {
     VRCON = 0; /* Shut off the Voltage Reference */
 
     OSCCON = 7; /* disable the comparator */
-    ANSELbits = 0; /* all pin are Digital */
+    ANSELbits. = 0; /* all pin are Digital */
     TRISA = 8; /* Only GP3 is set to input rest are out */
     TMR0 = 0; /* clear the timer */
     OPTION_REG = 0x88; /* pullups are disabled */
