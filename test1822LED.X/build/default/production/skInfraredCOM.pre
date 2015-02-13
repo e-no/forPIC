@@ -2878,7 +2878,7 @@ void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode) ;
 int InfraredRecive(unsigned char MyDeviceNo) ;
 int RemoconSW() ;
 
-# 40 "skInfraredCOM.c"
+# 35 "skInfraredCOM.c"
 void InitCCP()
 {
 CCP1CON = 0b00001100 ;
@@ -2890,7 +2890,7 @@ PR2 = 210 ;
 TMR2ON = 1 ;
 }
 
-# 55
+# 50
 void PalseHigh(int cnt)
 {
 int i ;
@@ -2902,7 +2902,7 @@ _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 CCPR1L = 0 ;
 }
 
-# 73
+# 68
 void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode)
 {
 int i ;
@@ -2960,7 +2960,7 @@ if (x1 != x2) return(0) ;
 return(x1) ;
 }
 
-# 138
+# 133
 int InfraredRecive(unsigned char MyDeviceNo)
 {
 char IRbit[26] ;
@@ -2971,14 +2971,17 @@ ans = 0 ;
 t = 0 ;
 
 if (RA0 == 0) {
+
 t = 0 ;
 while (RA0 == 0) {
 _delay((unsigned long)((10)*(32000000/4000000.0))) ;
 t++ ;
+
 }
 }
 
 if (t >= 300) {
+RA2 = 1;
 i = 0 ;
 while(RA0 == 1) ;
 
@@ -2996,7 +2999,7 @@ if (i == 24) break ;
 }
 
 if (i == 24) {
-ans = DataCheck(MyDeviceNo,IRbit) ;
+
 }
 }
 return( ans ) ;

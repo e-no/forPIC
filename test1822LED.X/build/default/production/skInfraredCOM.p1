@@ -19,6 +19,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "5404 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _RA0 `Vb ~T0 @X0 0 e@96 ]
+"5408
+[v _RA2 `Vb ~T0 @X0 0 e@98 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic12f1822.h: 47: extern volatile unsigned char INDF0 @ 0x000;
@@ -2142,463 +2144,463 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;skInfraredCOM.h: 14: void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode) ;
 [; ;skInfraredCOM.h: 15: int InfraredRecive(unsigned char MyDeviceNo) ;
 [; ;skInfraredCOM.h: 16: int RemoconSW() ;
-"40 skInfraredCOM.c
+"35 skInfraredCOM.c
 [v _InitCCP `(v ~T0 @X0 1 ef ]
-"41
+"36
 {
-[; ;skInfraredCOM.c: 40: void InitCCP()
-[; ;skInfraredCOM.c: 41: {
+[; ;skInfraredCOM.c: 35: void InitCCP()
+[; ;skInfraredCOM.c: 36: {
 [e :U _InitCCP ]
 [f ]
-[; ;skInfraredCOM.c: 42: CCP1CON = 0b00001100 ;
-"42
+[; ;skInfraredCOM.c: 37: CCP1CON = 0b00001100 ;
+"37
 [e = _CCP1CON -> -> 12 `i `uc ]
-[; ;skInfraredCOM.c: 43: T2CON = 0b00000000 ;
-"43
+[; ;skInfraredCOM.c: 38: T2CON = 0b00000000 ;
+"38
 [e = _T2CON -> -> 0 `i `uc ]
-[; ;skInfraredCOM.c: 44: CCPR1L = 0 ;
-"44
+[; ;skInfraredCOM.c: 39: CCPR1L = 0 ;
+"39
 [e = _CCPR1L -> -> 0 `i `uc ]
-[; ;skInfraredCOM.c: 45: CCPR1H = 0 ;
-"45
+[; ;skInfraredCOM.c: 40: CCPR1H = 0 ;
+"40
 [e = _CCPR1H -> -> 0 `i `uc ]
-[; ;skInfraredCOM.c: 46: TMR2 = 0 ;
-"46
+[; ;skInfraredCOM.c: 41: TMR2 = 0 ;
+"41
 [e = _TMR2 -> -> 0 `i `uc ]
-[; ;skInfraredCOM.c: 47: PR2 = 210 ;
-"47
+[; ;skInfraredCOM.c: 42: PR2 = 210 ;
+"42
 [e = _PR2 -> -> 210 `i `uc ]
-[; ;skInfraredCOM.c: 48: TMR2ON = 1 ;
-"48
+[; ;skInfraredCOM.c: 43: TMR2ON = 1 ;
+"43
 [e = _TMR2ON -> -> 1 `i `b ]
-[; ;skInfraredCOM.c: 49: }
-"49
+[; ;skInfraredCOM.c: 44: }
+"44
 [e :UE 270 ]
 }
-"55
+"50
 [v _PalseHigh `(v ~T0 @X0 1 ef1`i ]
-"56
+"51
 {
-[; ;skInfraredCOM.c: 55: void PalseHigh(int cnt)
-[; ;skInfraredCOM.c: 56: {
+[; ;skInfraredCOM.c: 50: void PalseHigh(int cnt)
+[; ;skInfraredCOM.c: 51: {
 [e :U _PalseHigh ]
-"55
+"50
 [v _cnt `i ~T0 @X0 1 r1 ]
-"56
+"51
 [f ]
-"57
+"52
 [v _i `i ~T0 @X0 1 a ]
-[; ;skInfraredCOM.c: 57: int i ;
-[; ;skInfraredCOM.c: 59: CCPR1L = 400/4 ;
-"59
+[; ;skInfraredCOM.c: 52: int i ;
+[; ;skInfraredCOM.c: 54: CCPR1L = 400/4 ;
+"54
 [e = _CCPR1L -> / -> 400 `i -> 4 `i `uc ]
-[; ;skInfraredCOM.c: 60: for (i=0 ; i < cnt ; i++ ) {
-"60
+[; ;skInfraredCOM.c: 55: for (i=0 ; i < cnt ; i++ ) {
+"55
 {
 [e = _i -> 0 `i ]
 [e $U 275  ]
 [e :U 272 ]
 {
-[; ;skInfraredCOM.c: 61: _delay((unsigned long)((560)*(32000000/4000000.0))) ;
-"61
+[; ;skInfraredCOM.c: 56: _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+"56
 [e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"62
+"57
 }
-"60
+"55
 [e ++ _i -> 1 `i ]
 [e :U 275 ]
 [e $ < _i _cnt 272  ]
 [e :U 273 ]
-"62
+"57
 }
-[; ;skInfraredCOM.c: 62: }
-[; ;skInfraredCOM.c: 63: CCPR1L = 0 ;
-"63
+[; ;skInfraredCOM.c: 57: }
+[; ;skInfraredCOM.c: 58: CCPR1L = 0 ;
+"58
 [e = _CCPR1L -> -> 0 `i `uc ]
-[; ;skInfraredCOM.c: 64: }
-"64
+[; ;skInfraredCOM.c: 59: }
+"59
 [e :UE 271 ]
 }
-"73
+"68
 [v _InfraredSend `(v ~T0 @X0 1 ef2`uc`uc ]
-"74
+"69
 {
-[; ;skInfraredCOM.c: 73: void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode)
-[; ;skInfraredCOM.c: 74: {
+[; ;skInfraredCOM.c: 68: void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode)
+[; ;skInfraredCOM.c: 69: {
 [e :U _InfraredSend ]
-"73
+"68
 [v _toDeviceNo `uc ~T0 @X0 1 r1 ]
 [v _KeyCode `uc ~T0 @X0 1 r2 ]
-"74
+"69
 [f ]
-"75
+"70
 [v _i `i ~T0 @X0 1 a ]
-[; ;skInfraredCOM.c: 75: int i ;
-[; ;skInfraredCOM.c: 78: PalseHigh(9) ;
-"78
+[; ;skInfraredCOM.c: 70: int i ;
+[; ;skInfraredCOM.c: 73: PalseHigh(9) ;
+"73
 [e ( _PalseHigh (1 -> 9 `i ]
-[; ;skInfraredCOM.c: 79: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
-"79
+[; ;skInfraredCOM.c: 74: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
+"74
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;skInfraredCOM.c: 81: for (i=0 ; i<8 ; i++) {
-"81
+[; ;skInfraredCOM.c: 76: for (i=0 ; i<8 ; i++) {
+"76
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 277  ]
 [e $U 278  ]
 [e :U 277 ]
 {
-[; ;skInfraredCOM.c: 82: PalseHigh(1) ;
-"82
+[; ;skInfraredCOM.c: 77: PalseHigh(1) ;
+"77
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 83: if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
-"83
+[; ;skInfraredCOM.c: 78: if ((toDeviceNo >> i) & 0x1) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+"78
 [e $ ! != & >> -> _toDeviceNo `i _i -> 1 `i -> 0 `i 280  ]
 [e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 281  ]
-"84
+"79
 [e :U 280 ]
-[; ;skInfraredCOM.c: 84: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 79: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 [e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 281 ]
-"85
+"80
 }
-"81
+"76
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 277  ]
 [e :U 278 ]
-"85
+"80
 }
-[; ;skInfraredCOM.c: 85: }
-[; ;skInfraredCOM.c: 87: for (i=0 ; i<8 ; i++) {
-"87
+[; ;skInfraredCOM.c: 80: }
+[; ;skInfraredCOM.c: 82: for (i=0 ; i<8 ; i++) {
+"82
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 282  ]
 [e $U 283  ]
 [e :U 282 ]
 {
-[; ;skInfraredCOM.c: 88: PalseHigh(1) ;
-"88
+[; ;skInfraredCOM.c: 83: PalseHigh(1) ;
+"83
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 89: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
-"89
+[; ;skInfraredCOM.c: 84: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+"84
 [e $ ! != & >> -> _KeyCode `i _i -> 1 `i -> 0 `i 285  ]
 [e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 286  ]
-"90
+"85
 [e :U 285 ]
-[; ;skInfraredCOM.c: 90: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 85: else _delay((unsigned long)((560)*(32000000/4000000.0))) ;
 [e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 286 ]
-"91
+"86
 }
-"87
+"82
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 282  ]
 [e :U 283 ]
-"91
+"86
 }
-[; ;skInfraredCOM.c: 91: }
-[; ;skInfraredCOM.c: 93: for (i=0 ; i<8 ; i++) {
-"93
+[; ;skInfraredCOM.c: 86: }
+[; ;skInfraredCOM.c: 88: for (i=0 ; i<8 ; i++) {
+"88
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 287  ]
 [e $U 288  ]
 [e :U 287 ]
 {
-[; ;skInfraredCOM.c: 94: PalseHigh(1) ;
-"94
+[; ;skInfraredCOM.c: 89: PalseHigh(1) ;
+"89
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 95: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(32000000/4000000.0))) ;
-"95
+[; ;skInfraredCOM.c: 90: if ((KeyCode >> i) & 0x01) _delay((unsigned long)((560)*(32000000/4000000.0))) ;
+"90
 [e $ ! != & >> -> _KeyCode `i _i -> 1 `i -> 0 `i 290  ]
 [e ( __delay (1 -> * -> -> 560 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e $U 291  ]
-"96
+"91
 [e :U 290 ]
-[; ;skInfraredCOM.c: 96: else _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
+[; ;skInfraredCOM.c: 91: else _delay((unsigned long)((1690)*(32000000/4000000.0))) ;
 [e ( __delay (1 -> * -> -> 1690 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [e :U 291 ]
-"97
+"92
 }
-"93
+"88
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 287  ]
 [e :U 288 ]
-"97
+"92
 }
-[; ;skInfraredCOM.c: 97: }
-[; ;skInfraredCOM.c: 99: PalseHigh(1) ;
-"99
+[; ;skInfraredCOM.c: 92: }
+[; ;skInfraredCOM.c: 94: PalseHigh(1) ;
+"94
 [e ( _PalseHigh (1 -> 1 `i ]
-[; ;skInfraredCOM.c: 100: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
-"100
+[; ;skInfraredCOM.c: 95: _delay((unsigned long)((1000)*(32000000/4000000.0))) ;
+"95
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;skInfraredCOM.c: 101: }
-"101
+[; ;skInfraredCOM.c: 96: }
+"96
 [e :UE 276 ]
 }
-"106
+"101
 [v _DataCheck `(i ~T0 @X0 1 ef2`uc`*uc ]
-"107
+"102
 {
-[; ;skInfraredCOM.c: 106: int DataCheck(unsigned char MyDeviceNo,char *dt)
-[; ;skInfraredCOM.c: 107: {
+[; ;skInfraredCOM.c: 101: int DataCheck(unsigned char MyDeviceNo,char *dt)
+[; ;skInfraredCOM.c: 102: {
 [e :U _DataCheck ]
-"106
+"101
 [v _MyDeviceNo `uc ~T0 @X0 1 r1 ]
 [v _dt `*uc ~T0 @X0 1 r2 ]
-"107
+"102
 [f ]
-"108
+"103
 [v _x1 `i ~T0 @X0 1 a ]
 [v _x2 `i ~T0 @X0 1 a ]
 [v _i `i ~T0 @X0 1 a ]
-[; ;skInfraredCOM.c: 108: int x1 , x2 , i ;
-[; ;skInfraredCOM.c: 111: x1 = 0 ;
-"111
+[; ;skInfraredCOM.c: 103: int x1 , x2 , i ;
+[; ;skInfraredCOM.c: 106: x1 = 0 ;
+"106
 [e = _x1 -> 0 `i ]
-[; ;skInfraredCOM.c: 112: for (i=0 ; i<8 ; i++) {
-"112
+[; ;skInfraredCOM.c: 107: for (i=0 ; i<8 ; i++) {
+"107
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 293  ]
 [e $U 294  ]
 [e :U 293 ]
 {
-[; ;skInfraredCOM.c: 113: if (*dt++ == 0x31) x1 = x1 | (1 << i) ;
-"113
+[; ;skInfraredCOM.c: 108: if (*dt++ == 0x31) x1 = x1 | (1 << i) ;
+"108
 [e $ ! == -> *U ++ _dt * -> -> 1 `i `x -> -> # *U _dt `i `x `i -> 49 `i 296  ]
 [e = _x1 | _x1 << -> 1 `i _i ]
 [e :U 296 ]
-"114
+"109
 }
-"112
+"107
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 293  ]
 [e :U 294 ]
-"114
+"109
 }
-[; ;skInfraredCOM.c: 114: }
-[; ;skInfraredCOM.c: 115: if ((x1 != 255) && (x1 != MyDeviceNo)) return(0) ;
-"115
+[; ;skInfraredCOM.c: 109: }
+[; ;skInfraredCOM.c: 110: if ((x1 != 255) && (x1 != MyDeviceNo)) return(0) ;
+"110
 [e $ ! && != _x1 -> 255 `i != _x1 -> _MyDeviceNo `i 297  ]
 [e ) -> 0 `i ]
 [e $UE 292  ]
 [e :U 297 ]
-[; ;skInfraredCOM.c: 117: x1 = 0 ;
-"117
+[; ;skInfraredCOM.c: 112: x1 = 0 ;
+"112
 [e = _x1 -> 0 `i ]
-[; ;skInfraredCOM.c: 118: for (i=0 ; i<8 ; i++) {
-"118
+[; ;skInfraredCOM.c: 113: for (i=0 ; i<8 ; i++) {
+"113
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 298  ]
 [e $U 299  ]
 [e :U 298 ]
 {
-[; ;skInfraredCOM.c: 119: if (*dt++ == 0x31) x1 = x1 | (1 << i) ;
-"119
+[; ;skInfraredCOM.c: 114: if (*dt++ == 0x31) x1 = x1 | (1 << i) ;
+"114
 [e $ ! == -> *U ++ _dt * -> -> 1 `i `x -> -> # *U _dt `i `x `i -> 49 `i 301  ]
 [e = _x1 | _x1 << -> 1 `i _i ]
 [e :U 301 ]
-"120
+"115
 }
-"118
+"113
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 298  ]
 [e :U 299 ]
-"120
+"115
 }
-[; ;skInfraredCOM.c: 120: }
-[; ;skInfraredCOM.c: 122: x2 = 0 ;
-"122
+[; ;skInfraredCOM.c: 115: }
+[; ;skInfraredCOM.c: 117: x2 = 0 ;
+"117
 [e = _x2 -> 0 `i ]
-[; ;skInfraredCOM.c: 123: for (i=0 ; i<8 ; i++) {
-"123
+[; ;skInfraredCOM.c: 118: for (i=0 ; i<8 ; i++) {
+"118
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 302  ]
 [e $U 303  ]
 [e :U 302 ]
 {
-[; ;skInfraredCOM.c: 124: if (*dt++ == 0x30) x2 = x2 | (1 << i) ;
-"124
+[; ;skInfraredCOM.c: 119: if (*dt++ == 0x30) x2 = x2 | (1 << i) ;
+"119
 [e $ ! == -> *U ++ _dt * -> -> 1 `i `x -> -> # *U _dt `i `x `i -> 48 `i 305  ]
 [e = _x2 | _x2 << -> 1 `i _i ]
 [e :U 305 ]
-"125
+"120
 }
-"123
+"118
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 302  ]
 [e :U 303 ]
-"125
+"120
 }
-[; ;skInfraredCOM.c: 125: }
-[; ;skInfraredCOM.c: 126: if (x1 != x2) return(0) ;
-"126
+[; ;skInfraredCOM.c: 120: }
+[; ;skInfraredCOM.c: 121: if (x1 != x2) return(0) ;
+"121
 [e $ ! != _x1 _x2 306  ]
 [e ) -> 0 `i ]
 [e $UE 292  ]
 [e :U 306 ]
-[; ;skInfraredCOM.c: 127: return(x1) ;
-"127
+[; ;skInfraredCOM.c: 122: return(x1) ;
+"122
 [e ) _x1 ]
 [e $UE 292  ]
-[; ;skInfraredCOM.c: 128: }
-"128
+[; ;skInfraredCOM.c: 123: }
+"123
 [e :UE 292 ]
 }
-"138
+"133
 [v _InfraredRecive `(i ~T0 @X0 1 ef1`uc ]
-"139
+"134
 {
-[; ;skInfraredCOM.c: 138: int InfraredRecive(unsigned char MyDeviceNo)
-[; ;skInfraredCOM.c: 139: {
+[; ;skInfraredCOM.c: 133: int InfraredRecive(unsigned char MyDeviceNo)
+[; ;skInfraredCOM.c: 134: {
 [e :U _InfraredRecive ]
-"138
+"133
 [v _MyDeviceNo `uc ~T0 @X0 1 r1 ]
-"139
+"134
 [f ]
-"140
+"135
 [v _IRbit `uc ~T0 @X0 -> 26 `i a ]
-"141
+"136
 [v _t `ul ~T0 @X0 1 a ]
-"142
+"137
 [v _ans `i ~T0 @X0 1 a ]
 [v _i `i ~T0 @X0 1 a ]
-[; ;skInfraredCOM.c: 140: char IRbit[26] ;
-[; ;skInfraredCOM.c: 141: unsigned long t ;
-[; ;skInfraredCOM.c: 142: int ans , i ;
-[; ;skInfraredCOM.c: 144: ans = 0 ;
-"144
+[; ;skInfraredCOM.c: 135: char IRbit[26] ;
+[; ;skInfraredCOM.c: 136: unsigned long t ;
+[; ;skInfraredCOM.c: 137: int ans , i ;
+[; ;skInfraredCOM.c: 139: ans = 0 ;
+"139
 [e = _ans -> 0 `i ]
-[; ;skInfraredCOM.c: 145: t = 0 ;
-"145
+[; ;skInfraredCOM.c: 140: t = 0 ;
+"140
 [e = _t -> -> -> 0 `i `l `ul ]
-[; ;skInfraredCOM.c: 147: if (RA0 == 0) {
-"147
+[; ;skInfraredCOM.c: 142: if (RA0 == 0) {
+"142
 [e $ ! == -> _RA0 `i -> 0 `i 308  ]
 {
-[; ;skInfraredCOM.c: 148: t = 0 ;
-"148
+[; ;skInfraredCOM.c: 144: t = 0 ;
+"144
 [e = _t -> -> -> 0 `i `l `ul ]
-[; ;skInfraredCOM.c: 149: while (RA0 == 0) {
-"149
+[; ;skInfraredCOM.c: 145: while (RA0 == 0) {
+"145
 [e $U 309  ]
 [e :U 310 ]
 {
-[; ;skInfraredCOM.c: 150: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
-"150
+[; ;skInfraredCOM.c: 146: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
+"146
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;skInfraredCOM.c: 151: t++ ;
-"151
+[; ;skInfraredCOM.c: 147: t++ ;
+"147
 [e ++ _t -> -> -> 1 `i `l `ul ]
-"152
+"149
 }
 [e :U 309 ]
-"149
+"145
 [e $ == -> _RA0 `i -> 0 `i 310  ]
 [e :U 311 ]
-"153
+"150
 }
 [e :U 308 ]
-[; ;skInfraredCOM.c: 152: }
-[; ;skInfraredCOM.c: 153: }
-[; ;skInfraredCOM.c: 155: if (t >= 300) {
-"155
+[; ;skInfraredCOM.c: 149: }
+[; ;skInfraredCOM.c: 150: }
+[; ;skInfraredCOM.c: 152: if (t >= 300) {
+"152
 [e $ ! >= _t -> -> -> 300 `i `l `ul 312  ]
 {
-[; ;skInfraredCOM.c: 156: i = 0 ;
-"156
+[; ;skInfraredCOM.c: 153: RA2 = 1;
+"153
+[e = _RA2 -> -> 1 `i `b ]
+[; ;skInfraredCOM.c: 154: i = 0 ;
+"154
 [e = _i -> 0 `i ]
-[; ;skInfraredCOM.c: 157: while(RA0 == 1) ;
-"157
+[; ;skInfraredCOM.c: 155: while(RA0 == 1) ;
+"155
 [e $U 313  ]
 [e :U 314 ]
 [e :U 313 ]
 [e $ == -> _RA0 `i -> 1 `i 314  ]
 [e :U 315 ]
-[; ;skInfraredCOM.c: 159: while (1) {
-"159
+[; ;skInfraredCOM.c: 157: while (1) {
+"157
 [e :U 317 ]
 {
-[; ;skInfraredCOM.c: 160: while(RA0 == 0) ;
-"160
+[; ;skInfraredCOM.c: 158: while(RA0 == 0) ;
+"158
 [e $U 319  ]
 [e :U 320 ]
 [e :U 319 ]
 [e $ == -> _RA0 `i -> 0 `i 320  ]
 [e :U 321 ]
-[; ;skInfraredCOM.c: 161: t = 0 ;
-"161
+[; ;skInfraredCOM.c: 159: t = 0 ;
+"159
 [e = _t -> -> -> 0 `i `l `ul ]
-[; ;skInfraredCOM.c: 162: while(RA0 == 1) {
-"162
+[; ;skInfraredCOM.c: 160: while(RA0 == 1) {
+"160
 [e $U 322  ]
 [e :U 323 ]
 {
-[; ;skInfraredCOM.c: 163: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
-"163
+[; ;skInfraredCOM.c: 161: _delay((unsigned long)((10)*(32000000/4000000.0))) ;
+"161
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;skInfraredCOM.c: 164: t++ ;
-"164
+[; ;skInfraredCOM.c: 162: t++ ;
+"162
 [e ++ _t -> -> -> 1 `i `l `ul ]
-"165
+"163
 }
 [e :U 322 ]
-"162
+"160
 [e $ == -> _RA0 `i -> 1 `i 323  ]
 [e :U 324 ]
-[; ;skInfraredCOM.c: 165: }
-[; ;skInfraredCOM.c: 166: if (t >= 50) IRbit[i] = (char)0x31 ;
-"166
+[; ;skInfraredCOM.c: 163: }
+[; ;skInfraredCOM.c: 164: if (t >= 50) IRbit[i] = (char)0x31 ;
+"164
 [e $ ! >= _t -> -> -> 50 `i `l `ul 325  ]
 [e = *U + &U _IRbit * -> -> _i `ui `ux -> -> # *U &U _IRbit `ui `ux -> -> 49 `i `uc ]
 [e $U 326  ]
-"167
+"165
 [e :U 325 ]
-[; ;skInfraredCOM.c: 167: else IRbit[i] = (char)0x30 ;
+[; ;skInfraredCOM.c: 165: else IRbit[i] = (char)0x30 ;
 [e = *U + &U _IRbit * -> -> _i `ui `ux -> -> # *U &U _IRbit `ui `ux -> -> 48 `i `uc ]
 [e :U 326 ]
-[; ;skInfraredCOM.c: 168: i++ ;
-"168
+[; ;skInfraredCOM.c: 166: i++ ;
+"166
 [e ++ _i -> 1 `i ]
-[; ;skInfraredCOM.c: 169: if (i == 24) break ;
-"169
+[; ;skInfraredCOM.c: 167: if (i == 24) break ;
+"167
 [e $ ! == _i -> 24 `i 327  ]
 [e $U 318  ]
 [e :U 327 ]
-"170
+"168
 }
 [e :U 316 ]
-"159
+"157
 [e $U 317  ]
 [e :U 318 ]
-[; ;skInfraredCOM.c: 170: }
-[; ;skInfraredCOM.c: 172: if (i == 24) {
-"172
+[; ;skInfraredCOM.c: 168: }
+[; ;skInfraredCOM.c: 170: if (i == 24) {
+"170
 [e $ ! == _i -> 24 `i 328  ]
 {
-[; ;skInfraredCOM.c: 173: ans = DataCheck(MyDeviceNo,IRbit) ;
-"173
-[e = _ans ( _DataCheck (2 , _MyDeviceNo &U _IRbit ]
-"174
+"172
 }
 [e :U 328 ]
-"175
+"173
 }
 [e :U 312 ]
-[; ;skInfraredCOM.c: 174: }
-[; ;skInfraredCOM.c: 175: }
-[; ;skInfraredCOM.c: 176: return( ans ) ;
-"176
+[; ;skInfraredCOM.c: 172: }
+[; ;skInfraredCOM.c: 173: }
+[; ;skInfraredCOM.c: 174: return( ans ) ;
+"174
 [e ) _ans ]
 [e $UE 307  ]
-[; ;skInfraredCOM.c: 177: }
-"177
+[; ;skInfraredCOM.c: 175: }
+"175
 [e :UE 307 ]
 }

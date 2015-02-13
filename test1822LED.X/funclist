@@ -1,10 +1,11 @@
-_strOutUSART: CODE, 534 0 22
-__stringdata: STRCODE, 522 0 12
-_dpowers: STRCODE, 512 0 10
-_main: CODE, 262 0 103
-__initialization: CODE, 49 0 6
-___lwdiv: CODE, 365 0 54
-_sprintf: CODE, 58 0 204
+_strOutUSART: CODE, 790 0 22
+_InfraredRecive: CODE, 270 0 128
+__stringdata: STRCODE, 778 0 12
+_dpowers: STRCODE, 768 0 10
+_main: CODE, 398 0 107
+__initialization: CODE, 49 0 14
+___lwdiv: CODE, 505 0 54
+_sprintf: CODE, 66 0 204
 _InterTimer: CODE, 4 0 44
-___lwmod: CODE, 419 0 47
-Total: 502
+___lwmod: CODE, 559 0 47
+Total: 642

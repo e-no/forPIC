@@ -5,12 +5,7 @@
 *    InfraredSend   - 赤外線ＬＥＤにデータを送信する処理                       *
 *    InfraredRecive - 赤外線受信モジュールよりデータを受信する処理             *
 *                                                                              *
-*    メモ：CCP(PWM)機能を使用して赤外線LEDの発振周波数37.9KHzを作っています、  *
-*          CCP機能の無いPICは利用出来ないでしょう。                            *
-* ============================================================================ *
-*  VERSION DATE        BY                    CHANGE/COMMENT                    *
-* ---------------------------------------------------------------------------- *
-*  1.00    2011-06-10  きむ茶工房(きむしげ)  Create                            *
+*    メモ：CCP(PWM)機能を使用して赤外線LEDの発振周波数37.9KHzを作っています*
 * ============================================================================ *
 *  PIC 12F1822                                                                 *
 *  MPLAB IDE(V8.63)                                                            *
@@ -145,14 +140,17 @@ int InfraredRecive(unsigned char MyDeviceNo)
      t   = 0 ;
      // リーダ部のチェックを行う
      if (IRpin == LOW) {
+                
           t = 0 ;
           while (IRpin == LOW) {	// HIGH(ON)になるまで繰返す
                __delay_us(10) ;	// OFFの部分をはかる
                t++ ;
+              
           }
      }
      // リーダ部有りなら処理する
      if (t >= 300) {
+         RA2 = 1;
           i = 0 ;
           while(IRpin == HIGH) ;	// ここまでがリーダ部(ON部分)読み飛ばす
           // データ部の読み込み
@@ -170,7 +168,7 @@ int InfraredRecive(unsigned char MyDeviceNo)
           }
           // データ有りならチェックを行う
           if (i == 24) {
-               ans = DataCheck(MyDeviceNo,IRbit) ;
+               //ans = DataCheck(MyDeviceNo,IRbit) ;
           }
      }
      return( ans ) ;

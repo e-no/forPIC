@@ -1,5 +1,4 @@
 #include <xc.h>
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -8,6 +7,7 @@
 
 #define T0COUT     61   // タイマー０用カウントの初期値(256 - 195 = 61)
 
+#define IR_IN RA0
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
@@ -33,6 +33,8 @@
 
 int Count; // タイマーの割込み発生回数をカウントする変数
 int LEDflg; // LEDのON/OFF状態フラグ
+
+unsigned char data[8]={0,0,0,0,0,0,0,0};
 
 
 void strOutUSART(char *str);
@@ -74,19 +76,17 @@ void main() {
 
         RA1 = 1;
         RA2 = 0;
-        // ans = InfraredRecive(39);
+        ans = InfraredRecive(72);
         __delay_ms(100);
 
         //TXREG = ans; //　受信したデータ(通知情報)はシリアル出力して表示させておる。
-
-        ans = 10;
 
         sprintf(str,"value:%d \n\r",ans);
 
         strOutUSART(str);
 
         RA1 = 0;
-        RA2 = 1;
+
 
         __delay_ms(100);
 
@@ -112,14 +112,9 @@ void interrupt InterTimer(void) {
 
 void strOutUSART(char *str){
     while(*str){                 //文字列の終わり(00)まで継続
-        while (!PIR1bits.TXIF);  //送信終了待ち
+        while(!PIR1bits.TXIF);  //送信終了待ち
         TXREG = *str++;          //文字出力しポインタ＋１
     }
 }
-
-
-
-
-
 
 

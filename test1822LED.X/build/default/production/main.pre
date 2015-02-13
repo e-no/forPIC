@@ -3077,6 +3077,8 @@ int RemoconSW() ;
 int Count;
 int LEDflg;
 
+unsigned char data[8]={0,0,0,0,0,0,0,0};
+
 
 void strOutUSART(char *str);
 
@@ -3117,19 +3119,17 @@ while (1) {
 
 RA1 = 1;
 RA2 = 0;
-
+ans = InfraredRecive(72);
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
 
-
-ans = 10;
 
 sprintf(str,"value:%d \n\r",ans);
 
 strOutUSART(str);
 
 RA1 = 0;
-RA2 = 1;
+
 
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
@@ -3155,7 +3155,7 @@ else LEDflg = 0;
 
 void strOutUSART(char *str){
 while(*str){
-while (!PIR1bits.TXIF);
+while(!PIR1bits.TXIF);
 TXREG = *str++;
 }
 }

@@ -45,9 +45,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RA1 `Vb ~T0 @X0 0 e@97 ]
 "5408
 [v _RA2 `Vb ~T0 @X0 0 e@98 ]
+"15 skInfraredCOM.h
+[v _InfraredRecive `(i ~T0 @X0 0 ef1`uc ]
 "205 C:\Program Files (x86)\Microchip\xc8\v1.33\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"38 main.c
+"40 main.c
 [v _strOutUSART `(v ~T0 @X0 0 ef1`*uc ]
 "707 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2330,92 +2332,107 @@ Version 3.2 HI-TECH Software Intermediate Code
 "35
 [v _LEDflg `i ~T0 @X0 1 e ]
 [; ;main.c: 35: int LEDflg;
-[; ;main.c: 38: void strOutUSART(char *str);
-"43
+"37
+[v _data `uc ~T0 @X0 -> 8 `i e ]
+[i _data
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[; ;main.c: 37: unsigned char data[8]={0,0,0,0,0,0,0,0};
+[; ;main.c: 40: void strOutUSART(char *str);
+"45
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 43: void main() {
+[; ;main.c: 45: void main() {
 [e :U _main ]
 [f ]
-"45
-[v F2463 `s ~T0 @X0 1 s led_flag ]
-[i F2463
+"47
+[v F2464 `s ~T0 @X0 1 s led_flag ]
+[i F2464
 -> -> 0 `i `s
 ]
-"46
+"48
 [v _ans `i ~T0 @X0 1 a ]
-"47
-[v _str `uc ~T0 @X0 -> 0 `x a ]
-[; ;main.c: 45: static short int led_flag = 0;
-[; ;main.c: 46: int ans;
-[; ;main.c: 47: char str[];
-[; ;main.c: 49: OSCCON = 0b01110010;
 "49
-[e = _OSCCON -> -> 114 `i `uc ]
-[; ;main.c: 50: ANSELAbits.ANSELA = 0b00000000;
-"50
-[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 51: TRISA = 0b00001001;
+[v _str `uc ~T0 @X0 -> 0 `x a ]
+[; ;main.c: 47: static short int led_flag = 0;
+[; ;main.c: 48: int ans;
+[; ;main.c: 49: char str[];
+[; ;main.c: 51: OSCCON = 0b01110010;
 "51
-[e = _TRISA -> -> 9 `i `uc ]
-[; ;main.c: 52: PORTA = 0b00000000;
+[e = _OSCCON -> -> 114 `i `uc ]
+[; ;main.c: 52: ANSELAbits.ANSELA = 0b00000000;
 "52
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 54: RXDTSEL = 1;
+[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 53: TRISA = 0b00001001;
+"53
+[e = _TRISA -> -> 9 `i `uc ]
+[; ;main.c: 54: PORTA = 0b00000000;
 "54
-[e = _RXDTSEL -> -> 1 `i `b ]
-[; ;main.c: 55: TXCKSEL = 1;
-"55
-[e = _TXCKSEL -> -> 1 `i `b ]
-[; ;main.c: 56: TXSTA = 0b00100100;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 56: RXDTSEL = 1;
 "56
-[e = _TXSTA -> -> 36 `i `uc ]
-[; ;main.c: 57: RCSTA = 0b10010000;
+[e = _RXDTSEL -> -> 1 `i `b ]
+[; ;main.c: 57: TXCKSEL = 1;
 "57
-[e = _RCSTA -> -> 144 `i `uc ]
-[; ;main.c: 58: SPBRG = 51;
+[e = _TXCKSEL -> -> 1 `i `b ]
+[; ;main.c: 58: TXSTA = 0b00100100;
 "58
-[e = _SPBRG -> -> 51 `i `uc ]
-[; ;main.c: 60: OPTION_REG = 0b00000110;
+[e = _TXSTA -> -> 36 `i `uc ]
+[; ;main.c: 59: RCSTA = 0b10010000;
+"59
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;main.c: 60: SPBRG = 51;
 "60
-[e = _OPTION_REG -> -> 6 `i `uc ]
-[; ;main.c: 61: TMR0 = 61;
-"61
-[e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 62: TMR0IF = 0;
+[e = _SPBRG -> -> 51 `i `uc ]
+[; ;main.c: 62: OPTION_REG = 0b00000110;
 "62
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 63: Count = 0;
+[e = _OPTION_REG -> -> 6 `i `uc ]
+[; ;main.c: 63: TMR0 = 61;
 "63
-[e = _Count -> 0 `i ]
-[; ;main.c: 64: TMR0IE = 1;
+[e = _TMR0 -> -> 61 `i `uc ]
+[; ;main.c: 64: TMR0IF = 0;
 "64
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 65: GIE = 1;
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 65: Count = 0;
 "65
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 67: LEDflg = 0;
+[e = _Count -> 0 `i ]
+[; ;main.c: 66: TMR0IE = 1;
+"66
+[e = _TMR0IE -> -> 1 `i `b ]
+[; ;main.c: 67: GIE = 1;
 "67
-[e = _LEDflg -> 0 `i ]
-[; ;main.c: 69: _delay((unsigned long)((200)*(32000000/4000.0)));
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 69: LEDflg = 0;
 "69
+[e = _LEDflg -> 0 `i ]
+[; ;main.c: 71: _delay((unsigned long)((200)*(32000000/4000.0)));
+"71
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 72: while (1) {
-"72
+[; ;main.c: 74: while (1) {
+"74
 [e :U 277 ]
 {
-[; ;main.c: 75: RA1 = 1;
-"75
+[; ;main.c: 77: RA1 = 1;
+"77
 [e = _RA1 -> -> 1 `i `b ]
-[; ;main.c: 76: RA2 = 0;
-"76
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 78: _delay((unsigned long)((100)*(32000000/4000.0)));
+[; ;main.c: 78: RA2 = 0;
 "78
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 79: ans = InfraredRecive(72);
+"79
+[e = _ans ( _InfraredRecive (1 -> -> 72 `i `uc ]
+[; ;main.c: 80: _delay((unsigned long)((100)*(32000000/4000.0)));
+"80
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 82: ans = 10;
-"82
-[e = _ans -> 10 `i ]
 [; ;main.c: 84: sprintf(str,"value:%d \n\r",ans);
 "84
 [e ( _sprintf (1 , (. , &U _str :s 1C _ans ]
@@ -2425,16 +2442,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 88: RA1 = 0;
 "88
 [e = _RA1 -> -> 0 `i `b ]
-[; ;main.c: 89: RA2 = 1;
-"89
-[e = _RA2 -> -> 1 `i `b ]
 [; ;main.c: 91: _delay((unsigned long)((100)*(32000000/4000.0)));
 "91
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "93
 }
 [e :U 276 ]
-"72
+"74
 [e $U 277  ]
 [e :U 278 ]
 [; ;main.c: 93: }
@@ -2442,9 +2456,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "94
 [e :UE 275 ]
 }
-[v F2471 `(v ~T0 @X0 1 tf ]
+[v F2472 `(v ~T0 @X0 1 tf ]
 "99
-[v _InterTimer `IF2471 ~T0 @X0 1 e ]
+[v _InterTimer `IF2472 ~T0 @X0 1 e ]
 {
 [; ;main.c: 99: void interrupt InterTimer(void) {
 [e :U _InterTimer ]
@@ -2503,7 +2517,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 285  ]
 [e :U 286 ]
 {
-[; ;main.c: 115: while (!PIR1bits.TXIF);
+[; ;main.c: 115: while(!PIR1bits.TXIF);
 "115
 [e $U 288  ]
 [e :U 289 ]

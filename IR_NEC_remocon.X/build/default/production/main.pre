@@ -3060,7 +3060,7 @@ ADCON0 = 0;
 VRCON = 0;
 
 OSCCON = 7;
-ANSELbits = 0;
+ANSELbits.ANS = 0;
 TRISA = 8;
 TMR0 = 0;
 OPTION_REG = 0x88;
