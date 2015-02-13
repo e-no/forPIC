@@ -1,4 +1,10 @@
-_main: CODE, 57 0 96
-__initialization: CODE, 48 0 6
-_InterTimer: CODE, 4 0 43
-Total: 145
+_strOutUSART: CODE, 534 0 22
+__stringdata: STRCODE, 522 0 12
+_dpowers: STRCODE, 512 0 10
+_main: CODE, 262 0 103
+__initialization: CODE, 49 0 6
+___lwdiv: CODE, 365 0 54
+_sprintf: CODE, 58 0 204
+_InterTimer: CODE, 4 0 44
+___lwmod: CODE, 419 0 47
+Total: 502

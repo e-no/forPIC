@@ -3078,29 +3078,16 @@ int Count;
 int LEDflg;
 
 
+void strOutUSART(char *str);
 
 
-void interrupt InterTimer(void) {
-if (TMR0IF == 1) {
-TMR0 = 61;
-Count++;
-TMR0IF = 0;
-if (Count >= 40) {
-Count = 0;
 
-if (LEDflg == 0) LEDflg = 1;
-else LEDflg = 0;
-}
-}
-}
 
-# 58
 void main() {
 
 static short int led_flag = 0;
 int ans;
-char s[6];
-
+char str[];
 
 OSCCON = 0b01110010;
 ANSELAbits.ANSELA = 0b00000000;
@@ -3122,26 +3109,54 @@ GIE = 1;
 
 LEDflg = 0;
 
-_delay((unsigned long)((50)*(32000000/4000.0)));
+_delay((unsigned long)((200)*(32000000/4000.0)));
 
 
 while (1) {
 
 
-RA5 = 1;
+RA1 = 1;
+RA2 = 0;
+
+_delay((unsigned long)((100)*(32000000/4000.0)));
 
 
-_delay((unsigned long)((500)*(32000000/4000.0)));
+
+ans = 10;
+
+sprintf(str,"value:%d \n\r",ans);
+
+strOutUSART(str);
+
+RA1 = 0;
+RA2 = 1;
+
+_delay((unsigned long)((100)*(32000000/4000.0)));
+
+}
+}
 
 
 
-ans++;
-if (ans > 0x7b) ans = 0x30;
 
-RA5= 0;
+void interrupt InterTimer(void) {
+if (TMR0IF == 1) {
+TMR0 = 61;
+Count++;
+TMR0IF = 0;
+if (Count >= 40) {
+Count = 0;
 
-_delay((unsigned long)((500)*(32000000/4000.0)));
+if (LEDflg == 0) LEDflg = 1;
+else LEDflg = 0;
+}
+}
+}
 
+void strOutUSART(char *str){
+while(*str){
+while (!PIR1bits.TXIF);
+TXREG = *str++;
 }
 }
 

@@ -35,22 +35,7 @@ int Count; // タイマーの割込み発生回数をカウントする変数
 int LEDflg; // LEDのON/OFF状態フラグ
 
 
-// タイマー割込みの処理
-
-void interrupt InterTimer(void) {
-    if (TMR0IF == 1) { // timer0interruptFlag
-        TMR0 = T0COUT; // タイマー0の初期化
-        Count++; // 割込み発生の回数をカウントする
-        TMR0IF = 0; // タイマー0割込フラグをリセット
-        if (Count >= 40) { // 割込みを40回カウントすると約１秒
-            Count = 0;
-            // １秒毎にLEDのフラグをON/OFFさせる処理
-            if (LEDflg == 0) LEDflg = 1;
-            else LEDflg = 0;
-        }
-    }
-}
-
+void strOutUSART(char *str);
 
 
 // メインの処理
@@ -59,8 +44,7 @@ void main() {
 
     static short int led_flag = 0;
     int ans;
-    char s[6];
-
+    char str[];
 
     OSCCON = 0b01110010; // 内部クロックは8ＭＨｚとする
     ANSELAbits.ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
@@ -82,28 +66,58 @@ void main() {
 
     LEDflg = 0; // LEDのフラグ状態をOFFとする
 
-    __delay_ms(50); // ５秒後に開始する
+    __delay_ms(200); // 0.0５秒後に開始する
 
 
     while (1) {
         // while (TXIF == 0); // 送信可能になるまで待つ    *1)
 
-        RA5 = 1;
-
-        //  ans = InfraredRecive(39);
-        __delay_ms(500);
+        RA1 = 1;
+        RA2 = 0;
+        // ans = InfraredRecive(39);
+        __delay_ms(100);
 
         //TXREG = ans; //　受信したデータ(通知情報)はシリアル出力して表示させておる。
 
-        ans++;
-        if (ans > 0x7b) ans = 0x30;
+        ans = 10;
 
-        RA5 = 0;
+        sprintf(str,"value:%d \n\r",ans);
 
-        __delay_ms(500);
+        strOutUSART(str);
+
+        RA1 = 0;
+        RA2 = 1;
+
+        __delay_ms(100);
 
     }
 }
+
+
+
+// タイマー割込みの処理
+void interrupt InterTimer(void) {
+    if (TMR0IF == 1) { // timer0interruptFlag
+        TMR0 = T0COUT; // タイマー0の初期化
+        Count++; // 割込み発生の回数をカウントする
+        TMR0IF = 0; // タイマー0割込フラグをリセット
+        if (Count >= 40) { // 割込みを40回カウントすると約１秒
+            Count = 0;
+            // １秒毎にLEDのフラグをON/OFFさせる処理
+            if (LEDflg == 0) LEDflg = 1;
+            else LEDflg = 0;
+        }
+    }
+}
+
+void strOutUSART(char *str){
+    while(*str){                 //文字列の終わり(00)まで継続
+        while (!PIR1bits.TXIF);  //送信終了待ち
+        TXREG = *str++;          //文字出力しポインタ＋１
+    }
+}
+
+
 
 
 

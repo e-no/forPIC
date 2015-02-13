@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\test1822LED.X.production.sym \
   --cmf=dist/default/production\test1822LED.X.production.cmf -z -Q12F1822 \
-  -oC:\Users\User\AppData\Local\Temp\s6v8.6 \
+  -oC:\Users\User\AppData\Local\Temp\s64.6 \
   -Mdist/default/production/test1822LED.X.production.map -E1 -ver=XC8 \
-  -ASTACK=02000h-0206fh -pstack=STACK -ACONST=00h-0FFhx8 -ACODE=00h-07FFh \
+  -ASTACK=02021h-0206fh -pstack=STACK -ACONST=00h-0FFhx8 -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -AENTRY=00h-0FFhx8 -ASTRING=00h-0FFhx8 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
   -ABIGRAM=02000h-0206Fh -ARAM=020h-06Fh,0A0h-0BFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s6v8.obj \
+  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s64.obj \
   dist/default/production\test1822LED.X.production.obj 
 
 Object code version is 3.11
@@ -36,16 +36,23 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\s6v8.obj
-                end_init                             2F       2F        1        8       0
+C:\Users\User\AppData\Local\Temp\s64.obj
+                end_init                             30       30        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\test1822LED.X.production.obj
-                cinit                                30       30        9        8       0
-                intentry                              4        4       2B        8       0
-                maintext                             39       39       60        8       0
-                cstackCOMMON                         70       70        7       70       1
-                bssCOMMON                            77       77        6       70       1
+                cinit                                31       31        9        8       0
+                intentry                              4        4       2C        8       0
+                text4                               16D      16D       36        8       0
+                text3                               1A3      1A3       2F        8       0
+                text2                                3A       3A       CC        8       0
+                text1                               216      216       16      42C       0
+                maintext                            106      106       67        8       0
+                cstackBANK0                          20       20       1D       20       1
+                cstackCOMMON                         70       70        A       70       1
+                bssBANK0                             3D       3D        4       20       1
+                bssCOMMON                            7A       7A        2       70       1
+                stringtext                          200      200       16        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -53,23 +60,30 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CONST          
 
         CLASS   CODE           
-                end_init                             2F       2F        1         0
-                cinit                                30       30        9         0
-                intentry                              4        4       2B         0
+                end_init                             30       30        1         0
+                cinit                                31       31        9         0
+                intentry                              4        4       2C         0
                 reset_vec                             0        0        1         0
-                maintext                             39       39       60         0
+                text4                               16D      16D       36         0
+                text3                               1A3      1A3       2F         0
+                text2                                3A       3A       CC         0
+                text1                               216      216       16         0
+                maintext                            106      106       67         0
 
         CLASS   STRCODE        
+                stringtext                          200      200       16         0
 
         CLASS   ENTRY          
 
         CLASS   STRING         
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        7         1
-                bssCOMMON                            77       77        6         1
+                cstackCOMMON                         70       70        A         1
+                bssCOMMON                            7A       7A        2         1
 
         CLASS   BANK0          
+                cstackBANK0                          20       20       1D         1
+                bssBANK0                             3D       3D        4         1
 
         CLASS   BANK1          
 
@@ -216,27 +230,33 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  000095  000099         8       0  CODE        2
-                cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
+                intentry                       000004  0001CE  0001D2         8       0  CODE        2
+                cstackBANK0                    000020  000021  000041        20       1  BANK0       1
+                cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
+                stringtext                     000200  000016  000216         4       0  STRCODE     2
+                text1                          000216  000016  00022C       42C       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00020-0006F              50           1
+        BANK0            00041-0006F              2F           1
         BANK1            000A0-000BF              20           1
         BIGRAM           02000-0206F              70           1
         CODE             00001-00003               3           2
-                         00099-007FF             767
-        COMMON           0007D-0007D               1           1
+                         001D2-001FF              2E
+                         0022C-007FF             5D4
+        COMMON           0007C-0007D               2           1
         CONST            00001-00003               3           2
-                         00099-007FF             100
+                         001D2-001FF              2E
+                         0022C-007FF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00001-00003               3           2
-                         00099-007FF             100
+                         001D2-001FF              2E
+                         0022C-007FF             100
         IDLOC            08000-08003               4           2
-        RAM              00020-0006F              50           1
+        RAM              00041-0006F              2F           1
                          000A0-000BF              20
         SFR0             00000-0001F              20           1
         SFR1             00080-0009F              20           1
@@ -270,28 +290,35 @@ UNUSED ADDRESS RANGES
         SFR7             00380-003EF              70           1
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
-        STACK            02000-0206F              70           1
+        STACK            02021-0206F              4F           1
         STRCODE          00001-00003               3           2
-                         00099-007FF             767
+                         001D2-001FF              2E
+                         0022C-007FF             5D4
         STRING           00001-00003               3           2
-                         00099-007FF             100
+                         001D2-001FF              2E
+                         0022C-007FF             100
 
                                   Symbol Table
 
+?___lwdiv                cstackCOMMON 00072
+?___lwmod                cstackBANK0  00020
+?_sprintf                cstackBANK0  00026
 _ANSELAbits              (abs)        0018C
 _CCP1CON                 (abs)        00293
 _CCPR1H                  (abs)        00292
 _CCPR1L                  (abs)        00291
-_Count                   bssCOMMON    00077
+_Count                   bssBANK0     0003D
 _GIE                     (abs)        0005F
 _InterTimer              intentry     00004
-_LEDflg                  bssCOMMON    00079
+_LEDflg                  bssBANK0     0003F
 _OPTION_REG              (abs)        00095
 _OSCCON                  (abs)        00099
+_PIR1bits                (abs)        00011
 _PORTA                   (abs)        0000C
 _PR2                     (abs)        0001B
 _RA0                     (abs)        00060
-_RA5                     (abs)        00065
+_RA1                     (abs)        00061
+_RA2                     (abs)        00062
 _RCSTA                   (abs)        0019D
 _RXDTSEL                 (abs)        008EF
 _SPBRG                   (abs)        0019B
@@ -303,6 +330,7 @@ _TMR2                    (abs)        0001A
 _TMR2ON                  (abs)        000E2
 _TRISA                   (abs)        0008C
 _TXCKSEL                 (abs)        008EA
+_TXREG                   (abs)        0019A
 _TXSTA                   (abs)        0019E
 __CFG_BOREN$ON           (abs)        00000
 __CFG_BORV$HI            (abs)        00000
@@ -353,19 +381,21 @@ __Hbank7                 bank7        00000
 __Hbank8                 bank8        00000
 __Hbank9                 bank9        00000
 __Hbigram                bigram       00000
+__HbssBANK0              bssBANK0     00000
 __HbssCOMMON             bssCOMMON    00000
-__Hcinit                 cinit        00039
+__Hcinit                 cinit        0003A
 __Hclrtext               clrtext      00000
 __Hcode                  code         00000
 __Hcommon                common       00000
 __Hconfig                config       08009
+__HcstackBANK0           cstackBANK0  00000
 __HcstackCOMMON          cstackCOMMON 00000
 __Heeprom_data           eeprom_data  00000
-__Hend_init              end_init     00030
+__Hend_init              end_init     00031
 __Hfunctab               functab      00000
 __Hidloc                 idloc        00000
-__Hinit                  init         0002F
-__Hintentry              intentry     0002F
+__Hinit                  init         00030
+__Hintentry              intentry     00030
 __Hmaintext              maintext     00000
 __Hpowerup               powerup      00000
 __Hram                   ram          00000
@@ -403,11 +433,12 @@ __Hsfr7                  sfr7         00000
 __Hsfr8                  sfr8         00000
 __Hsfr9                  sfr9         00000
 __Hspace_0               (abs)        08009
-__Hspace_1               (abs)        0007D
+__Hspace_1               (abs)        0007C
 __Hspace_2               (abs)        00000
 __Hspace_3               (abs)        00000
 __Hstack                 stack        00000
 __Hstrings               strings      00000
+__Hstringtext            stringtext   00000
 __Htext                  text         00000
 __Labs1                  abs1         00000
 __Lbank0                 bank0        00000
@@ -443,18 +474,20 @@ __Lbank7                 bank7        00000
 __Lbank8                 bank8        00000
 __Lbank9                 bank9        00000
 __Lbigram                bigram       00000
+__LbssBANK0              bssBANK0     00000
 __LbssCOMMON             bssCOMMON    00000
-__Lcinit                 cinit        00030
+__Lcinit                 cinit        00031
 __Lclrtext               clrtext      00000
 __Lcode                  code         00000
 __Lcommon                common       00000
 __Lconfig                config       08007
+__LcstackBANK0           cstackBANK0  00000
 __LcstackCOMMON          cstackCOMMON 00000
 __Leeprom_data           eeprom_data  00000
-__Lend_init              end_init     0002F
+__Lend_init              end_init     00030
 __Lfunctab               functab      00000
 __Lidloc                 idloc        00000
-__Linit                  init         0002F
+__Linit                  init         00030
 __Lintentry              intentry     00004
 __Lmaintext              maintext     00000
 __Lpowerup               powerup      00000
@@ -498,27 +531,58 @@ __Lspace_2               (abs)        00000
 __Lspace_3               (abs)        00000
 __Lstack                 stack        00000
 __Lstrings               strings      00000
+__Lstringtext            stringtext   00000
 __Ltext                  text         00000
 __S0                     (abs)        08009
-__S1                     (abs)        0007D
+__S1                     (abs)        0007C
 __S2                     (abs)        00000
 __S3                     (abs)        00000
 ___int_sp                stack        00000
 ___latbits               (abs)        00000
+___lwdiv                 text4        0016D
+___lwdiv@counter         cstackCOMMON 00079
+___lwdiv@dividend        cstackCOMMON 00074
+___lwdiv@divisor         cstackCOMMON 00072
+___lwdiv@quotient        cstackCOMMON 00077
+___lwmod                 text3        001A3
+___lwmod@counter         cstackBANK0  00025
+___lwmod@dividend        cstackBANK0  00022
+___lwmod@divisor         cstackBANK0  00020
 ___sp                    stack        00000
-__end_of_InterTimer      intentry     0002F
-__end_of__initialization cinit        00036
-__end_of_main            maintext     00099
-__initialization         cinit        00030
-__pbssCOMMON             bssCOMMON    00077
+__end_of_InterTimer      intentry     00030
+__end_of___lwdiv         text4        001A3
+__end_of___lwmod         text3        001D2
+__end_of__initialization cinit        00037
+__end_of__stringdata     stringtext   00216
+__end_of_dpowers         stringtext   0020A
+__end_of_main            maintext     0016D
+__end_of_sprintf         text2        00106
+__end_of_strOutUSART     text1        0022C
+__initialization         cinit        00031
+__pbssBANK0              bssBANK0     0003D
+__pbssCOMMON             bssCOMMON    0007A
+__pcstackBANK0           cstackBANK0  00020
 __pcstackCOMMON          cstackCOMMON 00070
 __pintentry              intentry     00004
-__pmaintext              maintext     00039
+__pmaintext              maintext     00106
+__pstringtext            stringtext   00200
+__ptext1                 text1        00216
+__ptext2                 text2        0003A
+__ptext3                 text3        001A3
+__ptext4                 text4        0016D
 __size_of_InterTimer     (abs)        00000
+__size_of___lwdiv        (abs)        00000
+__size_of___lwmod        (abs)        00000
 __size_of_main           (abs)        00000
-_main                    maintext     00039
+__size_of_sprintf        (abs)        00000
+__size_of_strOutUSART    (abs)        00000
+__stringdata             stringtext   0020A
+_dpowers                 stringtext   00200
+_main                    maintext     00106
+_sprintf                 text2        0003A
+_strOutUSART             text1        00216
 btemp                    (abs)        0007E
-end_of_initialization    cinit        00036
+end_of_initialization    cinit        00037
 intlevel0                functab      00000
 intlevel1                functab      00000
 intlevel2                functab      00000
@@ -530,13 +594,22 @@ ltemp0                   (abs)        0007E
 ltemp1                   (abs)        00082
 ltemp2                   (abs)        00086
 ltemp3                   (abs)        00080
-main@ans                 cstackCOMMON 00075
+main@ans                 cstackBANK0  0003B
+main@str                 cstackBANK0  0003B
 pic14e$flags             (abs)        0007E
 reset_vec                reset_vec    00000
+sprintf@_val             cstackBANK0  00033
+sprintf@ap               cstackBANK0  00030
+sprintf@c                cstackBANK0  00037
+sprintf@f                cstackBANK0  00028
+sprintf@flag             cstackBANK0  00031
+sprintf@prec             cstackBANK0  00032
+sprintf@sp               cstackBANK0  00026
 stackhi                  (abs)        0206F
-stacklo                  (abs)        02000
-start                    init         0002F
-start_initialization     cinit        00030
+stacklo                  (abs)        02021
+start                    init         00030
+start_initialization     cinit        00031
+strOutUSART@str          cstackCOMMON 00072
 ttemp                    (abs)        0007E
 ttemp0                   (abs)        0007E
 ttemp1                   (abs)        00081
@@ -557,14 +630,115 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 58 in file "main.c"
+		line 43 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  s               6    0        unsigned char [6]
-  ans             2    5[COMMON] int 
+  ans             2   27[BANK0 ] int 
+  str             0   27[BANK0 ] unsigned char [0]
  Return value:  Size  Location     Type
 		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       2       0
+      Temps:          0       3       0
+      Totals:         0       5       0
+Total ram usage:        5 bytes
+ Hardware stack levels required when called:    3
+ This function calls:
+		_sprintf
+		_strOutUSART
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _strOutUSART *****************
+ Defined at:
+		line 113 in file "main.c"
+ Parameters:    Size  Location     Type
+  str             2    2[COMMON] PTR unsigned char 
+		 -> main@str(0), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         2       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _sprintf *****************
+ Defined at:
+		line 492 in file "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c"
+ Parameters:    Size  Location     Type
+  sp              2    6[BANK0 ] PTR unsigned char 
+		 -> main@str(0), 
+  f               2    8[BANK0 ] PTR const unsigned char 
+		 -> STR_1(12), 
+ Auto vars:     Size  Location     Type
+  _val            4   19[BANK0 ] struct .
+  c               1   23[BANK0 ] char 
+  prec            1   18[BANK0 ] char 
+  flag            1   17[BANK0 ] unsigned char 
+  ap              1   16[BANK0 ] PTR void [1]
+		 -> ?_sprintf(2), 
+ Return value:  Size  Location     Type
+                  2    6[BANK0 ] int 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         0       6       0
+      Locals:         0       8       0
+      Temps:          0       4       0
+      Totals:         0      18       0
+Total ram usage:       18 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		___lwdiv
+		___lwmod
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwmod *****************
+ Defined at:
+		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[BANK0 ] unsigned int 
+  dividend        2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  counter         1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned int 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -572,22 +746,55 @@ FUNCTION INFORMATION:
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1
-      Params:         0       0       0
-      Locals:         2       0       0
-      Temps:          3       0       0
-      Totals:         5       0       0
-Total ram usage:        5 bytes
+      Params:         0       4       0
+      Locals:         0       1       0
+      Temps:          0       1       0
+      Totals:         0       6       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
 		Nothing
  This function is called by:
-		Startup code after reset
+		_sprintf
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwdiv *****************
+ Defined at:
+		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c"
+ Parameters:    Size  Location     Type
+  divisor         2    2[COMMON] unsigned int 
+  dividend        2    4[COMMON] unsigned int 
+ Auto vars:     Size  Location     Type
+  quotient        2    7[COMMON] unsigned int 
+  counter         1    9[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  2    2[COMMON] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         4       0       0
+      Locals:         3       0       0
+      Temps:          1       0       0
+      Totals:         8       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_sprintf
  This function uses a non-reentrant model
 
 
  *************** function _InterTimer *****************
  Defined at:
-		line 40 in file "main.c"
+		line 99 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -618,14 +825,32 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-shared
-		__initializatio		CODE           	0030	0000	6
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+		_sprintf       		CODE           	003A	0000	204
 
-shared estimated size: 6
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c estimated size: 204
+
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
+		___lwmod       		CODE           	01A3	0000	47
+
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c estimated size: 47
+
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
+		___lwdiv       		CODE           	016D	0000	54
+
+C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c estimated size: 54
+
+shared
+		__stringdata   		STRCODE        	020A	0000	12
+		_dpowers       		STRCODE        	0200	0000	10
+		__initializatio		CODE           	0031	0000	6
+
+shared estimated size: 28
 
 main.c
-		_main          		CODE           	0039	0000	96
-		_InterTimer    		CODE           	0004	0000	43
+		_strOutUSART   		CODE           	0216	0000	22
+		_main          		CODE           	0106	0000	103
+		_InterTimer    		CODE           	0004	0000	44
 
-main.c estimated size: 139
+main.c estimated size: 169
 
