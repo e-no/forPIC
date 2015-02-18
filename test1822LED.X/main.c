@@ -76,7 +76,8 @@ void main() {
 
         RA1 = 1;
         RA2 = 0;
-        ans = InfraredRecive(72);
+        RA5 = 0;
+        //ans = InfraredRecive(72);
         __delay_ms(100);
 
         //TXREG = ans; //　受信したデータ(通知情報)はシリアル出力して表示させておる。
@@ -86,6 +87,8 @@ void main() {
         strOutUSART(str);
 
         RA1 = 0;
+        RA2 = 1;
+        RA5 = 1;
 
 
         __delay_ms(100);
