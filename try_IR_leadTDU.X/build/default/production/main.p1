@@ -23,10 +23,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RA1 `Vb ~T0 @X0 0 e@97 ]
 "5408
 [v _RA2 `Vb ~T0 @X0 0 e@98 ]
-"5410
-[v _RA3 `Vb ~T0 @X0 0 e@99 ]
-"5412
-[v _RA4 `Vb ~T0 @X0 0 e@100 ]
 "5414
 [v _RA5 `Vb ~T0 @X0 0 e@101 ]
 [v F2176 `(v ~T0 @X0 1 tf1`ul ]
@@ -2236,89 +2232,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 109: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 110: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 112: extern char * ftoa(float f, int * status);
-"28 main.c
+"29 main.c
 [v _Count `i ~T0 @X0 1 e ]
-[; ;main.c: 28: int Count;
-"29
+[; ;main.c: 29: int Count;
+"30
 [v _LEDflg `i ~T0 @X0 1 e ]
-[; ;main.c: 29: int LEDflg;
-"33
-[p x FOSC=INTOSC ]
+[; ;main.c: 30: int LEDflg;
 "34
-[p x WDTE=OFF ]
+[p x FOSC=INTOSC ]
 "35
-[p x PWRTE=OFF ]
+[p x WDTE=OFF ]
 "36
-[p x MCLRE=ON ]
+[p x PWRTE=OFF ]
 "37
-[p x CP=ON ]
+[p x MCLRE=ON ]
 "38
-[p x CPD=ON ]
+[p x CP=ON ]
 "39
-[p x BOREN=SBODEN ]
+[p x CPD=ON ]
 "40
-[p x CLKOUTEN=ON ]
+[p x BOREN=SBODEN ]
 "41
-[p x IESO=OFF ]
+[p x CLKOUTEN=ON ]
 "42
+[p x IESO=OFF ]
+"43
 [p x FCMEN=OFF ]
-"45
-[p x WRT=ALL ]
 "46
-[p x PLLEN=OFF ]
+[p x WRT=ALL ]
 "47
-[p x STVREN=ON ]
+[p x PLLEN=OFF ]
 "48
-[p x BORV=HI ]
+[p x STVREN=ON ]
 "49
+[p x BORV=HI ]
+"50
 [p x LVP=OFF ]
-"54
+"55
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
-[; ;main.c: 54: int main(int argc, char** argv) {
+[; ;main.c: 55: int main(int argc, char** argv) {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"56
+"57
 [v _bon `l ~T0 @X0 1 a ]
 [v _boff `l ~T0 @X0 1 a ]
 [v _icnt `l ~T0 @X0 1 a ]
-[; ;main.c: 56: long bon, boff, icnt;
-[; ;main.c: 58: OSCCON = 0b01110000;
-"58
+[; ;main.c: 57: long bon, boff, icnt;
+[; ;main.c: 59: OSCCON = 0b01110000;
+"59
 [e = _OSCCON -> -> 112 `i `uc ]
-[; ;main.c: 78: ANSELAbits.ANSELA = 0b00000000;
-"78
-[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 79: TRISA = 0b00011000;
+[; ;main.c: 79: ANSELAbits.ANSELA = 0b00000000;
 "79
-[e = _TRISA -> -> 24 `i `uc ]
-[; ;main.c: 80: PORTA = 0b00000000;
+[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 80: TRISA = 0b00011000;
 "80
+[e = _TRISA -> -> 24 `i `uc ]
+[; ;main.c: 81: PORTA = 0b00000000;
+"81
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 84: LEDflg = 0;
-"84
+[; ;main.c: 85: LEDflg = 0;
+"85
 [e = _LEDflg -> 0 `i ]
-[; ;main.c: 86: while(1){
-"86
+[; ;main.c: 87: while(1){
+"87
 [e :U 277 ]
 {
-[; ;main.c: 88: RA0 = 1;
-"88
-[e = _RA0 -> -> 1 `i `b ]
-[; ;main.c: 89: RA1 = 1;
+[; ;main.c: 89: RA0 = 1;
 "89
-[e = _RA1 -> -> 1 `i `b ]
-[; ;main.c: 90: RA2 = 1;
+[e = _RA0 -> -> 1 `i `b ]
+[; ;main.c: 90: RA1 = 1;
 "90
-[e = _RA2 -> -> 1 `i `b ]
-[; ;main.c: 91: RA3 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+[; ;main.c: 91: RA2 = 1;
 "91
-[e = _RA3 -> -> 1 `i `b ]
-[; ;main.c: 92: RA4 = 1;
-"92
-[e = _RA4 -> -> 1 `i `b ]
+[e = _RA2 -> -> 1 `i `b ]
 [; ;main.c: 93: RA5 = 1;
 "93
 [e = _RA5 -> -> 1 `i `b ]
@@ -2334,30 +2324,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 99: RA2 = 0;
 "99
 [e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 100: RA3 = 0;
-"100
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 101: RA4 = 0;
+[; ;main.c: 101: RA5 = 0;
 "101
-[e = _RA4 -> -> 0 `i `b ]
-[; ;main.c: 102: RA5 = 0;
-"102
 [e = _RA5 -> -> 0 `i `b ]
-[; ;main.c: 104: _delay((unsigned long)((500)*(8000000/4000.0)));
-"104
+[; ;main.c: 103: _delay((unsigned long)((500)*(8000000/4000.0)));
+"103
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"106
+"105
 }
 [e :U 276 ]
-"86
+"87
 [e $U 277  ]
 [e :U 278 ]
-[; ;main.c: 106: }
-[; ;main.c: 107: return (0);
-"107
+[; ;main.c: 105: }
+[; ;main.c: 106: return (0);
+"106
 [e ) -> 0 `i ]
 [e $UE 275  ]
-[; ;main.c: 108: }
-"108
+[; ;main.c: 107: }
+"107
 [e :UE 275 ]
 }

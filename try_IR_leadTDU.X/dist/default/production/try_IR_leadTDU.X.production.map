@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\try_IR_leadTDU.X.production.sym \
   --cmf=dist/default/production\try_IR_leadTDU.X.production.cmf -z \
-  -Q12F1822 -oC:\Users\User\AppData\Local\Temp\s73s.6 \
+  -Q12F1822 -oC:\Users\User\AppData\Local\Temp\s80o.6 \
   -Mdist/default/production/try_IR_leadTDU.X.production.map -E1 -ver=XC8 \
   -ASTACK=02000h-0206fh -pstack=STACK -ACONST=00h-0FFhx8 -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -AENTRY=00h-0FFhx8 -ASTRING=00h-0FFhx8 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s73s.obj \
+  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s80o.obj \
   dist/default/production\try_IR_leadTDU.X.production.obj 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\s73s.obj
+C:\Users\User\AppData\Local\Temp\s80o.obj
                 end_init                              1        1        1        0       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
@@ -44,7 +44,7 @@ dist/default/production\try_IR_leadTDU.X.production.obj
                 cinit                               7F9      7F9        7      FF2       0
                 cstackCOMMON                         70       70        7       70       1
                 bssCOMMON                            77       77        4       70       1
-                maintext                            7C3      7C3       36      F86       0
+                maintext                            7C7      7C7       32      F8E       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -55,7 +55,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              1        1        1         0
                 cinit                               7F9      7F9        7         0
                 reset_vec                             0        0        1         0
-                maintext                            7C3      7C3       36         0
+                maintext                            7C7      7C7       32         0
 
         CLASS   STRCODE        
 
@@ -215,7 +215,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
                 cstackCOMMON                   000070  00000B  00007B        70       1  COMMON      1
-                maintext                       0007C3  000036  0007F9       F86       0  CODE        2
+                maintext                       0007C7  000032  0007F9       F8E       0  CODE        2
                 cinit                          0007F9  000007  000800       FF2       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
@@ -226,11 +226,11 @@ UNUSED ADDRESS RANGES
         BANK0            00020-0006F              50           1
         BANK1            000A0-000BF              20           1
         BIGRAM           02000-0206F              70           1
-        CODE             00002-007C2             7C1           2
+        CODE             00002-007C6             7C5           2
         COMMON           0007B-0007D               3           1
-        CONST            00002-007C2             100           2
+        CONST            00002-007C6             100           2
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00002-007C2             100           2
+        ENTRY            00002-007C6             100           2
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
                          000A0-000BF              20
@@ -267,8 +267,8 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
         STACK            02000-0206F              70           1
-        STRCODE          00002-007C2             7C1           2
-        STRING           00002-007C2             100           2
+        STRCODE          00002-007C6             7C5           2
+        STRING           00002-007C6             100           2
 
                                   Symbol Table
 
@@ -280,8 +280,6 @@ _PORTA                   (abs)        0000C
 _RA0                     (abs)        00060
 _RA1                     (abs)        00061
 _RA2                     (abs)        00062
-_RA3                     (abs)        00063
-_RA4                     (abs)        00064
 _RA5                     (abs)        00065
 _TRISA                   (abs)        0008C
 __CFG_BOREN$SBODEN       (abs)        00000
@@ -491,9 +489,9 @@ __end_of_main            maintext     007F9
 __initialization         cinit        007F9
 __pbssCOMMON             bssCOMMON    00077
 __pcstackCOMMON          cstackCOMMON 00070
-__pmaintext              maintext     007C3
+__pmaintext              maintext     007C7
 __size_of_main           (abs)        00000
-_main                    maintext     007C3
+_main                    maintext     007C7
 btemp                    (abs)        0007E
 end_of_initialization    cinit        007FD
 intlevel0                functab      00000
@@ -533,7 +531,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 54 in file "main.c"
+		line 55 in file "main.c"
  Parameters:    Size  Location     Type
   argc            2    0[COMMON] int 
   argv            2    2[COMMON] PTR PTR unsigned char 
@@ -572,7 +570,7 @@ shared
 shared estimated size: 4
 
 main.c
-		_main          		CODE           	07C3	0000	54
+		_main          		CODE           	07C7	0000	50
 
-main.c estimated size: 54
+main.c estimated size: 50
 

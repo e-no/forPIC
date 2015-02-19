@@ -16,6 +16,7 @@
 
 #define IR_IN RA0
 
+
 #byte   RA = 0x0C
 #bit    IRD = RA.0
 #bit    LED = RA.1
@@ -88,8 +89,7 @@ int main(int argc, char** argv) {
         RA0 = 1;
         RA1 = 1;
         RA2 = 1;
-        RA3 = 1;
-        RA4 = 1;
+
         RA5 = 1;
         __delay_ms(500);
 
@@ -97,8 +97,7 @@ int main(int argc, char** argv) {
         RA0 = 0;
         RA1 = 0;
         RA2 = 0;
-        RA3 = 0;
-        RA4 = 0;
+
         RA5 = 0;
         
         __delay_ms(500);

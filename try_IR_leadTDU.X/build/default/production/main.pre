@@ -3008,7 +3008,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 28 "main.c"
+# 29 "main.c"
 int Count;
 int LEDflg;
 
@@ -3032,14 +3032,14 @@ int LEDflg;
 #pragma config BORV = HI
 #pragma config LVP = 0
 
-# 54
+# 55
 int main(int argc, char** argv) {
 
 long bon, boff, icnt;
 
 OSCCON = 0b01110000;
 
-# 78
+# 79
 ANSELAbits.ANSELA = 0b00000000;
 TRISA = 0b00011000;
 PORTA = 0b00000000;
@@ -3053,8 +3053,7 @@ while(1){
 RA0 = 1;
 RA1 = 1;
 RA2 = 1;
-RA3 = 1;
-RA4 = 1;
+
 RA5 = 1;
 _delay((unsigned long)((500)*(8000000/4000.0)));
 
@@ -3062,8 +3061,7 @@ _delay((unsigned long)((500)*(8000000/4000.0)));
 RA0 = 0;
 RA1 = 0;
 RA2 = 0;
-RA3 = 0;
-RA4 = 0;
+
 RA5 = 0;
 
 _delay((unsigned long)((500)*(8000000/4000.0)));
