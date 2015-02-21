@@ -3111,7 +3111,6 @@ while (1) {
 
 Count++;
 
-
 while (RA2);
 
 while (!RA2);

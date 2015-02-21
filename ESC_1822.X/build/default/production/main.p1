@@ -2425,210 +2425,210 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 86: Count++;
 "86
 [e ++ _Count -> 1 `i ]
-[; ;main.c: 89: while (RA2);
-"89
+[; ;main.c: 88: while (RA2);
+"88
 [e $U 279  ]
 [e :U 280 ]
 [e :U 279 ]
 [e $ _RA2 280  ]
 [e :U 281 ]
-[; ;main.c: 91: while (!RA2);
-"91
+[; ;main.c: 90: while (!RA2);
+"90
 [e $U 282  ]
 [e :U 283 ]
 [e :U 282 ]
 [e $ ! _RA2 283  ]
 [e :U 284 ]
-[; ;main.c: 93: if (RA2 == 1) {
-"93
+[; ;main.c: 92: if (RA2 == 1) {
+"92
 [e $ ! == -> _RA2 `i -> 1 `i 285  ]
 {
-[; ;main.c: 94: RA5 = 1;
-"94
+[; ;main.c: 93: RA5 = 1;
+"93
 [e = _RA5 -> -> 1 `i `b ]
-[; ;main.c: 95: cnt++;
-"95
+[; ;main.c: 94: cnt++;
+"94
 [e ++ _cnt -> 1 `i ]
-[; ;main.c: 96: _delay((unsigned long)((600)*(8000000/4000000.0)));
-"96
+[; ;main.c: 95: _delay((unsigned long)((600)*(8000000/4000000.0)));
+"95
 [e ( __delay (1 -> * -> -> 600 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"97
+"96
 }
-[; ;main.c: 97: } else {
+[; ;main.c: 96: } else {
 [e $U 286  ]
 [e :U 285 ]
 {
-[; ;main.c: 98: RA5 = 0;
-"98
+[; ;main.c: 97: RA5 = 0;
+"97
 [e = _RA5 -> -> 0 `i `b ]
-"99
+"98
 }
 [e :U 286 ]
-[; ;main.c: 99: }
-[; ;main.c: 101: if (RA2 == 0) {
-"101
+[; ;main.c: 98: }
+[; ;main.c: 100: if (RA2 == 0) {
+"100
 [e $ ! == -> _RA2 `i -> 0 `i 287  ]
 {
-[; ;main.c: 102: _delay((unsigned long)((600)*(8000000/4000000.0)));
-"102
+[; ;main.c: 101: _delay((unsigned long)((600)*(8000000/4000000.0)));
+"101
 [e ( __delay (1 -> * -> -> 600 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 103: RA5 = 1;
-"103
+[; ;main.c: 102: RA5 = 1;
+"102
 [e = _RA5 -> -> 1 `i `b ]
-[; ;main.c: 104: cnt++;
-"104
+[; ;main.c: 103: cnt++;
+"103
 [e ++ _cnt -> 1 `i ]
-"105
+"104
 }
-[; ;main.c: 105: } else {
+[; ;main.c: 104: } else {
 [e $U 288  ]
 [e :U 287 ]
 {
-[; ;main.c: 106: RA5 = 0;
-"106
+[; ;main.c: 105: RA5 = 0;
+"105
 [e = _RA5 -> -> 0 `i `b ]
-"107
+"106
 }
 [e :U 288 ]
-[; ;main.c: 107: }
-[; ;main.c: 109: if(Count >= 10){
-"109
+[; ;main.c: 106: }
+[; ;main.c: 108: if(Count >= 10){
+"108
 [e $ ! >= _Count -> 10 `i 289  ]
 {
-[; ;main.c: 110: if(cnt >= 8){
-"110
+[; ;main.c: 109: if(cnt >= 8){
+"109
 [e $ ! >= _cnt -> 8 `i 290  ]
 {
-[; ;main.c: 111: RA0 = 1;
-"111
+[; ;main.c: 110: RA0 = 1;
+"110
 [e = _RA0 -> -> 1 `i `b ]
-[; ;main.c: 112: cnt = 0;
-"112
+[; ;main.c: 111: cnt = 0;
+"111
 [e = _cnt -> 0 `i ]
-"113
+"112
 }
 [e :U 290 ]
-"114
+"113
 }
-[; ;main.c: 113: }
-[; ;main.c: 114: }else{
+[; ;main.c: 112: }
+[; ;main.c: 113: }else{
 [e $U 291  ]
 [e :U 289 ]
 {
-[; ;main.c: 115: RA0 = 0;
-"115
+[; ;main.c: 114: RA0 = 0;
+"114
 [e = _RA0 -> -> 0 `i `b ]
-[; ;main.c: 116: cnt = 0;
-"116
+[; ;main.c: 115: cnt = 0;
+"115
 [e = _cnt -> 0 `i ]
-"117
+"116
 }
 [e :U 291 ]
-[; ;main.c: 117: }
-[; ;main.c: 120: if (LEDflg == 0) RA1 = 0;
-"120
+[; ;main.c: 116: }
+[; ;main.c: 119: if (LEDflg == 0) RA1 = 0;
+"119
 [e $ ! == _LEDflg -> 0 `i 292  ]
 [e = _RA1 -> -> 0 `i `b ]
 [e $U 293  ]
-"121
+"120
 [e :U 292 ]
-[; ;main.c: 121: else RA1 = 1;
+[; ;main.c: 120: else RA1 = 1;
 [e = _RA1 -> -> 1 `i `b ]
 [e :U 293 ]
-"122
+"121
 }
 [e :U 276 ]
 "84
 [e $U 277  ]
 [e :U 278 ]
-[; ;main.c: 122: }
-[; ;main.c: 123: return (0);
-"123
+[; ;main.c: 121: }
+[; ;main.c: 122: return (0);
+"122
 [e ) -> 0 `i ]
 [e $UE 275  ]
-[; ;main.c: 124: }
-"124
+[; ;main.c: 123: }
+"123
 [e :UE 275 ]
 }
-"127
+"126
 [v _strOutUSART `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;main.c: 127: void strOutUSART(char *str) {
+[; ;main.c: 126: void strOutUSART(char *str) {
 [e :U _strOutUSART ]
 [v _str `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 128: while (*str) {
-"128
+[; ;main.c: 127: while (*str) {
+"127
 [e $U 295  ]
 [e :U 296 ]
 {
-[; ;main.c: 129: while (!PIR1bits.TXIF);
-"129
+[; ;main.c: 128: while (!PIR1bits.TXIF);
+"128
 [e $U 298  ]
 [e :U 299 ]
 [e :U 298 ]
 [e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 299  ]
 [e :U 300 ]
-[; ;main.c: 130: TXREG = *str++;
-"130
+[; ;main.c: 129: TXREG = *str++;
+"129
 [e = _TXREG *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x ]
-"131
+"130
 }
 [e :U 295 ]
-"128
+"127
 [e $ != -> *U _str `i -> -> -> 0 `i `uc `i 296  ]
 [e :U 297 ]
+[; ;main.c: 130: }
 [; ;main.c: 131: }
-[; ;main.c: 132: }
-"132
+"131
 [e :UE 294 ]
 }
 [v F2465 `(v ~T0 @X0 1 tf ]
-"134
+"133
 [v _InterTimer `IF2465 ~T0 @X0 1 e ]
 {
-[; ;main.c: 134: void interrupt InterTimer(void) {
+[; ;main.c: 133: void interrupt InterTimer(void) {
 [e :U _InterTimer ]
 [f ]
-[; ;main.c: 135: if (TMR0IF == 1) {
-"135
+[; ;main.c: 134: if (TMR0IF == 1) {
+"134
 [e $ ! == -> _TMR0IF `i -> 1 `i 302  ]
 {
-[; ;main.c: 136: TMR0 = 61;
-"136
+[; ;main.c: 135: TMR0 = 61;
+"135
 [e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 137: Count++;
-"137
+[; ;main.c: 136: Count++;
+"136
 [e ++ _Count -> 1 `i ]
-[; ;main.c: 138: TMR0IF = 0;
-"138
+[; ;main.c: 137: TMR0IF = 0;
+"137
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 139: if (Count >= 40) {
-"139
+[; ;main.c: 138: if (Count >= 40) {
+"138
 [e $ ! >= _Count -> 40 `i 303  ]
 {
-[; ;main.c: 140: Count = 0;
-"140
+[; ;main.c: 139: Count = 0;
+"139
 [e = _Count -> 0 `i ]
-[; ;main.c: 142: if (LEDflg == 0) LEDflg = 1;
-"142
+[; ;main.c: 141: if (LEDflg == 0) LEDflg = 1;
+"141
 [e $ ! == _LEDflg -> 0 `i 304  ]
 [e = _LEDflg -> 1 `i ]
 [e $U 305  ]
-"143
+"142
 [e :U 304 ]
-[; ;main.c: 143: else LEDflg = 0;
+[; ;main.c: 142: else LEDflg = 0;
 [e = _LEDflg -> 0 `i ]
 [e :U 305 ]
-"144
+"143
 }
 [e :U 303 ]
-"145
+"144
 }
 [e :U 302 ]
+[; ;main.c: 143: }
 [; ;main.c: 144: }
 [; ;main.c: 145: }
-[; ;main.c: 146: }
-"146
+"145
 [e :UE 301 ]
 }

@@ -105,9 +105,9 @@
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 "56 C:\Users\User\Desktop\program\forPIC\ESC_1822.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"127
+"126
 [v _strOutUSART strOutUSART `(v  1 e 0 0 ]
-"134
+"133
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
 "412 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
@@ -197,10 +197,10 @@
 {
 "58
 [v main@cnt cnt `i  1 a 2 4 ]
-"124
+"123
 } 0
-"134
+"133
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
 {
-"146
+"145
 } 0

@@ -83,12 +83,11 @@ int main() {
 
     while (1) {
 
-        Count++;
-        
+        Count++;    //program counter
 
-        while (RA2);
+        while (RA2);    //wait IR OFF
 
-        while (!RA2);
+        while (!RA2);   //wait IR ON
 
         if (RA2 == 1) {
             RA5 = 1;

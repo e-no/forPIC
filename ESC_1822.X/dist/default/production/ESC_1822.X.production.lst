@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Sat Feb 21 18:35:13 2015
+                                                                                               Sat Feb 21 20:10:06 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	12F1822
@@ -359,30 +359,30 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    353  006E  3000               	movlw	0
    354  006F  3DF7               	addwfc	_Count+1,f
    355  0070                     l54:	
-   356                           ;main.c: 89: while (RA2);
+   356                           ;main.c: 88: while (RA2);
    357                           
    358  0070  190C               	btfsc	12,2	;volatile
    359  0071  2870               	goto	l54
    360  0072                     l57:	
-   361                           ;main.c: 91: while (!RA2);
+   361                           ;main.c: 90: while (!RA2);
    362                           
    363  0072  1D0C               	btfss	12,2	;volatile
    364  0073  2872               	goto	l57
    365                           
-   366                           ;main.c: 93: if (RA2 == 1) {
+   366                           ;main.c: 92: if (RA2 == 1) {
    367  0074  1D0C               	btfss	12,2	;volatile
    368  0075  2883               	goto	l60
    369                           
-   370                           ;main.c: 94: RA5 = 1;
+   370                           ;main.c: 93: RA5 = 1;
    371  0076  168C               	bsf	12,5	;volatile
    372                           
-   373                           ;main.c: 95: cnt++;
+   373                           ;main.c: 94: cnt++;
    374  0077  3001               	movlw	1
    375  0078  07F4               	addwf	main@cnt,f
    376  0079  3000               	movlw	0
    377  007A  3DF5               	addwfc	main@cnt+1,f
    378                           
-   379                           ;main.c: 96: _delay((unsigned long)((600)*(8000000/4000000.0)));
+   379                           ;main.c: 95: _delay((unsigned long)((600)*(8000000/4000000.0)));
    380  007B  30EF               	movlw	239
    381  007C  00F2               	movwf	??_main
    382  007D                     u147:	
@@ -392,21 +392,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    386  0080  3200               	nop2	;nop
    387  0081  3200               	nop2	;nop
    388                           
-   389                           ;main.c: 97: } else {
+   389                           ;main.c: 96: } else {
    390  0082  2884               	goto	l61
    391  0083                     l60:	
    392                           
-   393                           ;main.c: 98: RA5 = 0;
+   393                           ;main.c: 97: RA5 = 0;
    394  0083  128C               	bcf	12,5	;volatile
    395  0084                     l61:	
    396                           
-   397                           ;main.c: 99: }
-   398                           ;main.c: 101: if (RA2 == 0) {
+   397                           ;main.c: 98: }
+   398                           ;main.c: 100: if (RA2 == 0) {
    399  0084  0020               	movlb	0	; select bank0
    400  0085  190C               	btfsc	12,2	;volatile
    401  0086  2895               	goto	l62
    402                           
-   403                           ;main.c: 102: _delay((unsigned long)((600)*(8000000/4000000.0)));
+   403                           ;main.c: 101: _delay((unsigned long)((600)*(8000000/4000000.0)));
    404  0087  30EF               	movlw	239
    405  0088  00F2               	movwf	??_main
    406  0089                     u157:	
@@ -416,26 +416,26 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    410  008C  3200               	nop2	;nop
    411  008D  3200               	nop2	;nop
    412                           
-   413                           ;main.c: 103: RA5 = 1;
+   413                           ;main.c: 102: RA5 = 1;
    414  008E  0020               	movlb	0	; select bank0
    415  008F  168C               	bsf	12,5	;volatile
    416                           
-   417                           ;main.c: 104: cnt++;
+   417                           ;main.c: 103: cnt++;
    418  0090  3001               	movlw	1
    419  0091  07F4               	addwf	main@cnt,f
    420  0092  3000               	movlw	0
    421  0093  3DF5               	addwfc	main@cnt+1,f
    422                           
-   423                           ;main.c: 105: } else {
+   423                           ;main.c: 104: } else {
    424  0094  2896               	goto	l590
    425  0095                     l62:	
    426                           
-   427                           ;main.c: 106: RA5 = 0;
+   427                           ;main.c: 105: RA5 = 0;
    428  0095  128C               	bcf	12,5	;volatile
    429  0096                     l590:	
    430                           
-   431                           ;main.c: 107: }
-   432                           ;main.c: 109: if(Count >= 10){
+   431                           ;main.c: 106: }
+   432                           ;main.c: 108: if(Count >= 10){
    433  0096  0877               	movf	_Count+1,w
    434  0097  3A80               	xorlw	128
    435  0098  00F2               	movwf	??_main
@@ -449,7 +449,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    443  009F  1C03               	skipc
    444  00A0  28AE               	goto	l64
    445                           
-   446                           ;main.c: 110: if(cnt >= 8){
+   446                           ;main.c: 109: if(cnt >= 8){
    447  00A1  0875               	movf	main@cnt+1,w
    448  00A2  3A80               	xorlw	128
    449  00A3  00F2               	movwf	??_main
@@ -461,29 +461,29 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    455  00A9  1C03               	skipc
    456  00AA  28B2               	goto	l600
    457                           
-   458                           ;main.c: 111: RA0 = 1;
+   458                           ;main.c: 110: RA0 = 1;
    459  00AB  0020               	movlb	0	; select bank0
    460  00AC  140C               	bsf	12,0	;volatile
    461  00AD  28B0               	goto	l598
    462  00AE                     l64:	
-   463                           ;main.c: 113: }
-   464                           ;main.c: 114: }else{
+   463                           ;main.c: 112: }
+   464                           ;main.c: 113: }else{
    465                           
-   466                           ;main.c: 112: cnt = 0;
+   466                           ;main.c: 111: cnt = 0;
    467                           
    468                           
-   469                           ;main.c: 115: RA0 = 0;
+   469                           ;main.c: 114: RA0 = 0;
    470  00AE  0020               	movlb	0	; select bank0
    471  00AF  100C               	bcf	12,0	;volatile
    472  00B0                     l598:	
    473                           
-   474                           ;main.c: 116: cnt = 0;
+   474                           ;main.c: 115: cnt = 0;
    475  00B0  01F4               	clrf	main@cnt
    476  00B1  01F5               	clrf	main@cnt+1
    477  00B2                     l600:	
    478                           
-   479                           ;main.c: 117: }
-   480                           ;main.c: 120: if (LEDflg == 0) RA1 = 0;
+   479                           ;main.c: 116: }
+   480                           ;main.c: 119: if (LEDflg == 0) RA1 = 0;
    481  00B2  0879               	movf	_LEDflg+1,w
    482  00B3  0478               	iorwf	_LEDflg,w
    483  00B4  1D03               	skipz
@@ -493,13 +493,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    487  00B8  286C               	goto	l580
    488  00B9                     l67:	
    489                           
-   490                           ;main.c: 121: else RA1 = 1;
+   490                           ;main.c: 120: else RA1 = 1;
    491  00B9  0020               	movlb	0	; select bank0
    492  00BA  148C               	bsf	12,1	;volatile
    493  00BB  286C               	goto	l580
    494  00BC                     __end_of_main:	
-   495                           ;main.c: 122: }
-   496                           ;main.c: 123: return (0);
+   495                           ;main.c: 121: }
+   496                           ;main.c: 122: return (0);
    497                           ;	Return value of _main is never used
    498                           
    499                           
@@ -507,7 +507,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    501  0004                     __pintentry:	
    502 ;; *************** function _InterTimer *****************
    503 ;; Defined at:
-   504 ;;		line 134 in file "main.c"
+   504 ;;		line 133 in file "main.c"
    505 ;; Parameters:    Size  Location     Type
    506 ;;		None
    507 ;; Auto vars:     Size  Location     Type
@@ -544,24 +544,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    538  0007  087F               	movf	127,w
    539  0008  00F1               	movwf	??_InterTimer+1
    540                           
-   541                           ;main.c: 135: if (TMR0IF == 1) {
+   541                           ;main.c: 134: if (TMR0IF == 1) {
    542  0009  1D0B               	btfss	11,2	;volatile
    543  000A  282A               	goto	i1l87
    544                           
-   545                           ;main.c: 136: TMR0 = 61;
+   545                           ;main.c: 135: TMR0 = 61;
    546  000B  303D               	movlw	61
    547  000C  0095               	movwf	21	;volatile
    548                           
-   549                           ;main.c: 137: Count++;
+   549                           ;main.c: 136: Count++;
    550  000D  3001               	movlw	1
    551  000E  07F6               	addwf	_Count,f
    552  000F  3000               	movlw	0
    553  0010  3DF7               	addwfc	_Count+1,f
    554                           
-   555                           ;main.c: 138: TMR0IF = 0;
+   555                           ;main.c: 137: TMR0IF = 0;
    556  0011  110B               	bcf	11,2	;volatile
    557                           
-   558                           ;main.c: 139: if (Count >= 40) {
+   558                           ;main.c: 138: if (Count >= 40) {
    559  0012  0877               	movf	_Count+1,w
    560  0013  3A80               	xorlw	128
    561  0014  00F0               	movwf	??_InterTimer
@@ -575,11 +575,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    569  001B  1C03               	skipc
    570  001C  282A               	goto	i1l87
    571                           
-   572                           ;main.c: 140: Count = 0;
+   572                           ;main.c: 139: Count = 0;
    573  001D  01F6               	clrf	_Count
    574  001E  01F7               	clrf	_Count+1
    575                           
-   576                           ;main.c: 142: if (LEDflg == 0) LEDflg = 1;
+   576                           ;main.c: 141: if (LEDflg == 0) LEDflg = 1;
    577  001F  0879               	movf	_LEDflg+1,w
    578  0020  0478               	iorwf	_LEDflg,w
    579  0021  1D03               	skipz
@@ -591,7 +591,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    585  0027  282A               	goto	i1l87
    586  0028                     i1l624:	
    587                           
-   588                           ;main.c: 143: else LEDflg = 0;
+   588                           ;main.c: 142: else LEDflg = 0;
    589  0028  01F8               	clrf	_LEDflg
    590  0029  01F9               	clrf	_LEDflg+1
    591  002A                     i1l87:	
@@ -772,7 +772,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Sat Feb 21 18:35:13 2015
+Symbol Table                                                                                   Sat Feb 21 20:10:06 2015
 
             __CFG_CP$OFF 0000                       l60 0083                       l61 0084  
                      l62 0095                       l54 0070                       l64 00AE  
