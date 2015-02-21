@@ -1,13 +1,24 @@
+/***********************************************
+ * for PIC12F1822FN28
+ * Infrared Ray sensor 
+ *
+ *
+ * made:e-no
+ ************************************************/
+
 #include <xc.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#include "skInfraredCOM.h"	// 赤外線通信用
+#define _XTAL_FREQ 8000000	//  delay用に必要(クロック32MHzを指定)
 
 #define T0COUT     61   // タイマー０用カウントの初期値(256 - 195 = 61)
 
-#define IR_IN RA0
+
+#define HIGH       1
+#define LOW        0
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
@@ -32,10 +43,10 @@
 #pragma config LVP = OFF        // Low-Voltage Programming Enable (High-voltage on MCLR/VPP must be used for programming)
 
 int Count; // タイマーの割込み発生回数をカウントする変数
-int LEDflg; // LEDのON/OFF状態フラグ
+int LEDflg;
 
-unsigned char data[8]={0,0,0,0,0,0,0,0};
-
+unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+const unsigned char sig[8] = {0, 0, 1, 0, 1, 0, 0, 0};
 
 void strOutUSART(char *str);
 
@@ -44,14 +55,12 @@ void strOutUSART(char *str);
 
 void main() {
 
-    static short int led_flag = 0;
-    int ans;
-    char str[];
 
     OSCCON = 0b01110010; // 内部クロックは8ＭＨｚとする
     ANSELAbits.ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
-    TRISA = 0b00001001; // ピンは全て出力に割当てる(RA3は入力専用)
+    TRISA = 0b00001100; // ピンは全て出力に割当てる(RA3は入力専用)
     PORTA = 0b00000000; // 出力ピンの初期化(全てLOWにする)
+
     // ＵＳＡＲＴ機能の設定を行う
     RXDTSEL = 1; // 2番ピン(RA5)をＲＸ受信ピンとする
     TXCKSEL = 1; // 3番ピン(RA4)をＴＸ送信ピンとする
@@ -66,41 +75,47 @@ void main() {
     TMR0IE = 1; // タイマー0割込み(T0IE)を許可する
     GIE = 1; // 全割込み処理を許可する
 
-    LEDflg = 0; // LEDのフラグ状態をOFFとする
+    __delay_ms(50); // 0.0５秒後に開始する
 
-    __delay_ms(200); // 0.0５秒後に開始する
 
 
     while (1) {
-        // while (TXIF == 0); // 送信可能になるまで待つ    *1)
+        RA0 = 1;
 
-        RA1 = 1;
-        RA2 = 0;
-        RA5 = 0;
-        //ans = InfraredRecive(72);
-        __delay_ms(100);
+        while (RA2);
 
-        //TXREG = ans; //　受信したデータ(通知情報)はシリアル出力して表示させておる。
+        while (!RA2);
 
-        sprintf(str,"value:%d \n\r",ans);
+        if (RA2 == 1) {
+            RA5 = 1;
+            __delay_us(600);
+        } else {
+            RA5 = 0;
+        }
 
-        strOutUSART(str);
+        if (RA2 == 0) {
+            __delay_us(600);
+            RA5 = 1;
+        } else {
+            RA5 = 0;
+        }
 
-        RA1 = 0;
-        RA2 = 1;
-        RA5 = 1;
-
-
-        __delay_ms(100);
-
+        // LEDのフラグ状態ON/OFFによりLEDをON/OFFする処理
+        if (LEDflg == 0) RA1 = 0; // 5番ピンにLOWを出力する(LED OFF)
+        else RA1 = 1; // 5番ピンにHIGHを出力する(LED ON)
     }
 }
 
 
+void strOutUSART(char *str) {
+    while (*str) { //文字列の終わり(00)まで継続
+        while (!PIR1bits.TXIF); //送信終了待ち
+        TXREG = *str++; //文字出力しポインタ＋１
+    }
+}
 
-// タイマー割込みの処理
 void interrupt InterTimer(void) {
-    if (TMR0IF == 1) { // timer0interruptFlag
+    if (TMR0IF == 1) { // タイマー0の割込み発生か？
         TMR0 = T0COUT; // タイマー0の初期化
         Count++; // 割込み発生の回数をカウントする
         TMR0IF = 0; // タイマー0割込フラグをリセット
@@ -112,12 +127,3 @@ void interrupt InterTimer(void) {
         }
     }
 }
-
-void strOutUSART(char *str){
-    while(*str){                 //文字列の終わり(00)まで継続
-        while(!PIR1bits.TXIF);  //送信終了待ち
-        TXREG = *str++;          //文字出力しポインタ＋１
-    }
-}
-
-

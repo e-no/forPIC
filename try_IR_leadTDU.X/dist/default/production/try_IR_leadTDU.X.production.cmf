@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\s80o.obj
+$C:\Users\User\AppData\Local\Temp\s5ao.obj
 end_init CODE 0 1 1 1 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 8007 8007 2 2
@@ -19,7 +19,7 @@ $dist/default/production\try_IR_leadTDU.X.production.obj
 cinit CODE 0 7F9 7F9 7 2
 cstackCOMMON COMMON 1 70 70 7 1
 bssCOMMON COMMON 1 77 77 4 1
-maintext CODE 0 7C7 7C7 32 2
+maintext CODE 0 7CD 7CD 2C 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -29,11 +29,11 @@ maintext CODE 0 7C7 7C7 32 2
 BANK0 00020-0006F 1
 BANK1 000A0-000BF 1
 BIGRAM 02000-0206F 1
-CODE 00002-007C6 2
+CODE 00002-007CC 2
 COMMON 0007B-0007D 1
-CONST 00002-007C6 2
+CONST 00002-007CC 2
 EEDATA 0F000-0F0FF 2
-ENTRY 00002-007C6 2
+ENTRY 00002-007CC 2
 IDLOC 08000-08003 2
 RAM 00020-0006F 1
 RAM 000A0-000BF 1
@@ -70,8 +70,8 @@ SFR7 00380-003EF 1
 SFR8 00400-0046F 1
 SFR9 00480-004EF 1
 STACK 02000-0206F 1
-STRCODE 00002-007C6 2
-STRING 00002-007C6 2
+STRCODE 00002-007CC 2
+STRING 00002-007CC 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -86,34 +86,28 @@ STRING 00002-007C6 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\try_IR_leadTDU.X.production.obj
-"C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h":5702 7C7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":55 7C7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":59 7C7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":79 7CA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":80 7CD maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":81 7D0 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":85 7D2 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":89 7D4 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":90 7D6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":91 7D7 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":93 7D8 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":94 7D9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":97 7E6 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":98 7E8 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":99 7E9 maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":101 7EA maintext CODE
-"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":103 7EB maintext CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h":5702 7CD maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":55 7CD maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":59 7CD maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":79 7D0 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":80 7D3 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":81 7D6 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":85 7D8 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":91 7DA maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":92 7DC maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":97 7E9 maintext CODE
+"C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":99 7EB maintext CODE
 "C:\Users\User\Desktop\program\forPIC\try_IR_leadTDU.X\main.c":87 7F8 maintext CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":345 7F9 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":348 7F9 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":362 7F9 cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":363 7FA cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":364 7FB cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":365 7FC cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":371 7FD cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":372 7FD cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":373 7FE cinit CODE
-"C:\Users\User\AppData\Local\Temp\s80o.":374 7FF cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":339 7F9 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":342 7F9 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":356 7F9 cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":357 7FA cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":358 7FB cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":359 7FC cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":365 7FD cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":366 7FD cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":367 7FE cinit CODE
+"C:\Users\User\AppData\Local\Temp\s5ao.":368 7FF cinit CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -126,9 +120,6 @@ $dist/default/production\try_IR_leadTDU.X.production.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_RA0 60 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-_RA1 61 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-_RA2 62 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 _RA5 65 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 __S0 8009 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
@@ -136,16 +127,16 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hintentry 2 0 CODE 0 intentry -
 __Lintentry 2 0 CODE 0 intentry -
-_main F8E 0 CODE 0 maintext dist/default/production\try_IR_leadTDU.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s80o.obj
+_main F9A 0 CODE 0 maintext dist/default/production\try_IR_leadTDU.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s5ao.obj
 btemp 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-start 2 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s80o.obj
+start 2 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s5ao.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s80o.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s5ao.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
@@ -178,7 +169,7 @@ __Lcommon 0 0 ABS 0 common -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_CLKOUTEN$ON 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s80o.obj
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s5ao.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Labs1 0 0 ABS 0 abs1 -
@@ -208,8 +199,8 @@ _LEDflg 79 0 COMMON 1 bssCOMMON dist/default/production\try_IR_leadTDU.X.product
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
 __CFG_BOREN$SBODEN 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s80o.obj
-stacklo 2000 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s80o.obj
+stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s5ao.obj
+stacklo 2000 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s5ao.obj
 __Hinit 2 0 CODE 0 init -
 __Linit 2 0 CODE 0 init -
 __end_of_main FF2 0 CODE 0 maintext dist/default/production\try_IR_leadTDU.X.production.obj
@@ -359,13 +350,13 @@ __Hend_init 4 0 CODE 0 end_init -
 __Lend_init 2 0 CODE 0 end_init -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
+intlevel0 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
-intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
-intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
-intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
-intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s80o.obj
+intlevel1 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
+intlevel2 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
+intlevel3 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
+intlevel4 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
+intlevel5 0 0 CODE 0 functab C:\Users\User\AppData\Local\Temp\s5ao.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\try_IR_leadTDU.X.production.obj
@@ -373,7 +364,7 @@ start_initialization FF2 0 CODE 0 cinit dist/default/production\try_IR_leadTDU.X
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
-__pmaintext F8E 0 CODE 0 maintext dist/default/production\try_IR_leadTDU.X.production.obj
+__pmaintext F9A 0 CODE 0 maintext dist/default/production\try_IR_leadTDU.X.production.obj
 __CFG_BORV$HI 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\try_IR_leadTDU.X.production.obj
@@ -408,4 +399,4 @@ reset_vec 0 0 0 2 2
 cinit 0 7F9 FF2 7 2
 config 0 8007 1000E 2 2
 cstackCOMMON 1 70 70 B 1
-maintext 0 7C7 F8E 32 2
+maintext 0 7CD F9A 2C 2

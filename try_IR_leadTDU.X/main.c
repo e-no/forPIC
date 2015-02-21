@@ -86,17 +86,13 @@ int main(int argc, char** argv) {
 
     while(1){
 
-        RA0 = 1;
-        RA1 = 1;
-        RA2 = 1;
+ 
 
         RA5 = 1;
         __delay_ms(500);
 
 
-        RA0 = 0;
-        RA1 = 0;
-        RA2 = 0;
+      
 
         RA5 = 0;
         

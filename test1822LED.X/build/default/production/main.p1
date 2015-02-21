@@ -41,17 +41,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "154 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h
 [v __delay `JF2176 ~T0 @X0 0 e ]
 [p i __delay ]
-"5406 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
-[v _RA1 `Vb ~T0 @X0 0 e@97 ]
+"5404 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
+[v _RA0 `Vb ~T0 @X0 0 e@96 ]
 "5408
 [v _RA2 `Vb ~T0 @X0 0 e@98 ]
-"15 skInfraredCOM.h
-[v _InfraredRecive `(i ~T0 @X0 0 ef1`uc ]
-"205 C:\Program Files (x86)\Microchip\xc8\v1.33\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"40 main.c
-[v _strOutUSART `(v ~T0 @X0 0 ef1`*uc ]
-"707 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
+"5414
+[v _RA5 `Vb ~T0 @X0 0 e@101 ]
+"5406
+[v _RA1 `Vb ~T0 @X0 0 e@97 ]
+"707
 [s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S41 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
 "706
@@ -2292,47 +2290,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 64: extern char * strichr(const char *, int);
 [; ;string.h: 65: extern char * strrchr(const char *, int);
 [; ;string.h: 66: extern char * strrichr(const char *, int);
-[; ;skInfraredCOM.h: 13: void InitCCP() ;
-[; ;skInfraredCOM.h: 14: void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode) ;
-[; ;skInfraredCOM.h: 15: int InfraredRecive(unsigned char MyDeviceNo) ;
-[; ;skInfraredCOM.h: 16: int RemoconSW() ;
-"16 main.c
+"27 main.c
 [p x FOSC=INTOSC ]
-"17
-[p x WDTE=OFF ]
-"18
-[p x PWRTE=ON ]
-"19
-[p x MCLRE=ON ]
-"20
-[p x CP=OFF ]
-"21
-[p x CPD=OFF ]
-"22
-[p x BOREN=ON ]
-"23
-[p x CLKOUTEN=OFF ]
-"24
-[p x IESO=OFF ]
-"25
-[p x FCMEN=OFF ]
 "28
-[p x WRT=OFF ]
+[p x WDTE=OFF ]
 "29
-[p x PLLEN=OFF ]
+[p x PWRTE=ON ]
 "30
-[p x STVREN=ON ]
+[p x MCLRE=ON ]
 "31
-[p x BORV=HI ]
+[p x CP=OFF ]
 "32
-[p x LVP=OFF ]
+[p x CPD=OFF ]
+"33
+[p x BOREN=ON ]
 "34
-[v _Count `i ~T0 @X0 1 e ]
-[; ;main.c: 34: int Count;
+[p x CLKOUTEN=OFF ]
 "35
+[p x IESO=OFF ]
+"36
+[p x FCMEN=OFF ]
+"39
+[p x WRT=OFF ]
+"40
+[p x PLLEN=OFF ]
+"41
+[p x STVREN=ON ]
+"42
+[p x BORV=HI ]
+"43
+[p x LVP=OFF ]
+"45
+[v _Count `i ~T0 @X0 1 e ]
+[; ;main.c: 45: int Count;
+"46
 [v _LEDflg `i ~T0 @X0 1 e ]
-[; ;main.c: 35: int LEDflg;
-"37
+[; ;main.c: 46: int LEDflg;
+"48
 [v _data `uc ~T0 @X0 -> 8 `i e ]
 [i _data
 :U ..
@@ -2346,198 +2340,244 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-[; ;main.c: 37: unsigned char data[8]={0,0,0,0,0,0,0,0};
-[; ;main.c: 40: void strOutUSART(char *str);
-"45
+[; ;main.c: 48: unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+"49
+[v _sig `Cuc ~T0 @X0 -> 8 `i e ]
+[i _sig
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[; ;main.c: 49: const unsigned char sig[8] = {0, 0, 1, 0, 1, 0, 0, 0};
+[; ;main.c: 51: void strOutUSART(char *str);
+"56
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 45: void main() {
+[; ;main.c: 56: void main() {
 [e :U _main ]
 [f ]
-"47
-[v F2464 `s ~T0 @X0 1 s led_flag ]
-[i F2464
--> -> 0 `i `s
-]
-"48
-[v _ans `i ~T0 @X0 1 a ]
-"49
-[v _str `uc ~T0 @X0 -> 0 `x a ]
-[; ;main.c: 47: static short int led_flag = 0;
-[; ;main.c: 48: int ans;
-[; ;main.c: 49: char str[];
-[; ;main.c: 51: OSCCON = 0b01110010;
-"51
-[e = _OSCCON -> -> 114 `i `uc ]
-[; ;main.c: 52: ANSELAbits.ANSELA = 0b00000000;
-"52
-[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 53: TRISA = 0b00001001;
-"53
-[e = _TRISA -> -> 9 `i `uc ]
-[; ;main.c: 54: PORTA = 0b00000000;
-"54
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 56: RXDTSEL = 1;
-"56
-[e = _RXDTSEL -> -> 1 `i `b ]
-[; ;main.c: 57: TXCKSEL = 1;
-"57
-[e = _TXCKSEL -> -> 1 `i `b ]
-[; ;main.c: 58: TXSTA = 0b00100100;
-"58
-[e = _TXSTA -> -> 36 `i `uc ]
-[; ;main.c: 59: RCSTA = 0b10010000;
+[; ;main.c: 59: OSCCON = 0b01110010;
 "59
-[e = _RCSTA -> -> 144 `i `uc ]
-[; ;main.c: 60: SPBRG = 51;
+[e = _OSCCON -> -> 114 `i `uc ]
+[; ;main.c: 60: ANSELAbits.ANSELA = 0b00000000;
 "60
-[e = _SPBRG -> -> 51 `i `uc ]
-[; ;main.c: 62: OPTION_REG = 0b00000110;
+[e = . . _ANSELAbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 61: TRISA = 0b00001100;
+"61
+[e = _TRISA -> -> 12 `i `uc ]
+[; ;main.c: 62: PORTA = 0b00000000;
 "62
-[e = _OPTION_REG -> -> 6 `i `uc ]
-[; ;main.c: 63: TMR0 = 61;
-"63
-[e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 64: TMR0IF = 0;
-"64
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 65: Count = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 65: RXDTSEL = 1;
 "65
-[e = _Count -> 0 `i ]
-[; ;main.c: 66: TMR0IE = 1;
+[e = _RXDTSEL -> -> 1 `i `b ]
+[; ;main.c: 66: TXCKSEL = 1;
 "66
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 67: GIE = 1;
+[e = _TXCKSEL -> -> 1 `i `b ]
+[; ;main.c: 67: TXSTA = 0b00100100;
 "67
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 69: LEDflg = 0;
+[e = _TXSTA -> -> 36 `i `uc ]
+[; ;main.c: 68: RCSTA = 0b10010000;
+"68
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;main.c: 69: SPBRG = 51;
 "69
-[e = _LEDflg -> 0 `i ]
-[; ;main.c: 71: _delay((unsigned long)((200)*(32000000/4000.0)));
+[e = _SPBRG -> -> 51 `i `uc ]
+[; ;main.c: 71: OPTION_REG = 0b00000110;
 "71
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 74: while (1) {
+[e = _OPTION_REG -> -> 6 `i `uc ]
+[; ;main.c: 72: TMR0 = 61;
+"72
+[e = _TMR0 -> -> 61 `i `uc ]
+[; ;main.c: 73: TMR0IF = 0;
+"73
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 74: Count = 0;
 "74
+[e = _Count -> 0 `i ]
+[; ;main.c: 75: TMR0IE = 1;
+"75
+[e = _TMR0IE -> -> 1 `i `b ]
+[; ;main.c: 76: GIE = 1;
+"76
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 78: _delay((unsigned long)((50)*(8000000/4000.0)));
+"78
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 82: while (1) {
+"82
 [e :U 277 ]
 {
-[; ;main.c: 77: RA1 = 1;
-"77
-[e = _RA1 -> -> 1 `i `b ]
-[; ;main.c: 78: RA2 = 0;
-"78
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 79: ans = InfraredRecive(72);
-"79
-[e = _ans ( _InfraredRecive (1 -> -> 72 `i `uc ]
-[; ;main.c: 80: _delay((unsigned long)((100)*(32000000/4000.0)));
-"80
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 84: sprintf(str,"value:%d \n\r",ans);
-"84
-[e ( _sprintf (1 , (. , &U _str :s 1C _ans ]
-[; ;main.c: 86: strOutUSART(str);
-"86
-[e ( _strOutUSART (1 &U _str ]
-[; ;main.c: 88: RA1 = 0;
-"88
-[e = _RA1 -> -> 0 `i `b ]
-[; ;main.c: 91: _delay((unsigned long)((100)*(32000000/4000.0)));
+[; ;main.c: 83: RA0 = 1;
+"83
+[e = _RA0 -> -> 1 `i `b ]
+[; ;main.c: 85: while (RA2);
+"85
+[e $U 279  ]
+[e :U 280 ]
+[e :U 279 ]
+[e $ _RA2 280  ]
+[e :U 281 ]
+[; ;main.c: 87: while (!RA2);
+"87
+[e $U 282  ]
+[e :U 283 ]
+[e :U 282 ]
+[e $ ! _RA2 283  ]
+[e :U 284 ]
+[; ;main.c: 89: if (RA2 == 1) {
+"89
+[e $ ! == -> _RA2 `i -> 1 `i 285  ]
+{
+[; ;main.c: 90: RA5 = 1;
+"90
+[e = _RA5 -> -> 1 `i `b ]
+[; ;main.c: 91: _delay((unsigned long)((600)*(8000000/4000000.0)));
 "91
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 600 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"92
+}
+[; ;main.c: 92: } else {
+[e $U 286  ]
+[e :U 285 ]
+{
+[; ;main.c: 93: RA5 = 0;
 "93
+[e = _RA5 -> -> 0 `i `b ]
+"94
+}
+[e :U 286 ]
+[; ;main.c: 94: }
+[; ;main.c: 96: if (RA2 == 0) {
+"96
+[e $ ! == -> _RA2 `i -> 0 `i 287  ]
+{
+[; ;main.c: 97: _delay((unsigned long)((600)*(8000000/4000000.0)));
+"97
+[e ( __delay (1 -> * -> -> 600 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 98: RA5 = 1;
+"98
+[e = _RA5 -> -> 1 `i `b ]
+"99
+}
+[; ;main.c: 99: } else {
+[e $U 288  ]
+[e :U 287 ]
+{
+[; ;main.c: 100: RA5 = 0;
+"100
+[e = _RA5 -> -> 0 `i `b ]
+"101
+}
+[e :U 288 ]
+[; ;main.c: 101: }
+[; ;main.c: 104: if (LEDflg == 0) RA1 = 0;
+"104
+[e $ ! == _LEDflg -> 0 `i 289  ]
+[e = _RA1 -> -> 0 `i `b ]
+[e $U 290  ]
+"105
+[e :U 289 ]
+[; ;main.c: 105: else RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+[e :U 290 ]
+"106
 }
 [e :U 276 ]
-"74
+"82
 [e $U 277  ]
 [e :U 278 ]
-[; ;main.c: 93: }
-[; ;main.c: 94: }
-"94
+[; ;main.c: 106: }
+[; ;main.c: 107: }
+"107
 [e :UE 275 ]
 }
-[v F2472 `(v ~T0 @X0 1 tf ]
-"99
-[v _InterTimer `IF2472 ~T0 @X0 1 e ]
-{
-[; ;main.c: 99: void interrupt InterTimer(void) {
-[e :U _InterTimer ]
-[f ]
-[; ;main.c: 100: if (TMR0IF == 1) {
-"100
-[e $ ! == -> _TMR0IF `i -> 1 `i 280  ]
-{
-[; ;main.c: 101: TMR0 = 61;
-"101
-[e = _TMR0 -> -> 61 `i `uc ]
-[; ;main.c: 102: Count++;
-"102
-[e ++ _Count -> 1 `i ]
-[; ;main.c: 103: TMR0IF = 0;
-"103
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 104: if (Count >= 40) {
-"104
-[e $ ! >= _Count -> 40 `i 281  ]
-{
-[; ;main.c: 105: Count = 0;
-"105
-[e = _Count -> 0 `i ]
-[; ;main.c: 107: if (LEDflg == 0) LEDflg = 1;
-"107
-[e $ ! == _LEDflg -> 0 `i 282  ]
-[e = _LEDflg -> 1 `i ]
-[e $U 283  ]
-"108
-[e :U 282 ]
-[; ;main.c: 108: else LEDflg = 0;
-[e = _LEDflg -> 0 `i ]
-[e :U 283 ]
-"109
-}
-[e :U 281 ]
 "110
-}
-[e :U 280 ]
-[; ;main.c: 109: }
-[; ;main.c: 110: }
-[; ;main.c: 111: }
-"111
-[e :UE 279 ]
-}
-"113
 [v _strOutUSART `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;main.c: 113: void strOutUSART(char *str){
+[; ;main.c: 110: void strOutUSART(char *str) {
 [e :U _strOutUSART ]
 [v _str `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 114: while(*str){
-"114
-[e $U 285  ]
-[e :U 286 ]
+[; ;main.c: 111: while (*str) {
+"111
+[e $U 292  ]
+[e :U 293 ]
 {
-[; ;main.c: 115: while(!PIR1bits.TXIF);
-"115
-[e $U 288  ]
-[e :U 289 ]
-[e :U 288 ]
-[e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 289  ]
-[e :U 290 ]
-[; ;main.c: 116: TXREG = *str++;
-"116
+[; ;main.c: 112: while (!PIR1bits.TXIF);
+"112
+[e $U 295  ]
+[e :U 296 ]
+[e :U 295 ]
+[e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 296  ]
+[e :U 297 ]
+[; ;main.c: 113: TXREG = *str++;
+"113
 [e = _TXREG *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x ]
-"117
-}
-[e :U 285 ]
 "114
-[e $ != -> *U _str `i -> -> -> 0 `i `uc `i 286  ]
-[e :U 287 ]
-[; ;main.c: 117: }
-[; ;main.c: 118: }
-"118
-[e :UE 284 ]
 }
-[p f _sprintf 8388736 ]
-[a 1C 118 97 108 117 101 58 37 100 32 10 13 0 ]
-
+[e :U 292 ]
+"111
+[e $ != -> *U _str `i -> -> -> 0 `i `uc `i 293  ]
+[e :U 294 ]
+[; ;main.c: 114: }
+[; ;main.c: 115: }
+"115
+[e :UE 291 ]
+}
+[v F2464 `(v ~T0 @X0 1 tf ]
+"117
+[v _InterTimer `IF2464 ~T0 @X0 1 e ]
+{
+[; ;main.c: 117: void interrupt InterTimer(void) {
+[e :U _InterTimer ]
+[f ]
+[; ;main.c: 118: if (TMR0IF == 1) {
+"118
+[e $ ! == -> _TMR0IF `i -> 1 `i 299  ]
+{
+[; ;main.c: 119: TMR0 = 61;
+"119
+[e = _TMR0 -> -> 61 `i `uc ]
+[; ;main.c: 120: Count++;
+"120
+[e ++ _Count -> 1 `i ]
+[; ;main.c: 121: TMR0IF = 0;
+"121
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 122: if (Count >= 40) {
+"122
+[e $ ! >= _Count -> 40 `i 300  ]
+{
+[; ;main.c: 123: Count = 0;
+"123
+[e = _Count -> 0 `i ]
+[; ;main.c: 125: if (LEDflg == 0) LEDflg = 1;
+"125
+[e $ ! == _LEDflg -> 0 `i 301  ]
+[e = _LEDflg -> 1 `i ]
+[e $U 302  ]
+"126
+[e :U 301 ]
+[; ;main.c: 126: else LEDflg = 0;
+[e = _LEDflg -> 0 `i ]
+[e :U 302 ]
+"127
+}
+[e :U 300 ]
+"128
+}
+[e :U 299 ]
+[; ;main.c: 127: }
+[; ;main.c: 128: }
+[; ;main.c: 129: }
+"129
+[e :UE 298 ]
+}

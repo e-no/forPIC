@@ -17,12 +17,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
 "412
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
-"5404
-[v _RA0 `Vb ~T0 @X0 0 e@96 ]
-"5406
-[v _RA1 `Vb ~T0 @X0 0 e@97 ]
-"5408
-[v _RA2 `Vb ~T0 @X0 0 e@98 ]
 "5414
 [v _RA5 `Vb ~T0 @X0 0 e@101 ]
 [v F2176 `(v ~T0 @X0 1 tf1`ul ]
@@ -2300,48 +2294,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 "87
 [e :U 277 ]
 {
-[; ;main.c: 89: RA0 = 1;
-"89
-[e = _RA0 -> -> 1 `i `b ]
-[; ;main.c: 90: RA1 = 1;
-"90
-[e = _RA1 -> -> 1 `i `b ]
-[; ;main.c: 91: RA2 = 1;
+[; ;main.c: 91: RA5 = 1;
 "91
-[e = _RA2 -> -> 1 `i `b ]
-[; ;main.c: 93: RA5 = 1;
-"93
 [e = _RA5 -> -> 1 `i `b ]
-[; ;main.c: 94: _delay((unsigned long)((500)*(8000000/4000.0)));
-"94
+[; ;main.c: 92: _delay((unsigned long)((500)*(8000000/4000.0)));
+"92
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 97: RA0 = 0;
+[; ;main.c: 97: RA5 = 0;
 "97
-[e = _RA0 -> -> 0 `i `b ]
-[; ;main.c: 98: RA1 = 0;
-"98
-[e = _RA1 -> -> 0 `i `b ]
-[; ;main.c: 99: RA2 = 0;
-"99
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 101: RA5 = 0;
-"101
 [e = _RA5 -> -> 0 `i `b ]
-[; ;main.c: 103: _delay((unsigned long)((500)*(8000000/4000.0)));
-"103
+[; ;main.c: 99: _delay((unsigned long)((500)*(8000000/4000.0)));
+"99
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"105
+"101
 }
 [e :U 276 ]
 "87
 [e $U 277  ]
 [e :U 278 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: return (0);
-"106
+[; ;main.c: 101: }
+[; ;main.c: 102: return (0);
+"102
 [e ) -> 0 `i ]
 [e $UE 275  ]
-[; ;main.c: 107: }
-"107
+[; ;main.c: 103: }
+"103
 [e :UE 275 ]
 }

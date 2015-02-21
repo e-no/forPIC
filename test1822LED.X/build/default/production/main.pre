@@ -3048,14 +3048,8 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 13 "skInfraredCOM.h"
-void InitCCP() ;
-void InfraredSend(unsigned char toDeviceNo,unsigned char KeyCode) ;
-int InfraredRecive(unsigned char MyDeviceNo) ;
-int RemoconSW() ;
 
-
-# 16 "main.c"
+# 27 "main.c"
 #pragma config FOSC = INTOSC
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -3077,8 +3071,8 @@ int RemoconSW() ;
 int Count;
 int LEDflg;
 
-unsigned char data[8]={0,0,0,0,0,0,0,0};
-
+unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+const unsigned char sig[8] = {0, 0, 1, 0, 1, 0, 0, 0};
 
 void strOutUSART(char *str);
 
@@ -3087,14 +3081,12 @@ void strOutUSART(char *str);
 
 void main() {
 
-static short int led_flag = 0;
-int ans;
-char str[];
 
 OSCCON = 0b01110010;
 ANSELAbits.ANSELA = 0b00000000;
-TRISA = 0b00001001;
+TRISA = 0b00001100;
 PORTA = 0b00000000;
+
 
 RXDTSEL = 1;
 TXCKSEL = 1;
@@ -3109,35 +3101,44 @@ Count = 0;
 TMR0IE = 1;
 GIE = 1;
 
-LEDflg = 0;
+_delay((unsigned long)((50)*(8000000/4000.0)));
 
-_delay((unsigned long)((200)*(32000000/4000.0)));
 
 
 while (1) {
+RA0 = 1;
+
+while (RA2);
+
+while (!RA2);
+
+if (RA2 == 1) {
+RA5 = 1;
+_delay((unsigned long)((600)*(8000000/4000000.0)));
+} else {
+RA5 = 0;
+}
+
+if (RA2 == 0) {
+_delay((unsigned long)((600)*(8000000/4000000.0)));
+RA5 = 1;
+} else {
+RA5 = 0;
+}
 
 
-RA1 = 1;
-RA2 = 0;
-ans = InfraredRecive(72);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-
-
-
-sprintf(str,"value:%d \n\r",ans);
-
-strOutUSART(str);
-
-RA1 = 0;
-
-
-_delay((unsigned long)((100)*(32000000/4000.0)));
-
+if (LEDflg == 0) RA1 = 0;
+else RA1 = 1;
 }
 }
 
 
-
+void strOutUSART(char *str) {
+while (*str) {
+while (!PIR1bits.TXIF);
+TXREG = *str++;
+}
+}
 
 void interrupt InterTimer(void) {
 if (TMR0IF == 1) {
@@ -3152,11 +3153,3 @@ else LEDflg = 0;
 }
 }
 }
-
-void strOutUSART(char *str){
-while(*str){
-while(!PIR1bits.TXIF);
-TXREG = *str++;
-}
-}
-

@@ -134,12 +134,6 @@
 [v _CARRY CARRY `VEb  1 e 0 @24 ]
 "5208
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"5404
-[v _RA0 RA0 `VEb  1 e 0 @96 ]
-"5406
-[v _RA1 RA1 `VEb  1 e 0 @97 ]
-"5408
-[v _RA2 RA2 `VEb  1 e 0 @98 ]
 "5414
 [v _RA5 RA5 `VEb  1 e 0 @101 ]
 "5424
@@ -157,5 +151,5 @@
 {
 [v main@argc argc `i  1 p 2 0 ]
 [v main@argv argv `*.1*.1uc  1 p 2 2 ]
-"107
+"103
 } 0
