@@ -106,7 +106,6 @@ void main() {
     }
 }
 
-
 void strOutUSART(char *str) {
     while (*str) { //•¶š—ñ‚ÌI‚í‚è(00)‚Ü‚ÅŒp‘±
         while (!PIR1bits.TXIF); //‘—MI—¹‘Ò‚¿

@@ -105,9 +105,9 @@
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 "56 C:\Users\User\Desktop\program\forPIC\test1822LED.X\main.c
 [v _main main `(v  1 e 0 0 ]
-"110
+"109
 [v _strOutUSART strOutUSART `(v  1 e 0 0 ]
-"117
+"116
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
 "412 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic12f1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
@@ -197,8 +197,8 @@
 {
 "107
 } 0
-"117
+"116
 [v _InterTimer InterTimer `II(v  1 e 0 0 ]
 {
-"129
+"128
 } 0

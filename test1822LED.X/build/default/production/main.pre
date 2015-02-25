@@ -3132,7 +3132,6 @@ else RA1 = 1;
 }
 }
 
-
 void strOutUSART(char *str) {
 while (*str) {
 while (!PIR1bits.TXIF);
