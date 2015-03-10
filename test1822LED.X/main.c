@@ -8,17 +8,9 @@
 
 #include <xc.h>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-#define _XTAL_FREQ 8000000	//  delay用に必要(クロック32MHzを指定)
-
+#define _XTAL_FREQ 16000000	//  delay用に必要(クロック32MHzを指定)
 #define T0COUT     61   // タイマー０用カウントの初期値(256 - 195 = 61)
 
-
-#define HIGH       1
-#define LOW        0
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
@@ -42,87 +34,56 @@
 #pragma config BORV = HI        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), high trip point selected.)
 #pragma config LVP = OFF        // Low-Voltage Programming Enable (High-voltage on MCLR/VPP must be used for programming)
 
-int Count; // タイマーの割込み発生回数をカウントする変数
-int LEDflg;
 
-unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-const unsigned char sig[8] = {0, 0, 1, 0, 1, 0, 0, 0};
-
-void strOutUSART(char *str);
 
 
 // メインの処理
 
 void main() {
 
-
-    OSCCON = 0b01110010; // 内部クロックは8ＭＨｚとする
+    OSCCON = 0b11110010; // 内部クロックは8ＭＨｚとする
     ANSELAbits.ANSELA = 0b00000000; // アナログは使用しない（すべてデジタルI/Oに割当てる）
-    TRISA = 0b00001100; // ピンは全て出力に割当てる(RA3は入力専用)
+    TRISA = 0b0111000; // ピンは全て出力に割当てる(RA3は入力専用)
     PORTA = 0b00000000; // 出力ピンの初期化(全てLOWにする)
-
-    // ＵＳＡＲＴ機能の設定を行う
-    RXDTSEL = 1; // 2番ピン(RA5)をＲＸ受信ピンとする
-    TXCKSEL = 1; // 3番ピン(RA4)をＴＸ送信ピンとする
-    TXSTA = 0b00100100; // 送信情報設定：非同期モード　８ビット・ノンパリティ
-    RCSTA = 0b10010000; // 受信情報設定
-    SPBRG = 51; // ボーレートを９６００(高速モード)に設定
-
-    OPTION_REG = 0b00000110; // 内部ｸﾛｯｸでTIMER0を使用、ﾌﾟﾘｽｹｰﾗｶｳﾝﾄ値 1:128
-    TMR0 = T0COUT; // タイマー0の初期化
-    TMR0IF = 0; // タイマー0割込フラグ(T0IF)を0にする
-    Count = 0; // 割込み発生の回数カウンターを0にする
-    TMR0IE = 1; // タイマー0割込み(T0IE)を許可する
-    GIE = 1; // 全割込み処理を許可する
-
-    __delay_ms(50); // 0.0５秒後に開始する
-
 
 
     while (1) {
-        RA0 = 1;
 
-        while (RA2);
-
-        while (!RA2);
-
-        if (RA2 == 1) {
-            RA5 = 1;
-            __delay_us(600);
+        if (RA4 == 1) {
+            RA2 = 0;
+        } else if (RA4 == 0) {
+            RA2 = 1;
         } else {
-            RA5 = 0;
+            RA2 = 1;
         }
-
-        if (RA2 == 0) {
-            __delay_us(600);
-            RA5 = 1;
-        } else {
-            RA5 = 0;
-        }
-
-        // LEDのフラグ状態ON/OFFによりLEDをON/OFFする処理
-        if (LEDflg == 0) RA1 = 0; // 5番ピンにLOWを出力する(LED OFF)
-        else RA1 = 1; // 5番ピンにHIGHを出力する(LED ON)
     }
+
 }
 
-void strOutUSART(char *str) {
-    while (*str) { //文字列の終わり(00)まで継続
-        while (!PIR1bits.TXIF); //送信終了待ち
-        TXREG = *str++; //文字出力しポインタ＋１
-    }
-}
+/*腹が減った?*/
 
-void interrupt InterTimer(void) {
-    if (TMR0IF == 1) { // タイマー0の割込み発生か？
-        TMR0 = T0COUT; // タイマー0の初期化
-        Count++; // 割込み発生の回数をカウントする
-        TMR0IF = 0; // タイマー0割込フラグをリセット
-        if (Count >= 40) { // 割込みを40回カウントすると約１秒
-            Count = 0;
-            // １秒毎にLEDのフラグをON/OFFさせる処理
-            if (LEDflg == 0) LEDflg = 1;
-            else LEDflg = 0;
+/*
+    while (RA4 == 0);
+
+    while (1) {
+
+        if (RA4 == 1) {
+            
+        } else if (RA4 == 0) {
+            __delay_ms(1);
+
+            if (RA4 == 0) {
+                __delay_ms(1);
+
+                if (RA4 == 0) {
+                    RA2 = 1;
+                }else{
+                RA2 = 0;
+                }
+            }else{
+                RA2 = 0;
+            }
         }
     }
 }
+ */
